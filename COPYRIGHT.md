@@ -1,0 +1,1 @@
+© 2025 Dominik Opałka. All Rights Reserved. Contact: hetwerk1943@gmail.com
