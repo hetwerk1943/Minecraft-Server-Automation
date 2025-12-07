@@ -1,0 +1,82 @@
+# Minecraft Server Files
+server.jar
+*.jar
+!scripts/*.jar
+eula.txt
+server.properties
+ops.json
+whitelist.json
+banned-players.json
+banned-ips.json
+usercache.json
+
+# World Data
+world/
+world_nether/
+world_the_end/
+*.mca
+*.mcc
+
+# Logs
+logs/
+*.log
+*.log.gz
+
+# Backups (too large for git)
+backups/
+*.zip
+*.tar.gz
+*.7z
+
+# Plugins/Mods
+plugins/
+mods/
+*.jar.disabled
+
+# Libraries
+libraries/
+versions/
+
+# Crash Reports
+crash-reports/
+
+# Performance Data
+timings/
+*.jfr
+thread_dump.txt
+
+# PowerShell Temporary Files
+*.ps1~
+*.swp
+*~
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE Files
+.vscode/
+.idea/
+*.code-workspace
+
+# Temporary Files
+tmp/
+temp/
+*.tmp
+*.bak
+
+# Node Modules (if using JS tools)
+node_modules/
+
+# Environment Files
+.env
+.env.local
+
+# Cache
+cache/
+.cache/
+
+# Local Configuration Overrides
+config/local/
+*.local.json
