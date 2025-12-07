@@ -6,7 +6,7 @@
 # --- PARAMETRY KONFIGURACYJNE ---
 $MinecraftVersion = "1.20.4" # Zmień na pożądaną wersję
 $ServerFolder   = "C:\MinecraftServer"
-$RamAlloc       = "-Xmx2G -Xms1G" # 2GB maksymalnie, 1GB startowo
+$RamAlloc       = "-Xmx4G -Xms2G" # 4GB maksymalnie, 2GB startowo
 $ServerJarName  = "server.jar"
 $EulaAgreement  = "eula=true"
 

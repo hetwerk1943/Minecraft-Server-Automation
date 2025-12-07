@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2025-12-07
+
+### Added
+- **RestartServer.ps1**: Server restart utility
+  - Safe server restart with player warning
+  - Automatic process detection and termination
+  - Configurable wait time between stop and start
+  - Graceful handling of server not running
+
+### Changed
+- **Default RAM allocation increased from 2GB to 4GB**
+  - Updated MinecraftServerSetup.ps1 default: `-Xmx4G -Xms2G`
+  - Updated StartServer.ps1 default: `-Xmx4G -Xms2G`
+  - Updated RestartServer.ps1 default: `-Xmx4G -Xms2G`
+  - Updated config.json: `ramAllocation: "-Xmx4G -Xms2G"`
+- Updated README.md with RestartServer.ps1 documentation
+- Updated daily management section with restart command
+
 ## [1.0.0] - 2025-12-07
 
 ### Added

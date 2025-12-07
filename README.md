@@ -72,8 +72,31 @@ Szybkie uruchamianie serwera Minecraft.
 
 **Parametry:**
 - `-ServerFolder`: Ścieżka do folderu serwera (domyślnie: `C:\MinecraftServer`)
-- `-RamAlloc`: Alokacja pamięci RAM (domyślnie: `-Xmx2G -Xms1G`)
+- `-RamAlloc`: Alokacja pamięci RAM (domyślnie: `-Xmx4G -Xms2G`)
 - `-ServerJarName`: Nazwa pliku JAR (domyślnie: `server.jar`)
+
+### RestartServer.ps1
+Bezpieczny restart serwera Minecraft.
+
+**Użycie:**
+```powershell
+# Podstawowy restart
+.\RestartServer.ps1
+
+# Restart z niestandardowymi ustawieniami
+.\RestartServer.ps1 -ServerFolder "D:\MyServer" -RamAlloc "-Xmx8G -Xms4G"
+
+# Restart z dłuższym czasem oczekiwania
+.\RestartServer.ps1 -WaitSeconds 30
+```
+
+**Parametry:**
+- `-ServerFolder`: Ścieżka do folderu serwera (domyślnie: `C:\MinecraftServer`)
+- `-RamAlloc`: Alokacja pamięci RAM (domyślnie: `-Xmx4G -Xms2G`)
+- `-ServerJarName`: Nazwa pliku JAR (domyślnie: `server.jar`)
+- `-WaitSeconds`: Czas oczekiwania przed restartem w sekundach (domyślnie: 10)
+
+**Uwaga:** Restart zatrzyma serwer i odłączy wszystkich graczy!
 
 ### BackupServer.ps1
 Tworzenie kopii zapasowych serwera.
@@ -131,7 +154,7 @@ Plik konfiguracyjny zawiera wszystkie podstawowe ustawienia:
     "downloadUrl": "https://..."
   },
   "performance": {
-    "ramAllocation": "-Xmx2G -Xms1G",
+    "ramAllocation": "-Xmx4G -Xms2G",
     "maxPlayers": 20,
     "viewDistance": 10
   },
@@ -181,6 +204,11 @@ enable-query=true
 
 **Zatrzymanie serwera:**
 W konsoli serwera wpisz: `stop`
+
+**Restart serwera:**
+```powershell
+.\RestartServer.ps1
+```
 
 **Tworzenie backupu:**
 ```powershell

@@ -5,7 +5,7 @@
 
 param(
     [string]$ServerFolder = "C:\MinecraftServer",
-    [string]$RamAlloc = "-Xmx2G -Xms1G",
+    [string]$RamAlloc = "-Xmx4G -Xms2G",
     [string]$ServerJarName = "server.jar"
 )
 
