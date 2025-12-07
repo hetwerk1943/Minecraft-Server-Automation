@@ -95,6 +95,29 @@ Tworzenie kopii zapasowych serwera.
 - `-BackupFolder`: Folder dla kopii zapasowych (domyślnie: `C:\MinecraftBackups`)
 - `-IncludeLogs`: Włącz logi w backupie (domyślnie: wyłączone)
 
+### UpdateServer.ps1
+Aktualizacja serwera Minecraft do nowszej wersji.
+
+**Użycie:**
+```powershell
+# Podstawowa aktualizacja
+.\UpdateServer.ps1 -NewServerUrl "https://piston-data.mojang.com/.../server.jar"
+
+# Aktualizacja bez automatycznego backupu
+.\UpdateServer.ps1 -NewServerUrl "URL" -SkipBackup
+
+# Niestandardowa lokalizacja
+.\UpdateServer.ps1 -NewServerUrl "URL" -ServerFolder "D:\MyServer" -BackupFolder "E:\Backups"
+```
+
+**Parametry:**
+- `-NewServerUrl`: URL do nowego pliku JAR serwera (wymagane)
+- `-ServerFolder`: Ścieżka do folderu serwera (domyślnie: `C:\MinecraftServer`)
+- `-BackupFolder`: Folder dla kopii zapasowych (domyślnie: `C:\MinecraftBackups`)
+- `-SkipBackup`: Pomiń automatyczny backup przed aktualizacją (domyślnie: false)
+
+**Uwaga:** Zawsze sprawdzaj najnowszy URL na [minecraft.net/download/server](https://www.minecraft.net/download/server)
+
 ## ⚙️ Konfiguracja
 
 ### config.json
@@ -162,6 +185,11 @@ W konsoli serwera wpisz: `stop`
 **Tworzenie backupu:**
 ```powershell
 .\BackupServer.ps1
+```
+
+**Aktualizacja serwera:**
+```powershell
+.\UpdateServer.ps1 -NewServerUrl "https://piston-data.mojang.com/.../server.jar"
 ```
 
 ### Komendy Administratora
