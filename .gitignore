@@ -1,0 +1,40 @@
+# Minecraft Server Files
+server.jar
+*.jar
+world/
+world_nether/
+world_the_end/
+logs/
+crash-reports/
+server.properties
+ops.json
+whitelist.json
+banned-players.json
+banned-ips.json
+usercache.json
+eula.txt
+
+# Backup Files
+*.zip
+*.backup
+backups/
+
+# System Files
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Temporary Files
+*.tmp
+*.temp
+~$*
+
+# Log Files
+*.log
+
+# Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
