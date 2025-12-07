@@ -52,8 +52,9 @@ function New-ServerBackup {
         Write-ColorMessage "Źródło: $ServerPath" "White"
         Write-ColorMessage "Cel: $backupFullPath" "White"
         
-        # Kompresja katalogu serwera
-        Compress-Archive -Path "$ServerPath\*" -DestinationPath $backupFullPath -Force
+        # Kompresja katalogu serwera (cross-platform compatible)
+        $serverPathPattern = Join-Path $ServerPath "*"
+        Compress-Archive -Path $serverPathPattern -DestinationPath $backupFullPath -Force
         
         $backupSize = (Get-Item $backupFullPath).Length / 1MB
         Write-ColorMessage "Kopia zapasowa utworzona pomyślnie! Rozmiar: $([Math]::Round($backupSize, 2)) MB" "Green"

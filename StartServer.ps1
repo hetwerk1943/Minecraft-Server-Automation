@@ -35,6 +35,19 @@ function Test-ServerFiles {
     return $true
 }
 
+function Test-JavaInstallation {
+    try {
+        $javaVersion = java -version 2>&1
+        if ($LASTEXITCODE -eq 0) {
+            return $true
+        }
+    }
+    catch {
+        return $false
+    }
+    return $false
+}
+
 function Start-MinecraftServer {
     param(
         [string]$Path,
@@ -44,6 +57,13 @@ function Start-MinecraftServer {
     )
     
     try {
+        # Sprawdzenie Java
+        if (-not (Test-JavaInstallation)) {
+            Write-ColorMessage "Java nie jest zainstalowana lub niedostępna w PATH" "Red"
+            Write-ColorMessage "Zainstaluj Java 17+ i upewnij się, że jest dodana do PATH" "Yellow"
+            return $false
+        }
+        
         $serverJar = Join-Path $Path "server.jar"
         $currentLocation = Get-Location
         

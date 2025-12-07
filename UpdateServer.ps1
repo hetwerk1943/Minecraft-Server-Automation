@@ -34,7 +34,8 @@ function Backup-ServerBeforeUpdate {
         $backupName = "PreUpdate_$timestamp.zip"
         $backupFullPath = Join-Path $BackupPath $backupName
         
-        Compress-Archive -Path "$ServerPath\*" -DestinationPath $backupFullPath -Force
+        $serverPathPattern = Join-Path $ServerPath "*"
+        Compress-Archive -Path $serverPathPattern -DestinationPath $backupFullPath -Force
         
         Write-ColorMessage "Kopia zapasowa utworzona: $backupName" "Green"
         return $true
@@ -67,39 +68,46 @@ function Get-CurrentServerVersion {
     }
 }
 
-function Update-ServerJar {
+function Get-ManualServerUpdate {
     param(
         [string]$ServerPath,
         [string]$Version
     )
     
     try {
-        Write-ColorMessage "Aktualizacja serwera do wersji: $Version" "Cyan"
+        Write-ColorMessage "Sprawdzanie aktualizacji serwera do wersji: $Version" "Cyan"
+        Write-ColorMessage "UWAGA: Ten skrypt wymaga ręcznego pobrania server.jar" "Yellow"
         
         $serverJar = Join-Path $ServerPath "server.jar"
         
         if ($Version -eq "latest") {
-            Write-ColorMessage "Sprawdzanie najnowszej wersji..." "Cyan"
-            # Tu powinna być logika pobierania najnowszej wersji z oficjalnego źródła
-            Write-ColorMessage "UWAGA: Pobierz najnowszą wersję server.jar ręcznie z:" "Yellow"
-            Write-ColorMessage "https://www.minecraft.net/en-us/download/server" "Yellow"
-            Write-ColorMessage "I umieść ją w katalogu: $ServerPath" "Yellow"
+            Write-ColorMessage "`nKroki do wykonania:" "Cyan"
+            Write-ColorMessage "1. Odwiedź: https://www.minecraft.net/en-us/download/server" "White"
+            Write-ColorMessage "2. Pobierz najnowszą wersję server.jar" "White"
+            Write-ColorMessage "3. Zastąp stary plik w katalogu: $ServerPath" "White"
         }
         else {
-            Write-ColorMessage "Pobieranie wersji $Version..." "Cyan"
-            Write-ColorMessage "UWAGA: Pobierz wersję $Version ręcznie i umieść w: $ServerPath" "Yellow"
+            Write-ColorMessage "`nKroki do wykonania:" "Cyan"
+            Write-ColorMessage "1. Znajdź wersję $Version server.jar" "White"
+            Write-ColorMessage "2. Pobierz plik server.jar" "White"
+            Write-ColorMessage "3. Zastąp stary plik w katalogu: $ServerPath" "White"
         }
         
-        # Sprawdzenie czy plik server.jar został zaktualizowany
+        # Sprawdzenie czy plik server.jar istnieje
         if (Test-Path $serverJar) {
             $fileInfo = Get-Item $serverJar
-            Write-ColorMessage "Plik server.jar obecny (ostatnia modyfikacja: $($fileInfo.LastWriteTime))" "Green"
+            Write-ColorMessage "`nObecny plik server.jar:" "Cyan"
+            Write-ColorMessage "  Rozmiar: $([Math]::Round($fileInfo.Length / 1MB, 2)) MB" "White"
+            Write-ColorMessage "  Ostatnia modyfikacja: $($fileInfo.LastWriteTime)" "White"
+        }
+        else {
+            Write-ColorMessage "`nBrak pliku server.jar w katalogu serwera" "Red"
         }
         
         return $true
     }
     catch {
-        Write-ColorMessage "Błąd podczas aktualizacji: $_" "Red"
+        Write-ColorMessage "Błąd podczas sprawdzania aktualizacji: $_" "Red"
         return $false
     }
 }
@@ -156,9 +164,9 @@ try {
         Write-ColorMessage "Pominięto tworzenie kopii zapasowej (użyto -SkipBackup)" "Yellow"
     }
     
-    # Aktualizacja server.jar
-    if (-not (Update-ServerJar -ServerPath $ServerPath -Version $Version)) {
-        throw "Nie udało się zaktualizować serwera"
+    # Instrukcje aktualizacji server.jar
+    if (-not (Get-ManualServerUpdate -ServerPath $ServerPath -Version $Version)) {
+        throw "Nie udało się sprawdzić aktualizacji serwera"
     }
     
     # Sprawdzenie konfiguracji

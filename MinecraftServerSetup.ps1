@@ -104,9 +104,10 @@ function New-StartScript {
     
     try {
         $startScriptPath = Join-Path $Path "start.bat"
+        $minMemory = [Math]::Max(512, [int]($Memory / 2))
         @"
 @echo off
-java -Xmx${Memory}M -Xms${Memory}M -jar server.jar nogui
+java -Xmx${Memory}M -Xms${minMemory}M -jar server.jar nogui
 pause
 "@ | Out-File -FilePath $startScriptPath -Encoding ASCII
         Write-ColorMessage "Utworzono skrypt startowy: start.bat" "Green"
