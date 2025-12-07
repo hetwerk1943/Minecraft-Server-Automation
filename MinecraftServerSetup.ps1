@@ -117,10 +117,11 @@ function Start-MinecraftServer {
     }
     
     # Uruchomienie serwera za pomocą Javy
-    $Arguments = "$RamAlloc -jar $ServerJarName nogui"
+    $RamArgs = $RamAlloc.Split()
+    $Arguments = $RamArgs + @('-jar', $ServerJarName, 'nogui')
     
     try {
-        Write-Host "Uruchamianie polecenia: java $Arguments" -ForegroundColor Cyan
+        Write-Host "Uruchamianie polecenia: java $RamAlloc -jar $ServerJarName nogui" -ForegroundColor Cyan
         # Używamy Start-Process aby uruchomić serwer
         Start-Process -FilePath "java" -ArgumentList $Arguments -WorkingDirectory $ServerFolder -Wait
     } catch {
