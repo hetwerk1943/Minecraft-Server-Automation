@@ -334,8 +334,17 @@ Get-Content logs/backup.log -Tail 50
 **Rozwiązanie:**
 1. Weryfikuj integralność backupu:
 ```powershell
-# Sprawdź archiwum ZIP
-Test-Archive -Path "backup.zip"
+# Sprawdź czy plik istnieje i spróbuj go rozpakować
+if (Test-Path "backup.zip") {
+    try {
+        # Test rozpakowania (bez faktycznego wypakowywania)
+        Add-Type -AssemblyName System.IO.Compression.FileSystem
+        [System.IO.Compression.ZipFile]::OpenRead("backup.zip") | Out-Null
+        Write-Host "✅ Backup jest prawidłowy"
+    } catch {
+        Write-Host "❌ Backup jest uszkodzony: $_"
+    }
+}
 ```
 
 2. Zatrzymaj serwer przed przywracaniem:
@@ -393,7 +402,7 @@ Remove-Item plugins/*.jar.old
 # (manualnie lub przez plugin manager)
 ```
 
-3. Temporary disable problematycznych pluginów:
+3. Tymczasowo wyłącz problematyczne pluginy:
 ```powershell
 # Zmień rozszerzenie
 Rename-Item plugins/problem-plugin.jar plugins/problem-plugin.jar.disabled

@@ -46,7 +46,7 @@ Projekt jest w **aktywnym rozwoju**. Zobacz szczegółowy plan działania:
 - [x] Przygotowanie README.md z pełną dokumentacją
 - [x] Stworzenie kompleksowego planu działania
 - [x] Utworzenie przewodnika rozwiązywania problemów
-- [ ] Stworzenie QUICK_START.md
+- [x] Stworzenie QUICK_START.md
 - [ ] Utworzenie struktury katalogów
 - [ ] Przygotowanie pierwszych skryptów
 
