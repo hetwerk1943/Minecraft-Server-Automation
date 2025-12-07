@@ -338,6 +338,9 @@ donation-system:
         - 'elytra 1'
         - 'totem_of_undying 3'
       commands:
+        # UWAGA: NBT syntax może różnić się w zależności od wersji Minecraft
+        # Dla 1.13+: używaj poniższej składni
+        # Dla starszych wersji: dostosuj do odpowiedniego formatu NBT
         - 'give {player} netherite_sword{Enchantments:[{id:sharpness,lvl:5},{id:mending,lvl:1}]} 1'
         - 'give {player} elytra 1'
         - 'give {player} totem_of_undying 3'
@@ -396,6 +399,8 @@ donation-system:
     broadcast-purchases: true
     thank-you-message: true
     email-receipts: true
+    # UWAGA: Webhook URL jest tajny! Nie commituj prawdziwego URL do repozytorium
+    # Przechowuj webhook URL w zmiennych środowiskowych lub bezpiecznym magazynie
     webhook-url: 'https://discord.com/api/webhooks/YOUR_WEBHOOK'
 "@ | Out-File -FilePath $configFile -Encoding UTF8
         
@@ -443,7 +448,8 @@ Miesięczne/kwartalne subskrypcje z różnymi poziomami:
 ### 3. System Ekonomii In-Game
 - Gracze zarabiają walutę za grę
 - Mogą kupować items/rangi za in-game currency
-- Opcja zakupu waluty za real money (0.01 PLN = 100 monet)
+- Opcja zakupu waluty za real money
+  (Przykładowy kurs: 0.01 PLN = 100 monet - dostosuj do balansu serwera)
 
 **Przewidywany przychód**: 100 graczy × 20% × średnio 15 PLN = 300 PLN/miesiąc
 

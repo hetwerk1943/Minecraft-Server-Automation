@@ -36,9 +36,14 @@ function Get-ServerMetrics {
         
         # Sprawdzenie czy serwer działa
         $serverProcess = Get-Process -Name "java" -ErrorAction SilentlyContinue | 
-            Where-Object { $_.Path -like "*$ServerPath*" }
+            Where-Object { $_.Path -and $_.Path -like "*$ServerPath*" }
         
         if ($serverProcess) {
+            # Jeśli jest wiele procesów, użyj pierwszego
+            if ($serverProcess -is [array]) {
+                $serverProcess = $serverProcess[0]
+            }
+            
             $metrics.ServerOnline = $true
             
             # Użycie pamięci
@@ -166,8 +171,22 @@ function Send-DiscordNotification {
             )
         } | ConvertTo-Json -Depth 10
         
-        Invoke-RestMethod -Uri $WebhookUrl -Method Post -Body $embed -ContentType "application/json" | Out-Null
-        Write-ColorMessage "Wysłano powiadomienie na Discord" "Green"
+        try {
+            Invoke-RestMethod -Uri $WebhookUrl -Method Post -Body $embed -ContentType "application/json" | Out-Null
+            Write-ColorMessage "Wysłano powiadomienie na Discord" "Green"
+        }
+        catch [System.Net.WebException] {
+            $statusCode = $_.Exception.Response.StatusCode.value__
+            if ($statusCode -eq 429) {
+                Write-ColorMessage "Rate limit Discord - spróbuj ponownie później" "Yellow"
+            }
+            elseif ($statusCode -eq 404) {
+                Write-ColorMessage "Nieprawidłowy webhook URL Discord" "Red"
+            }
+            else {
+                Write-ColorMessage "Błąd HTTP $statusCode podczas wysyłania do Discord" "Red"
+            }
+        }
     }
     catch {
         Write-ColorMessage "Błąd podczas wysyłania powiadomienia Discord: $_" "Red"

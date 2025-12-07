@@ -94,7 +94,8 @@ function Get-PlayerStats {
                 $custom = $stats.stats.'minecraft:custom'
                 
                 if ($custom.'minecraft:play_time') {
-                    $playerStats.PlayTime = [Math]::Round($custom.'minecraft:play_time' / 72000, 2)  # w godzinach
+                    # Konwersja z ticków do godzin: 20 ticks/sek * 3600 sek/godz = 72000 ticks/godz
+                    $playerStats.PlayTime = [Math]::Round($custom.'minecraft:play_time' / 72000, 2)
                 }
                 if ($custom.'minecraft:deaths') {
                     $playerStats.Deaths = $custom.'minecraft:deaths'
@@ -335,6 +336,13 @@ function Send-RewardsToTopPlayers {
         
         $position = 1
         foreach ($player in $topPlayers) {
+            # Walidacja nazwy gracza (tylko alfanumeryczne i underscore)
+            $sanitizedName = $player.Name -replace '[^a-zA-Z0-9_]', ''
+            if ($sanitizedName -ne $player.Name) {
+                Write-ColorMessage "Ostrzeżenie: Nazwa gracza '$($player.Name)' zawiera niedozwolone znaki" "Yellow"
+                continue
+            }
+            
             $reward = switch ($position) {
                 1 { 
                     @{
@@ -366,17 +374,17 @@ function Send-RewardsToTopPlayers {
                 }
             }
             
-            $commands += "# Pozycja $position : $($player.Name)"
-            $commands += "eco give $($player.Name) $($reward.Money)"
-            $commands += "lp user $($player.Name) parent set $($reward.Rank)"
+            $commands += "# Pozycja $position : $sanitizedName"
+            $commands += "eco give $sanitizedName $($reward.Money)"
+            $commands += "lp user $sanitizedName parent set $($reward.Rank)"
             
             foreach ($item in $reward.Items -split ", ") {
                 $itemParts = $item -split " "
-                $commands += "give $($player.Name) $($itemParts[0]) $($itemParts[1])"
+                $commands += "give $sanitizedName $($itemParts[0]) $($itemParts[1])"
             }
             $commands += ""
             
-            Write-ColorMessage "$position. $($player.Name) - $($reward.Money) monet + $($reward.Items) + ranga $($reward.Rank)" "Green"
+            Write-ColorMessage "$position. $sanitizedName - $($reward.Money) monet + $($reward.Items) + ranga $($reward.Rank)" "Green"
             $position++
         }
         
