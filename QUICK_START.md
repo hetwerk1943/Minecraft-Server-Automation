@@ -42,6 +42,7 @@ Alternatywnie, pobierz z: https://adoptium.net/
 #### 1.1. Zainstaluj PowerShell 7
 ```bash
 # Pobierz i zainstaluj PowerShell
+# UWAGA: Sprawdź najnowszą wersję na https://github.com/PowerShell/PowerShell/releases
 wget https://github.com/PowerShell/PowerShell/releases/download/v7.4.0/powershell_7.4.0-1.deb_amd64.deb
 sudo dpkg -i powershell_7.4.0-1.deb_amd64.deb
 sudo apt-get install -f  # Naprawia zależności jeśli są problemy

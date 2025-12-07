@@ -98,7 +98,7 @@ winget install EclipseAdoptium.Temurin.17.JDK
 
 #### Linux (Ubuntu/Debian)
 ```bash
-# PowerShell 7
+# PowerShell 7 (sprawdź najnowszą wersję na https://github.com/PowerShell/PowerShell/releases)
 wget https://github.com/PowerShell/PowerShell/releases/download/v7.4.0/powershell_7.4.0-1.deb_amd64.deb
 sudo dpkg -i powershell_7.4.0-1.deb_amd64.deb
 
