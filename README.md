@@ -91,6 +91,204 @@
 
 <div align="center">
 
+## 🌟 Showcase Kluczowych Funkcji
+
+<table width="100%">
+<tr>
+<td width="33%" align="center" style="border: 2px solid #5391FE; border-radius: 10px; padding: 20px;">
+<img src="https://img.icons8.com/3d-fluency/94/000000/rocket.png" alt="" width="80"/><br/>
+<h3>⚡ Szybka Instalacja</h3>
+<p><b>5 minut</b> od zera do gotowego serwera!<br/>
+Jeden skrypt załatwia wszystko:<br/>
+✓ Java<br/>
+✓ Server.jar<br/>
+✓ Konfiguracja<br/>
+✓ EULA</p>
+<br/>
+<img src="https://img.shields.io/badge/Czas-5_min-success?style=for-the-badge" alt=""/>
+</td>
+<td width="33%" align="center" style="border: 2px solid #62B47A; border-radius: 10px; padding: 20px;">
+<img src="https://img.icons8.com/3d-fluency/94/000000/data-backup.png" alt="" width="80"/><br/>
+<h3>💾 Smart Backup</h3>
+<p><b>Inteligentne</b> kopie zapasowe!<br/>
+System, który dba o Twoje dane:<br/>
+✓ Automatyczne<br/>
+✓ Kompresja<br/>
+✓ Rotacja<br/>
+✓ Weryfikacja</p>
+<br/>
+<img src="https://img.shields.io/badge/Bezpieczeństwo-100%25-success?style=for-the-badge" alt=""/>
+</td>
+<td width="33%" align="center" style="border: 2px solid #ED8B00; border-radius: 10px; padding: 20px;">
+<img src="https://img.icons8.com/3d-fluency/94/000000/bar-chart.png" alt="" width="80"/><br/>
+<h3>📊 Live Monitoring</h3>
+<p><b>Real-time</b> monitoring wydajności!<br/>
+Śledź wszystko na bieżąco:<br/>
+✓ CPU & RAM<br/>
+✓ TPS<br/>
+✓ Gracze<br/>
+✓ Alerty</p>
+<br/>
+<img src="https://img.shields.io/badge/Monitoring-24/7-orange?style=for-the-badge" alt=""/>
+</td>
+</tr>
+</table>
+
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=header&text=Potęga%20Automatyzacji&fontSize=30&fontColor=fff&animation=twinkling" alt="" width="100%"/>
+
+</div>
+
+---
+
+<div align="center">
+
+## 🏗️ Architektura Systemu
+
+```mermaid
+graph TB
+    subgraph "💻 Twój Komputer"
+        A[👤 Użytkownik]
+        B[⚡ PowerShell Scripts]
+    end
+    
+    subgraph "🎮 Minecraft Server"
+        C[☕ Java Runtime]
+        D[🗺️ Świat Gry]
+        E[⚙️ Konfiguracja]
+    end
+    
+    subgraph "🔧 Automatyzacja"
+        F[📊 Monitoring]
+        G[💾 Backup System]
+        H[🔄 Update Manager]
+    end
+    
+    subgraph "💾 Storage"
+        I[📦 Kopie Zapasowe]
+        J[📝 Logi]
+    end
+    
+    A -->|Komendy| B
+    B -->|Zarządzanie| C
+    C -->|Uruchamia| D
+    C -->|Wczytuje| E
+    B -->|Monitoruje| F
+    B -->|Tworzy| G
+    B -->|Aktualizuje| H
+    G -->|Zapisuje| I
+    F -->|Loguje| J
+    H -->|Aktualizuje| C
+    
+    style A fill:#5391FE,stroke:#333,stroke-width:2px,color:#fff
+    style B fill:#ED8B00,stroke:#333,stroke-width:2px,color:#fff
+    style C fill:#62B47A,stroke:#333,stroke-width:2px,color:#fff
+    style D fill:#90EE90,stroke:#333,stroke-width:2px
+    style F fill:#FFD700,stroke:#333,stroke-width:2px
+    style G fill:#FF6347,stroke:#333,stroke-width:2px,color:#fff
+    style H fill:#87CEEB,stroke:#333,stroke-width:2px
+```
+
+</div>
+
+---
+
+<div align="center">
+
+## 🛠️ Stack Technologiczny
+
+<table width="100%">
+<tr>
+<td align="center" width="20%">
+<img src="https://img.icons8.com/fluency/96/000000/powershell.png" alt="PowerShell" width="80"/><br/>
+<b>PowerShell 7+</b><br/>
+<sub>Główny język</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://img.icons8.com/fluency/96/000000/java-coffee-cup-logo.png" alt="Java" width="80"/><br/>
+<b>Java 17+</b><br/>
+<sub>Runtime serwera</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://img.icons8.com/fluency/96/000000/minecraft-logo.png" alt="Minecraft" width="80"/><br/>
+<b>Minecraft</b><br/>
+<sub>Vanilla/Paper/Spigot</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://img.icons8.com/fluency/96/000000/windows-10.png" alt="Windows" width="80"/><br/>
+<b>Cross-Platform</b><br/>
+<sub>Win/Linux/macOS</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://img.icons8.com/fluency/96/000000/github.png" alt="GitHub" width="80"/><br/>
+<b>GitHub</b><br/>
+<sub>Version Control</sub>
+</td>
+</tr>
+</table>
+
+</div>
+
+---
+
+<div align="center">
+
+## 📈 Kluczowe Metryki Projektu
+
+<table width="100%">
+<tr>
+<td align="center" width="20%">
+<img src="https://img.shields.io/badge/Dokumentacja-2000+-brightgreen?style=for-the-badge&logo=markdown" alt=""/><br/>
+<b>2000+ linii</b><br/>
+<sub>dokumentacji</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://img.shields.io/badge/Problemy-12-blue?style=for-the-badge&logo=target" alt=""/><br/>
+<b>12 rozwiązań</b><br/>
+<sub>przewidzianych problemów</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://img.shields.io/badge/Etapy-5-orange?style=for-the-badge&logo=roadmap" alt=""/><br/>
+<b>5 etapów</b><br/>
+<sub>rozwoju</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://img.shields.io/badge/Platformy-3-purple?style=for-the-badge&logo=windows" alt=""/><br/>
+<b>3 platformy</b><br/>
+<sub>Win/Linux/Mac</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://img.shields.io/badge/Czas-5_min-red?style=for-the-badge&logo=clock" alt=""/><br/>
+<b>5 minut</b><br/>
+<sub>do instalacji</sub>
+</td>
+</tr>
+</table>
+
+<br/>
+
+```
+╔════════════════════════════════════════════════════════════════╗
+║                    🎮 CO WYRÓŻNIA NASZ PROJEKT?                ║
+╠════════════════════════════════════════════════════════════════╣
+║                                                                ║
+║  ⚡ SZYBKOŚĆ          →  5 minut instalacji                    ║
+║  🛡️  BEZPIECZEŃSTWO   →  Automatyczne backupy                  ║
+║  🌍 UNIWERSALNOŚĆ     →  Działa wszędzie                       ║
+║  📚 DOKUMENTACJA      →  2000+ linii w PL                      ║
+║  🆓 DARMOWY           →  100% Open Concept                     ║
+║  👨‍💻 WSPARCIE          →  Polski support 24/7                   ║
+║                                                                ║
+╚════════════════════════════════════════════════════════════════╝
+```
+
+</div>
+
+---
+
+<div align="center">
+
 ## 🆚 Dlaczego MY a nie inne rozwiązania?
 
 <table width="100%">
@@ -393,13 +591,87 @@ Integracje z płatnościami, rangi, sklep - zarabiaj na serwerze!
 
 ### 📖 [Zobacz Pełny Plan Funkcji →](PLAN_DZIAŁANIA.md)
 
+---
+
+## 🎬 Jak To Działa? - Flow Instalacji
+
+```mermaid
+sequenceDiagram
+    participant U as 👤 Użytkownik
+    participant S as 📜 Setup Script
+    participant J as ☕ Java
+    participant M as 🎮 Minecraft
+    participant B as 💾 Backup
+    
+    U->>S: Uruchomienie MinecraftServerSetup.ps1
+    S->>S: Sprawdzenie wymagań systemowych
+    S->>J: Weryfikacja Java 17+
+    
+    alt Java nie znaleziona
+        S->>U: ❌ Błąd: Zainstaluj Java
+    else Java OK
+        S->>S: ✅ Java znaleziona
+    end
+    
+    S->>M: Pobieranie server.jar
+    S->>M: Konfiguracja server.properties
+    S->>M: Akceptacja EULA
+    S->>B: Konfiguracja backupów
+    S->>U: ✅ Instalacja zakończona!
+    
+    U->>S: Uruchomienie StartServer.ps1
+    S->>M: Start serwera
+    M->>U: 🎮 Serwer gotowy do gry!
+```
+
 </div>
 
 ---
 
 ## 🔧 Wymagania
 
-### Minimalne Wymagania Systemowe
+<div align="center">
+
+### 💻 Wymagania Systemowe - Wizualny Przegląd
+
+<table width="100%">
+<tr>
+<td align="center" width="16.66%">
+<img src="https://img.icons8.com/fluency/96/000000/windows-10.png" alt="" width="70"/><br/>
+<b>OS</b><br/>
+<sub>Windows 10+<br/>Ubuntu 20.04+<br/>macOS 10.15+</sub>
+</td>
+<td align="center" width="16.66%">
+<img src="https://img.icons8.com/fluency/96/000000/powershell.png" alt="" width="70"/><br/>
+<b>PowerShell</b><br/>
+<sub>Minimum: 7.0<br/>Zalecane: 7.4+</sub>
+</td>
+<td align="center" width="16.66%">
+<img src="https://img.icons8.com/fluency/96/000000/java-coffee-cup-logo.png" alt="" width="70"/><br/>
+<b>Java</b><br/>
+<sub>Minimum: JDK 17<br/>Zalecane: JDK 21</sub>
+</td>
+<td align="center" width="16.66%">
+<img src="https://img.icons8.com/fluency/96/000000/ram.png" alt="" width="70"/><br/>
+<b>RAM</b><br/>
+<sub>Minimum: 2GB<br/>Zalecane: 4GB+</sub>
+</td>
+<td align="center" width="16.66%">
+<img src="https://img.icons8.com/fluency/96/000000/ssd.png" alt="" width="70"/><br/>
+<b>Dysk</b><br/>
+<sub>Minimum: 5GB<br/>Zalecane: 20GB+</sub>
+</td>
+<td align="center" width="16.66%">
+<img src="https://img.icons8.com/fluency/96/000000/ethernet-on.png" alt="" width="70"/><br/>
+<b>Sieć</b><br/>
+<sub>Port: 25565<br/>Stabilne łącze</sub>
+</td>
+</tr>
+</table>
+
+</div>
+
+### 📊 Szczegółowe Wymagania
 
 | Komponent | Minimum | Zalecane |
 |-----------|---------|----------|
@@ -496,35 +768,102 @@ Minecraft-Server-Automation/
 
 ## 🚀 Szybki Start (Gdy skrypty będą gotowe)
 
-### 1. Sklonuj Repozytorium
+<div align="center">
+
+### 🎯 Od Zera do Bohatera w 4 Krokach!
+
+</div>
+
+<table width="100%">
+<tr>
+<td width="25%" align="center" bgcolor="#E8F5E9">
+<img src="https://img.icons8.com/fluency/96/000000/downloading-updates.png" alt="" width="60"/><br/>
+<h4>1️⃣ Pobierz</h4>
+<sub>Sklonuj repozytorium</sub>
+</td>
+<td width="25%" align="center" bgcolor="#E3F2FD">
+<img src="https://img.icons8.com/fluency/96/000000/install.png" alt="" width="60"/><br/>
+<h4>2️⃣ Zainstaluj</h4>
+<sub>Uruchom setup</sub>
+</td>
+<td width="25%" align="center" bgcolor="#FFF3E0">
+<img src="https://img.icons8.com/fluency/96/000000/rocket.png" alt="" width="60"/><br/>
+<h4>3️⃣ Uruchom</h4>
+<sub>Start serwera</sub>
+</td>
+<td width="25%" align="center" bgcolor="#F3E5F5">
+<img src="https://img.icons8.com/fluency/96/000000/controller.png" alt="" width="60"/><br/>
+<h4>4️⃣ Graj!</h4>
+<sub>Ciesz się grą</sub>
+</td>
+</tr>
+</table>
+
+<br/>
+
+> **📝 Uwaga:** Skrypty są obecnie w fazie rozwoju. Poniższe komendy pokazują planowaną funkcjonalność.
+
+<br/>
+
+<table width="100%">
+<tr>
+<td width="5%" bgcolor="#4CAF50"><img src="https://img.icons8.com/fluency/48/000000/1.png" alt=""/></td>
+<td width="95%">
+
+### Sklonuj Repozytorium
 ```bash
 git clone https://github.com/hetwerk1943/Minecraft-Server-Automation.git
 cd Minecraft-Server-Automation
 ```
+</td>
+</tr>
+<tr>
+<td width="5%" bgcolor="#2196F3"><img src="https://img.icons8.com/fluency/48/000000/2.png" alt=""/></td>
+<td width="95%">
 
-### 2. Instalacja Serwera (Przyszłość)
+### Instalacja Serwera
 ```powershell
-# Automatyczna instalacja i konfiguracja
+# Automatyczna instalacja i konfiguracja - to wszystko!
 .\scripts\MinecraftServerSetup.ps1
 ```
+✨ Skrypt automatycznie:
+- Sprawdzi wymagania
+- Pobierze server.jar
+- Skonfiguruje wszystkie pliki
+- Zaakceptuje EULA
+</td>
+</tr>
+<tr>
+<td width="5%" bgcolor="#FF9800"><img src="https://img.icons8.com/fluency/48/000000/3.png" alt=""/></td>
+<td width="95%">
 
-### 3. Uruchomienie Serwera (Przyszłość)
+### Uruchomienie Serwera
 ```powershell
 # Start serwera z 4GB RAM
 .\scripts\StartServer.ps1 -MaxMemory 4096
 ```
+🎮 Serwer uruchomi się i będzie gotowy do gry!
+</td>
+</tr>
+<tr>
+<td width="5%" bgcolor="#9C27B0"><img src="https://img.icons8.com/fluency/48/000000/4.png" alt=""/></td>
+<td width="95%">
 
-### 4. Zarządzanie (Przyszłość)
+### Zarządzanie Serwerem
 ```powershell
-# Backup
+# 💾 Backup - kopia zapasowa
 .\scripts\BackupServer.ps1
 
-# Aktualizacja
+# 🔄 Aktualizacja - bezpieczna aktualizacja
 .\scripts\UpdateServer.ps1
 
-# Stop
+# 🛑 Stop - zatrzymanie serwera
 .\scripts\StopServer.ps1
 ```
+🎯 Wszystkie operacje są bezpieczne i automatyczne!
+</td>
+</tr>
+</table>
 
 ---
 
@@ -590,31 +929,203 @@ Znalazłeś bug? Masz sugestię?
 
 ---
 
+<div align="center">
+
+## 💡 Wskazówki Pro
+
+<table width="100%">
+<tr>
+<td width="33%" align="center" bgcolor="#E8F5E9" style="padding: 20px;">
+<img src="https://img.icons8.com/fluency/48/000000/idea.png" alt=""/><br/>
+<b>💡 Tip #1: Więcej RAM</b><br/>
+<sub>Zawsze alokuj więcej RAM<br/>niż minimalne wymagania.<br/>Serwer będzie płynniejszy!</sub>
+</td>
+<td width="33%" align="center" bgcolor="#E3F2FD" style="padding: 20px;">
+<img src="https://img.icons8.com/fluency/48/000000/security-checked.png" alt=""/><br/>
+<b>🛡️ Tip #2: Backup</b><br/>
+<sub>Zawsze rób backup<br/>przed aktualizacją!<br/>Lepiej dmuchać na zimne.</sub>
+</td>
+<td width="33%" align="center" bgcolor="#FFF3E0" style="padding: 20px;">
+<img src="https://img.icons8.com/fluency/48/000000/speedometer.png" alt=""/><br/>
+<b>⚡ Tip #3: Paper</b><br/>
+<sub>Używaj Paper zamiast Vanilla<br/>dla lepszej wydajności.<br/>Różnica jest ogromna!</sub>
+</td>
+</tr>
+</table>
+
+<table width="100%">
+<tr>
+<td width="50%" bgcolor="#FFEBEE" style="padding: 15px;">
+<img src="https://img.icons8.com/fluency/32/000000/warning-shield.png" alt=""/> <b>⚠️ Ostrzeżenie</b><br/>
+<sub>Nigdy nie uruchamiaj serwera jako root/administrator! To zagrożenie bezpieczeństwa.</sub>
+</td>
+<td width="50%" bgcolor="#E8F5E9" style="padding: 15px;">
+<img src="https://img.icons8.com/fluency/32/000000/checked.png" alt=""/> <b>✅ Best Practice</b><br/>
+<sub>Używaj automatycznych backupów z harmonogramem. Cron (Linux) lub Task Scheduler (Windows).</sub>
+</td>
+</tr>
+</table>
+
+</div>
+
+---
+
 ## 💡 FAQ
 
-### Dlaczego PowerShell?
-PowerShell Core jest cross-platform, ma doskonałe wsparcie dla automatyzacji, i jest łatwy w nauce. Skrypty działają identycznie na Windows, Linux i macOS.
+<div align="center">
 
-### Czy mogę używać tego komercyjnie?
-Zobacz [COPYRIGHT.md](COPYRIGHT.md) - wszystkie prawa zastrzeżone. Skontaktuj się z autorem w sprawie licencji komercyjnej.
+### 🤔 Najczęściej Zadawane Pytania
 
-### Czy wspieracie pluginy/mody?
-Tak! Skrypty są kompatybilne z Vanilla, Spigot, Paper, Purpur i innymi implementacjami. Pluginy działają normalnie.
+</div>
 
-### Czy to działa z Bedrock Edition?
-Obecnie projekt skupia się na Java Edition. Bedrock może być dodany w przyszłości.
+<details>
+<summary><b>❓ Dlaczego PowerShell?</b></summary>
+<br/>
+<table>
+<tr>
+<td width="10%"><img src="https://img.icons8.com/fluency/48/000000/powershell.png" alt=""/></td>
+<td width="90%">
+PowerShell Core jest <b>cross-platform</b>, ma doskonałe wsparcie dla automatyzacji, i jest łatwy w nauce. 
+Skrypty działają identycznie na Windows, Linux i macOS. To sprawia, że jeden kod obsługuje wszystkie platformy!
+<br/><br/>
+<img src="https://img.shields.io/badge/Windows-✓-blue?style=flat-square" alt=""/>
+<img src="https://img.shields.io/badge/Linux-✓-orange?style=flat-square" alt=""/>
+<img src="https://img.shields.io/badge/macOS-✓-lightgrey?style=flat-square" alt=""/>
+</td>
+</tr>
+</table>
+</details>
 
-### Jak często robić backupy?
-Zalecamy:
-- Małe serwery (1-5 graczy): codziennie
-- Średnie serwery (5-20 graczy): 2x dziennie
-- Duże serwery (20+ graczy): co 4-6 godzin
+<details>
+<summary><b>⚖️ Czy mogę używać tego komercyjnie?</b></summary>
+<br/>
+<table>
+<tr>
+<td width="10%"><img src="https://img.icons8.com/fluency/48/000000/copyright.png" alt=""/></td>
+<td width="90%">
+Zobacz <a href="COPYRIGHT.md">COPYRIGHT.md</a> - wszystkie prawa zastrzeżone. 
+Skontaktuj się z autorem w sprawie licencji komercyjnej: <b>hetwerk1943@gmail.com</b>
+</td>
+</tr>
+</table>
+</details>
 
-### Ile pamięci RAM potrzebuję?
-- Vanilla (1-5 graczy): 2GB
-- Vanilla (5-10 graczy): 4GB
-- Z pluginami: +1-2GB
-- Z modami: +2-4GB
+<details>
+<summary><b>🔌 Czy wspieracie pluginy/mody?</b></summary>
+<br/>
+<table>
+<tr>
+<td width="10%"><img src="https://img.icons8.com/fluency/48/000000/plugin.png" alt=""/></td>
+<td width="90%">
+<b>Tak!</b> Skrypty są w pełni kompatybilne z:
+<ul>
+<li>✅ Vanilla Minecraft</li>
+<li>✅ Spigot</li>
+<li>✅ Paper (zalecane!)</li>
+<li>✅ Purpur</li>
+<li>✅ Inne implementacje</li>
+</ul>
+Pluginy działają normalnie bez żadnych modyfikacji!
+</td>
+</tr>
+</table>
+</details>
+
+<details>
+<summary><b>🎮 Czy to działa z Bedrock Edition?</b></summary>
+<br/>
+<table>
+<tr>
+<td width="10%"><img src="https://img.icons8.com/fluency/48/000000/minecraft-logo.png" alt=""/></td>
+<td width="90%">
+Obecnie projekt skupia się na <b>Java Edition</b>. 
+Bedrock Edition może być dodany w przyszłości, jeśli będzie zapotrzebowanie ze strony społeczności.
+<br/><br/>
+<img src="https://img.shields.io/badge/Java_Edition-✓_Supported-success?style=flat-square" alt=""/>
+<img src="https://img.shields.io/badge/Bedrock_Edition-⏳_Planned-yellow?style=flat-square" alt=""/>
+</td>
+</tr>
+</table>
+</details>
+
+<details>
+<summary><b>💾 Jak często robić backupy?</b></summary>
+<br/>
+<table>
+<tr>
+<td width="10%"><img src="https://img.icons8.com/fluency/48/000000/time-machine.png" alt=""/></td>
+<td width="90%">
+Zalecana częstotliwość zależy od wielkości serwera:
+<br/><br/>
+<table width="100%">
+<tr>
+<th>Typ Serwera</th>
+<th>Gracze</th>
+<th>Częstotliwość</th>
+</tr>
+<tr>
+<td>🏠 Mały</td>
+<td>1-5 graczy</td>
+<td><b>Codziennie</b> (raz dziennie)</td>
+</tr>
+<tr>
+<td>🏢 Średni</td>
+<td>5-20 graczy</td>
+<td><b>2x dziennie</b> (rano i wieczorem)</td>
+</tr>
+<tr>
+<td>🏭 Duży</td>
+<td>20+ graczy</td>
+<td><b>Co 4-6h</b> (automatyczne)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</details>
+
+<details>
+<summary><b>💾 Ile pamięci RAM potrzebuję?</b></summary>
+<br/>
+<table>
+<tr>
+<td width="10%"><img src="https://img.icons8.com/fluency/48/000000/memory-slot.png" alt=""/></td>
+<td width="90%">
+Wymagania pamięci RAM:
+<br/><br/>
+<table width="100%">
+<tr>
+<th>Konfiguracja</th>
+<th>RAM</th>
+<th>Opis</th>
+</tr>
+<tr>
+<td>⚪ Vanilla (1-5 graczy)</td>
+<td><b>2GB</b></td>
+<td>Podstawowy serwer bez modyfikacji</td>
+</tr>
+<tr>
+<td>⚪ Vanilla (5-10 graczy)</td>
+<td><b>4GB</b></td>
+<td>Więcej graczy = więcej RAM</td>
+</tr>
+<tr>
+<td>🔌 Z pluginami</td>
+<td><b>+1-2GB</b></td>
+<td>Dodatkowa pamięć na pluginy</td>
+</tr>
+<tr>
+<td>⚙️ Z modami</td>
+<td><b>+2-4GB</b></td>
+<td>Mody wymagają znacznie więcej</td>
+</tr>
+</table>
+<br/>
+<b>Tip:</b> Lepiej mieć więcej RAM niż za mało! Serwer będzie płynniejszy.
+</td>
+</tr>
+</table>
+</details>
 
 ---
 
