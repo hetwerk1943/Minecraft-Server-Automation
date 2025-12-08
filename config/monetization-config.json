@@ -1,0 +1,95 @@
+{
+  "enabled": false,
+  "notice": "System monetyzacji będzie dostępny w przyszłych wersjach",
+  "payment": {
+    "providers": {
+      "paypal": {
+        "enabled": false,
+        "clientId": "",
+        "secret": "",
+        "sandbox": true
+      },
+      "stripe": {
+        "enabled": false,
+        "publicKey": "",
+        "secretKey": "",
+        "webhookSecret": ""
+      },
+      "przelewy24": {
+        "enabled": false,
+        "merchantId": "",
+        "posId": "",
+        "crcKey": "",
+        "sandbox": true
+      }
+    }
+  },
+  "ranks": {
+    "vip": {
+      "price": 10.00,
+      "currency": "PLN",
+      "duration": 30,
+      "permissions": [
+        "essentials.fly",
+        "essentials.hat",
+        "essentials.kit.vip"
+      ],
+      "features": [
+        "Kolorowy nick",
+        "Latanie na spawnie",
+        "Dostęp do /hat",
+        "Kit VIP co 24h"
+      ]
+    },
+    "premium": {
+      "price": 25.00,
+      "currency": "PLN",
+      "duration": 30,
+      "permissions": [
+        "essentials.fly",
+        "essentials.hat",
+        "essentials.kit.premium",
+        "essentials.workbench"
+      ],
+      "features": [
+        "Wszystko z VIP",
+        "Dostęp do /wb",
+        "Kit Premium co 12h",
+        "Priorytet w kolejce"
+      ]
+    },
+    "sponsor": {
+      "price": 50.00,
+      "currency": "PLN",
+      "duration": 30,
+      "permissions": [
+        "essentials.*"
+      ],
+      "features": [
+        "Wszystko z Premium",
+        "Nieśmiertelność",
+        "Kit Sponsor co 6h",
+        "Własne komendy"
+      ]
+    }
+  },
+  "shop": {
+    "enabled": false,
+    "items": [],
+    "categories": []
+  },
+  "database": {
+    "type": "sqlite",
+    "path": "./data/monetization.db",
+    "host": "",
+    "port": 3306,
+    "username": "",
+    "password": "",
+    "database": ""
+  },
+  "webhooks": {
+    "onPurchase": "",
+    "onExpire": "",
+    "onRefund": ""
+  }
+}

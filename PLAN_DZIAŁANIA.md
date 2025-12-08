@@ -38,12 +38,15 @@ Minecraft-Server-Automation/
 
 ## 📝 Etapy Realizacji
 
-### Etap 1: Fundamenty (Priorytet: WYSOKI)
+### Etap 1: Fundamenty (Priorytet: WYSOKI) ✅ UKOŃCZONY
 - [x] Utworzenie podstawowej struktury repozytorium
-- [ ] Stworzenie pliku .gitignore
-- [ ] Przygotowanie README.md z pełną dokumentacją
-- [ ] Stworzenie QUICK_START.md
-- [ ] Utworzenie struktury katalogów
+- [x] Stworzenie pliku .gitignore
+- [x] Przygotowanie README.md z pełną dokumentacją
+- [x] Stworzenie QUICK_START.md
+- [x] Utworzenie struktury katalogów
+  - [x] scripts/ - skrypty PowerShell
+  - [x] config/ - pliki konfiguracyjne
+  - [x] tests/ - testy automatyczne
 
 ### Etap 2: Skrypty Podstawowe (Priorytet: WYSOKI)
 - [ ] MinecraftServerSetup.ps1 - instalacja i konfiguracja

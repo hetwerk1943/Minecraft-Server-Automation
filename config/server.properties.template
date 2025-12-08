@@ -1,0 +1,73 @@
+# Minecraft Server Properties
+# Szablon konfiguracji dla Minecraft Server Automation
+# Ten plik zostanie skopiowany do głównego katalogu podczas instalacji
+
+# Podstawowe ustawienia serwera
+server-name=Minecraft Server
+motd=§6Witaj na serwerze! §r§aPowered by PowerShell Automation
+server-port=25565
+server-ip=
+
+# Tryb gry
+gamemode=survival
+difficulty=normal
+hardcore=false
+pvp=true
+
+# Świat
+level-name=world
+level-seed=
+level-type=default
+generator-settings=
+allow-nether=true
+allow-flight=false
+
+# Gracze
+max-players=20
+white-list=false
+online-mode=true
+enable-command-block=false
+spawn-protection=16
+max-world-size=29999984
+
+# Sieć i wydajność
+network-compression-threshold=256
+max-tick-time=60000
+view-distance=10
+simulation-distance=10
+
+# Zaawansowane
+enable-jmx-monitoring=false
+enable-rcon=false
+rcon.password=
+rcon.port=25575
+broadcast-rcon-to-ops=true
+enable-status=true
+enable-query=false
+query.port=25565
+
+# Zasoby
+resource-pack=
+resource-pack-prompt=
+resource-pack-sha1=
+require-resource-pack=false
+
+# Funkcje
+function-permission-level=2
+op-permission-level=4
+spawn-monsters=true
+spawn-animals=true
+spawn-npcs=true
+force-gamemode=false
+
+# Logowanie
+log-ips=true
+broadcast-console-to-ops=true
+
+# Inne
+enforce-whitelist=false
+rate-limit=0
+player-idle-timeout=0
+text-filtering-config=
+hide-online-players=false
+entity-broadcast-range-percentage=100

@@ -1,0 +1,50 @@
+{
+  "backupDirectory": "./backups",
+  "compressionLevel": "Optimal",
+  "retentionPolicy": {
+    "maxBackups": 10,
+    "maxAge": 7,
+    "keepDaily": 7,
+    "keepWeekly": 4,
+    "keepMonthly": 3
+  },
+  "schedule": {
+    "enabled": false,
+    "frequency": "daily",
+    "time": "03:00",
+    "daysOfWeek": ["*"]
+  },
+  "include": {
+    "world": true,
+    "worldNether": true,
+    "worldTheEnd": true,
+    "plugins": true,
+    "configs": true,
+    "logs": false
+  },
+  "exclude": {
+    "patterns": [
+      "*.tmp",
+      "*.lock",
+      "cache/*",
+      "session.lock"
+    ]
+  },
+  "verification": {
+    "enabled": true,
+    "checkIntegrity": true,
+    "testRestore": false
+  },
+  "notifications": {
+    "onSuccess": false,
+    "onFailure": true,
+    "email": "",
+    "webhook": ""
+  },
+  "advanced": {
+    "parallelCompression": true,
+    "threads": 4,
+    "bufferSize": 8192,
+    "tempDirectory": "./temp"
+  }
+}

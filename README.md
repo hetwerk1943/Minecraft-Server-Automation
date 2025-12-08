@@ -384,7 +384,7 @@ graph LR
 ### ✅ Aktualny Etap: Fundamenty
 
 <details open>
-<summary><b>🟢 Ukończone (80%)</b></summary>
+<summary><b>🟢 Ukończone (100% - Etap 1)</b></summary>
 
 - [x] 📁 Struktura repozytorium
 - [x] 🚫 Plik .gitignore
@@ -392,14 +392,16 @@ graph LR
 - [x] 🗺️ Plan działania
 - [x] 🔧 Przewodnik troubleshooting
 - [x] 🚀 Quick Start guide
+- [x] 📂 Struktura katalogów (scripts/, config/, tests/)
 
 </details>
 
 <details>
-<summary><b>🟡 W Trakcie (20%)</b></summary>
+<summary><b>🟡 Następny Krok: Etap 2 - Skrypty</b></summary>
 
-- [ ] 📂 Struktura katalogów
-- [ ] ⚙️ Pierwsze skrypty PowerShell
+- [ ] ⚙️ MinecraftServerSetup.ps1
+- [ ] ▶️ StartServer.ps1
+- [ ] 🛑 StopServer.ps1
 
 </details>
 
@@ -1330,8 +1332,8 @@ Funkcje premium:
 <td align="center" width="20%">
 <img src="https://img.icons8.com/fluency/96/000000/documents.png" alt="Ikona dokumentów" width="60"/><br/>
 <b>Dokumentacja</b><br/>
-<img src="https://geps.dev/progress/80?dangerColor=800000&warningColor=ff9900&successColor=006600" alt="Progress: 80% complete" /><br/>
-<b>80%</b> 🟢
+<img src="https://geps.dev/progress/100?dangerColor=800000&warningColor=ff9900&successColor=006600" alt="Progress: 100% complete" /><br/>
+<b>100%</b> ✅
 </td>
 <td align="center" width="20%">
 <img src="https://img.icons8.com/fluency/96/000000/code-file.png" alt="Ikona pliku kodu" width="60"/><br/>
@@ -1360,7 +1362,9 @@ Funkcje premium:
 </tr>
 </table>
 
-### 📈 Ogólny Postęp: 15% 🟡
+### 📈 Ogólny Postęp: 20% 🟡
+
+**Etap 1: Fundamenty** - ✅ Ukończony!
 
 </div>
 
