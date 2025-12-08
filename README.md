@@ -4,7 +4,7 @@
 
 ### ⚡ PowerShell Omega Scripts dla Profesjonalnego Zarządzania Serwerem Minecraft
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/icons/powershell.svg" alt="PowerShell" width="100"/>
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/icons/powershell.svg" alt="PowerShell Logo - symbolizuje cross-platform scripting i automatyzację" width="100"/>
 
 [![PowerShell](https://img.shields.io/badge/PowerShell-7.0+-5391FE?style=for-the-badge&logo=powershell&logoColor=white)](https://github.com/PowerShell/PowerShell)
 [![Java](https://img.shields.io/badge/Java-17+-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://adoptium.net/)
@@ -229,7 +229,7 @@ graph LR
 <tr>
 <td width="20%">
 <div align="center">
-<img src="https://img.icons8.com/fluency/96/000000/rocket.png" width="50"/>
+<img src="https://img.icons8.com/fluency/96/000000/rocket.png" alt="Ikona rakiety - szybka instalacja" width="50"/>
 <br/><b>Instalacja</b>
 </div>
 </td>
@@ -244,7 +244,7 @@ Jeden klik i gotowe! Skrypt pobiera Java, server.jar, konfiguruje wszystko autom
 <tr>
 <td>
 <div align="center">
-<img src="https://img.icons8.com/fluency/96/000000/play-button-circled.png" width="50"/>
+<img src="https://img.icons8.com/fluency/96/000000/play-button-circled.png" alt="Ikona play - zarządzanie serwerem" width="50"/>
 <br/><b>Zarządzanie</b>
 </div>
 </td>
@@ -259,7 +259,7 @@ Start, stop, restart z graceful shutdown. Serwer zatrzymuje się bezpiecznie, za
 <tr>
 <td>
 <div align="center">
-<img src="https://img.icons8.com/fluency/96/000000/database.png" width="50"/>
+<img src="https://img.icons8.com/fluency/96/000000/database.png" alt="Ikona bazy danych - system backupów" width="50"/>
 <br/><b>Backupy</b>
 </div>
 </td>
@@ -274,7 +274,7 @@ Automatyczne backupy z rotacją. Nigdy nie stracisz swojego świata!
 <tr>
 <td>
 <div align="center">
-<img src="https://img.icons8.com/fluency/96/000000/update.png" width="50"/>
+<img src="https://img.icons8.com/fluency/96/000000/update.png" alt="Ikona aktualizacji - bezpieczne update" width="50"/>
 <br/><b>Aktualizacje</b>
 </div>
 </td>
@@ -289,7 +289,7 @@ Automatyczny backup przed aktualizacją. Coś poszło nie tak? Rollback w sekund
 <tr>
 <td>
 <div align="center">
-<img src="https://img.icons8.com/fluency/96/000000/graph.png" width="50"/>
+<img src="https://img.icons8.com/fluency/96/000000/graph.png" alt="Ikona wykresu - monitoring wydajności" width="50"/>
 <br/><b>Monitoring</b>
 </div>
 </td>
@@ -311,7 +311,7 @@ Automatyczny backup przed aktualizacją. Coś poszło nie tak? Rollback w sekund
 <tr>
 <td width="20%">
 <div align="center">
-<img src="https://img.icons8.com/fluency/96/000000/alarm.png" width="50"/>
+<img src="https://img.icons8.com/fluency/96/000000/alarm.png" alt="Ikona alarmu - system alertów" width="50"/>
 <br/><b>Alerty</b>
 </div>
 </td>
@@ -326,7 +326,7 @@ Powiadomienia o problemach przez email lub webhook. Zawsze wiesz co się dzieje!
 <tr>
 <td>
 <div align="center">
-<img src="https://img.icons8.com/fluency/96/000000/document.png" width="50"/>
+<img src="https://img.icons8.com/fluency/96/000000/document.png" alt="Ikona dokumentu - logowanie" width="50"/>
 <br/><b>Logi</b>
 </div>
 </td>
@@ -341,7 +341,7 @@ Wszystkie operacje logowane z rotacją. Łatwo znajdziesz problemy!
 <tr>
 <td>
 <div align="center">
-<img src="https://img.icons8.com/fluency/96/000000/security-checked.png" width="50"/>
+<img src="https://img.icons8.com/fluency/96/000000/security-checked.png" alt="Ikona bezpieczeństwa - weryfikacja" width="50"/>
 <br/><b>Bezpieczeństwo</b>
 </div>
 </td>
@@ -356,7 +356,7 @@ Weryfikacja integralności backupów, safe mode, automatyczne testy.
 <tr>
 <td>
 <div align="center">
-<img src="https://img.icons8.com/fluency/96/000000/globe.png" width="50"/>
+<img src="https://img.icons8.com/fluency/96/000000/globe.png" alt="Ikona globu - cross-platform" width="50"/>
 <br/><b>Cross-Platform</b>
 </div>
 </td>
@@ -371,7 +371,7 @@ Jeden kod działa wszędzie: Windows, Linux, macOS.
 <tr>
 <td>
 <div align="center">
-<img src="https://img.icons8.com/fluency/96/000000/money.png" width="50"/>
+<img src="https://img.icons8.com/fluency/96/000000/money.png" alt="Ikona pieniędzy - monetyzacja" width="50"/>
 <br/><b>Monetyzacja</b>
 </div>
 </td>
@@ -705,7 +705,7 @@ timeline
 ### ✅ Etap 1
 **Fundamenty**
 
-<img src="https://img.icons8.com/fluency/96/000000/foundation.png" width="60"/>
+<img src="https://img.icons8.com/fluency/96/000000/foundation.png" alt="Ikona fundamentów - etap 1" width="60"/>
 
 **Status:** 80% 🟢
 
@@ -715,7 +715,7 @@ timeline
 ### 🚧 Etap 2
 **Skrypty**
 
-<img src="https://img.icons8.com/fluency/96/000000/code.png" width="60"/>
+<img src="https://img.icons8.com/fluency/96/000000/code.png" alt="Ikona kodu - etap 2" width="60"/>
 
 **Status:** 0% 🟡
 
@@ -725,7 +725,7 @@ timeline
 ### 📋 Etap 3
 **Automatyzacja**
 
-<img src="https://img.icons8.com/fluency/96/000000/automation.png" width="60"/>
+<img src="https://img.icons8.com/fluency/96/000000/automation.png" alt="Ikona automatyzacji - etap 3" width="60"/>
 
 **Status:** 0% ⚪
 
@@ -735,7 +735,7 @@ timeline
 ### 🔮 Etap 4
 **Monitoring**
 
-<img src="https://img.icons8.com/fluency/96/000000/monitor.png" width="60"/>
+<img src="https://img.icons8.com/fluency/96/000000/monitor.png" alt="Ikona monitora - etap 4" width="60"/>
 
 **Status:** 0% ⚪
 
@@ -745,7 +745,7 @@ timeline
 ### 💰 Etap 5
 **Monetyzacja**
 
-<img src="https://img.icons8.com/fluency/96/000000/cash.png" width="60"/>
+<img src="https://img.icons8.com/fluency/96/000000/cash.png" alt="Ikona gotówki - etap 5" width="60"/>
 
 **Status:** 0% ⚪
 
@@ -757,12 +757,15 @@ timeline
 <summary><h3>📖 Szczegółowy Plan Etapów (kliknij aby rozwinąć)</h3></summary>
 
 ### ✅ Etap 1: Fundamenty (80% - W TRAKCIE)
-```diff
-+ [x] Podstawowa struktura repozytorium
-+ [x] Dokumentacja i plan działania (2085 linii!)
-+ [x] Przewodnik rozwiązywania problemów
-! [ ] Struktura katalogów (scripts/, config/, logs/)
-! [ ] Pierwsze skrypty testowe
+```
+Ukończone:
+✅ [x] Podstawowa struktura repozytorium
+✅ [x] Dokumentacja i plan działania (2085 linii!)
+✅ [x] Przewodnik rozwiązywania problemów
+
+W trakcie:
+⏳ [ ] Struktura katalogów (scripts/, config/, logs/)
+⏳ [ ] Pierwsze skrypty testowe
 ```
 
 ### 🚧 Etap 2: Skrypty Podstawowe (NASTĘPNY)
@@ -814,33 +817,33 @@ Funkcje premium:
 <table>
 <tr>
 <td align="center" width="20%">
-<img src="https://img.icons8.com/fluency/96/000000/documents.png" width="60"/><br/>
+<img src="https://img.icons8.com/fluency/96/000000/documents.png" alt="Ikona dokumentów" width="60"/><br/>
 <b>Dokumentacja</b><br/>
-<img src="https://geps.dev/progress/80?dangerColor=800000&warningColor=ff9900&successColor=006600" /><br/>
+<img src="https://geps.dev/progress/80" alt="Progress: 80% complete"?dangerColor=800000&warningColor=ff9900&successColor=006600" /><br/>
 <b>80%</b> 🟢
 </td>
 <td align="center" width="20%">
-<img src="https://img.icons8.com/fluency/96/000000/code-file.png" width="60"/><br/>
+<img src="https://img.icons8.com/fluency/96/000000/code-file.png" alt="Ikona pliku kodu" width="60"/><br/>
 <b>Skrypty</b><br/>
-<img src="https://geps.dev/progress/0" /><br/>
+<img src="https://geps.dev/progress/0" alt="Progress: 0% not started" /><br/>
 <b>0%</b> 🔴
 </td>
 <td align="center" width="20%">
-<img src="https://img.icons8.com/fluency/96/000000/robot.png" width="60"/><br/>
+<img src="https://img.icons8.com/fluency/96/000000/robot.png" alt="Ikona robota" width="60"/><br/>
 <b>Automatyzacja</b><br/>
-<img src="https://geps.dev/progress/0" /><br/>
+<img src="https://geps.dev/progress/0" alt="Progress: 0% not started" /><br/>
 <b>0%</b> 🔴
 </td>
 <td align="center" width="20%">
-<img src="https://img.icons8.com/fluency/96/000000/dashboard.png" width="60"/><br/>
+<img src="https://img.icons8.com/fluency/96/000000/dashboard.png" alt="Ikona dashboardu" width="60"/><br/>
 <b>Monitoring</b><br/>
-<img src="https://geps.dev/progress/0" /><br/>
+<img src="https://geps.dev/progress/0" alt="Progress: 0% not started" /><br/>
 <b>0%</b> 🔴
 </td>
 <td align="center" width="20%">
-<img src="https://img.icons8.com/fluency/96/000000/test-passed.png" width="60"/><br/>
+<img src="https://img.icons8.com/fluency/96/000000/test-passed.png" alt="Ikona testów" width="60"/><br/>
 <b>Testy</b><br/>
-<img src="https://geps.dev/progress/0" /><br/>
+<img src="https://geps.dev/progress/0" alt="Progress: 0% not started" /><br/>
 <b>0%</b> 🔴
 </td>
 </tr>
@@ -900,25 +903,25 @@ w planie
 <table>
 <tr>
 <td align="center" width="25%">
-<img src="https://img.icons8.com/fluency/96/000000/github.png" width="80"/><br/>
+<img src="https://img.icons8.com/fluency/96/000000/github.png" alt="GitHub logo" width="80"/><br/>
 <b>GitHub</b><br/>
 <a href="https://github.com/hetwerk1943/Minecraft-Server-Automation/issues">Issues</a> •
 <a href="https://github.com/hetwerk1943/Minecraft-Server-Automation/discussions">Discussions</a>
 </td>
 <td align="center" width="25%">
-<img src="https://img.icons8.com/fluency/96/000000/star.png" width="80"/><br/>
+<img src="https://img.icons8.com/fluency/96/000000/star.png" alt="Star icon" width="80"/><br/>
 <b>Zostaw Gwiazdkę</b><br/>
 Pokaż że Ci się podoba!<br/>
 ⭐ <a href="https://github.com/hetwerk1943/Minecraft-Server-Automation/stargazers">Star</a>
 </td>
 <td align="center" width="25%">
-<img src="https://img.icons8.com/fluency/96/000000/code-fork.png" width="80"/><br/>
+<img src="https://img.icons8.com/fluency/96/000000/code-fork.png" alt="Fork icon" width="80"/><br/>
 <b>Fork</b><br/>
 Stwórz swoją wersję!<br/>
 🔱 <a href="https://github.com/hetwerk1943/Minecraft-Server-Automation/fork">Fork</a>
 </td>
 <td align="center" width="25%">
-<img src="https://img.icons8.com/fluency/96/000000/email.png" width="80"/><br/>
+<img src="https://img.icons8.com/fluency/96/000000/email.png" alt="Email icon" width="80"/><br/>
 <b>Kontakt</b><br/>
 Masz pytania?<br/>
 📧 hetwerk1943@gmail.com
@@ -933,27 +936,27 @@ Masz pytania?<br/>
 <table width="100%">
 <tr>
 <td align="center" width="20%">
-<img src="https://img.icons8.com/fluency/48/000000/code.png"/><br/>
+<img src="https://img.icons8.com/fluency/48/000000/code.png" alt=""/><br/>
 <b>Koduj</b><br/>
 Pomóż w rozwoju
 </td>
 <td align="center" width="20%">
-<img src="https://img.icons8.com/fluency/48/000000/test-tube.png"/><br/>
+<img src="https://img.icons8.com/fluency/48/000000/test-tube.png" alt=""/><br/>
 <b>Testuj</b><br/>
 Znajdź błędy
 </td>
 <td align="center" width="20%">
-<img src="https://img.icons8.com/fluency/48/000000/document.png"/><br/>
+<img src="https://img.icons8.com/fluency/48/000000/document.png" alt=""/><br/>
 <b>Dokumentuj</b><br/>
 Popraw docs
 </td>
 <td align="center" width="20%">
-<img src="https://img.icons8.com/fluency/48/000000/chat.png"/><br/>
+<img src="https://img.icons8.com/fluency/48/000000/chat.png" alt=""/><br/>
 <b>Dyskutuj</b><br/>
 Dziel się pomysłami
 </td>
 <td align="center" width="20%">
-<img src="https://img.icons8.com/fluency/48/000000/share.png"/><br/>
+<img src="https://img.icons8.com/fluency/48/000000/share.png" alt=""/><br/>
 <b>Udostępnij</b><br/>
 Pokaż znajomym
 </td>
@@ -975,19 +978,19 @@ Projekt istnieje dzięki wszystkim, którzy przyczyniają się do jego rozwoju! 
 <table>
 <tr>
 <td align="center">
-<img src="https://img.icons8.com/fluency/48/000000/community.png"/><br/>
+<img src="https://img.icons8.com/fluency/48/000000/community.png" alt=""/><br/>
 <b>Społeczność PowerShell</b>
 </td>
 <td align="center">
-<img src="https://img.icons8.com/fluency/48/000000/minecraft-creeper.png"/><br/>
+<img src="https://img.icons8.com/fluency/48/000000/minecraft-creeper.png" alt=""/><br/>
 <b>Deweloperzy Paper/Spigot</b>
 </td>
 <td align="center">
-<img src="https://img.icons8.com/fluency/48/000000/java-coffee-cup-logo.png"/><br/>
+<img src="https://img.icons8.com/fluency/48/000000/java-coffee-cup-logo.png" alt=""/><br/>
 <b>Eclipse Adoptium</b>
 </td>
 <td align="center">
-<img src="https://img.icons8.com/fluency/48/000000/administrator-male.png"/><br/>
+<img src="https://img.icons8.com/fluency/48/000000/administrator-male.png" alt=""/><br/>
 <b>Admini Serwerów MC</b>
 </td>
 </tr>
@@ -1016,21 +1019,21 @@ Ten projekt jest własnością prywatną. Wszystkie prawa zastrzeżone.
 <table>
 <tr>
 <td align="center" width="33%">
-<img src="https://img.icons8.com/fluency/96/000000/heart-with-pulse.png" width="60"/><br/>
+<img src="https://img.icons8.com/fluency/96/000000/heart-with-pulse.png" alt="" width="60"/><br/>
 <b>Made with ❤️</b>
 </td>
 <td align="center" width="33%">
-<img src="https://img.icons8.com/fluency/96/000000/minecraft-creeper.png" width="60"/><br/>
+<img src="https://img.icons8.com/fluency/96/000000/minecraft-creeper.png" alt="" width="60"/><br/>
 <b>For Minecraft</b>
 </td>
 <td align="center" width="33%">
-<img src="https://img.icons8.com/fluency/96/000000/administrator-male.png" width="60"/><br/>
+<img src="https://img.icons8.com/fluency/96/000000/administrator-male.png" alt="" width="60"/><br/>
 <b>By Server Admins</b>
 </td>
 </tr>
 </table>
 
-### 🚀 Ostatnia Aktualizacja: 2025-12-08 • Status: 🟢 Aktywny Rozwój
+### 🚀 Status: 🟢 Aktywny Rozwój
 
 [![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=hetwerk1943.Minecraft-Server-Automation)](https://github.com/hetwerk1943/Minecraft-Server-Automation)
 
