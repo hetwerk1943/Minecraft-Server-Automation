@@ -68,9 +68,25 @@ function Get-MinecraftServerProcess {
         $processes = Get-Process -Name "java" -ErrorAction SilentlyContinue
         
         foreach ($proc in $processes) {
-            $commandLine = $proc.CommandLine
-            if ($commandLine -and $commandLine -match "server\.jar") {
-                return $proc
+            try {
+                # CommandLine może nie być dostępne na wszystkich systemach
+                # Próbujemy różne metody wykrywania
+                $commandLine = $null
+                
+                if ($IsWindows) {
+                    $commandLine = (Get-CimInstance Win32_Process -Filter "ProcessId = $($proc.Id)" -ErrorAction SilentlyContinue).CommandLine
+                }
+                elseif ($IsLinux -or $IsMacOS) {
+                    $commandLine = (ps -p $proc.Id -o command= 2>$null)
+                }
+                
+                if ($commandLine -and $commandLine -match "server\.jar") {
+                    return $proc
+                }
+            }
+            catch {
+                # Ignoruj błędy dla poszczególnych procesów
+                continue
             }
         }
         

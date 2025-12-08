@@ -172,8 +172,10 @@ function Start-MinecraftServer {
         "-Daikars.new.flags=true"
     )
     
+    # nogui jest argumentem dla serwera, nie dla JVM
+    $serverArgs = @()
     if ($NoGui) {
-        $jvmArgs += "nogui"
+        $serverArgs += "nogui"
     }
     
     Write-ColorMessage "  ✓ Używam zoptymalizowanych flag Aikar's" -Type Success
@@ -199,8 +201,8 @@ function Start-MinecraftServer {
     Push-Location $ServerPath
     
     try {
-        # Uruchom serwer
-        & java $jvmArgs -jar server.jar
+        # Uruchom serwer (serverArgs idą PO server.jar)
+        & java $jvmArgs -jar server.jar $serverArgs
         
         $exitCode = $LASTEXITCODE
         

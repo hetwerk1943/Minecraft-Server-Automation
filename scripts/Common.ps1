@@ -79,8 +79,24 @@ function Test-JavaInstallation {
         
         # Wyciągnij numer wersji z output
         $versionString = $javaVersion | Select-Object -First 1
-        if ($versionString -match '(\d+)\.(\d+)\.(\d+)' -or $versionString -match 'version "(\d+)"') {
+        
+        # Obsługa różnych formatów wersji:
+        # Java 8 i starsze: "1.8.0_xxx" -> major version = 8
+        # Java 9+: "9.0.1", "17.0.1", "21" -> major version = 9, 17, 21
+        if ($versionString -match 'version "1\.(\d+)') {
+            # Java 8 i starsze (1.8.0 -> 8)
             $majorVersion = [int]$matches[1]
+        }
+        elseif ($versionString -match 'version "(\d+)') {
+            # Java 9+ (17.0.1 -> 17)
+            $majorVersion = [int]$matches[1]
+        }
+        else {
+            Write-ColorMessage "Nie można określić wersji Java" -Type Warning
+            return $false
+        }
+        
+        if ($majorVersion -ge $MinimumVersion) {
             
             if ($majorVersion -lt $MinimumVersion) {
                 Write-ColorMessage "Java $majorVersion wykryta. Wymagana Java $MinimumVersion lub nowsza!" -Type Warning
