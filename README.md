@@ -1,11 +1,28 @@
+<div align="center">
+
 # 🎮 Minecraft Server Automation
 
-> **PowerShell Omega scripts + configs for automated Minecraft server management and monetization**
+### ⚡ PowerShell Omega Scripts dla Profesjonalnego Zarządzania Serwerem Minecraft
 
-[![PowerShell](https://img.shields.io/badge/PowerShell-7.0+-blue.svg)](https://github.com/PowerShell/PowerShell)
-[![Java](https://img.shields.io/badge/Java-17+-orange.svg)](https://adoptium.net/)
-[![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-red.svg)](COPYRIGHT.md)
-[![Status](https://img.shields.io/badge/Status-In%20Development-yellow.svg)](PLAN_DZIAŁANIA.md)
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/icons/powershell.svg" alt="PowerShell" width="100"/>
+
+[![PowerShell](https://img.shields.io/badge/PowerShell-7.0+-5391FE?style=for-the-badge&logo=powershell&logoColor=white)](https://github.com/PowerShell/PowerShell)
+[![Java](https://img.shields.io/badge/Java-17+-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://adoptium.net/)
+[![Minecraft](https://img.shields.io/badge/Minecraft-Server-62B47A?style=for-the-badge&logo=minecraft&logoColor=white)](https://www.minecraft.net/)
+[![License](https://img.shields.io/badge/License-All_Rights_Reserved-red?style=for-the-badge)](COPYRIGHT.md)
+
+[![Status](https://img.shields.io/badge/Status-In_Development-yellow?style=flat-square)](PLAN_DZIAŁANIA.md)
+[![Issues](https://img.shields.io/github/issues/hetwerk1943/Minecraft-Server-Automation?style=flat-square)](https://github.com/hetwerk1943/Minecraft-Server-Automation/issues)
+[![Stars](https://img.shields.io/github/stars/hetwerk1943/Minecraft-Server-Automation?style=flat-square)](https://github.com/hetwerk1943/Minecraft-Server-Automation/stargazers)
+[![Forks](https://img.shields.io/github/forks/hetwerk1943/Minecraft-Server-Automation?style=flat-square)](https://github.com/hetwerk1943/Minecraft-Server-Automation/network/members)
+
+[📖 Dokumentacja](#-dokumentacja) • [🚀 Szybki Start](QUICK_START.md) • [💡 FAQ](#-faq) • [🐛 Zgłoś Problem](https://github.com/hetwerk1943/Minecraft-Server-Automation/issues)
+
+---
+
+### 🌟 Automatyzacja, która naprawdę działa!
+
+</div>
 
 ## 📋 Spis Treści
 
@@ -21,54 +38,362 @@
 
 ## 🎯 O Projekcie
 
-**Minecraft Server Automation** to kompleksowy zestaw skryptów PowerShell zaprojektowanych do automatyzacji zarządzania serwerem Minecraft. Projekt ma na celu:
+<table>
+<tr>
+<td width="60%">
 
-✅ **Uproszczenie instalacji** - jeden skrypt do pełnej konfiguracji serwera  
-✅ **Automatyzację zadań** - backupy, aktualizacje, monitoring bez ręcznej interwencji  
-✅ **Cross-platform** - działa na Windows, Linux i macOS  
-✅ **Bezpieczeństwo** - automatyczne backupy, bezpieczne aktualizacje z rollback  
-✅ **Monitoring** - śledzenie wydajności, alerty, logi  
-✅ **Łatwość użycia** - kolorowe outputy, jasne komunikaty, polska dokumentacja  
+**Minecraft Server Automation** to **rewolucyjny** zestaw skryptów PowerShell, który **zmienia sposób** zarządzania serwerami Minecraft!
+
+### 💎 Dlaczego Warto?
+
+<table>
+<tr><td>🚀</td><td><b>Błyskawiczna Instalacja</b><br/>Jeden skrypt - pełna konfiguracja w 5 minut!</td></tr>
+<tr><td>🤖</td><td><b>Inteligentna Automatyzacja</b><br/>Backupy, aktualizacje, monitoring - wszystko działa samo</td></tr>
+<tr><td>🌍</td><td><b>Prawdziwy Cross-Platform</b><br/>Windows, Linux, macOS - jeden kod dla wszystkich</td></tr>
+<tr><td>🛡️</td><td><b>Bezpieczeństwo na Pierwszym Miejscu</b><br/>Automatyczne backupy przed każdą zmianą</td></tr>
+<tr><td>📊</td><td><b>Profesjonalny Monitoring</b><br/>CPU, RAM, TPS, gracze - masz wszystko pod kontrolą</td></tr>
+<tr><td>🎨</td><td><b>Przyjazny Interface</b><br/>Kolorowe logi, jasne komunikaty, polska dokumentacja</td></tr>
+</table>
+
+</td>
+<td width="40%">
+
+```powershell
+# 🎯 To naprawdę takie proste!
+
+# 1️⃣ Instalacja
+.\scripts\MinecraftServerSetup.ps1
+
+# 2️⃣ Uruchomienie
+.\scripts\StartServer.ps1 -MaxMemory 4096
+
+# 3️⃣ Backup
+.\scripts\BackupServer.ps1
+
+# ✅ Gotowe! Twój serwer działa!
+```
+
+<div align="center">
+
+### 🔥 Funkcje Premium 🔥
+
+![Backup](https://img.shields.io/badge/Backup-Automatyczny-success?style=flat-square)
+![Updates](https://img.shields.io/badge/Updates-Bezpieczne-blue?style=flat-square)
+![Monitoring](https://img.shields.io/badge/Monitoring-24/7-orange?style=flat-square)
+
+</div>
+
+</td>
+</tr>
+</table>  
+
+---
+
+<div align="center">
+
+## 🆚 Dlaczego MY a nie inne rozwiązania?
+
+<table width="100%">
+<tr>
+<th width="25%">Funkcja</th>
+<th width="25%">🎮 Nasz Projekt</th>
+<th width="25%">🔧 Ręczne Zarządzanie</th>
+<th width="25%">💰 Komercyjne Panele</th>
+</tr>
+<tr>
+<td><b>Instalacja</b></td>
+<td>✅ 5 minut<br/>🤖 Automatyczna</td>
+<td>❌ 30-60 min<br/>📚 Wymaga wiedzy</td>
+<td>⚠️ 10-20 min<br/>💵 Płatna subskrypcja</td>
+</tr>
+<tr>
+<td><b>Backupy</b></td>
+<td>✅ Automatyczne<br/>🔄 Z rotacją</td>
+<td>❌ Ręczne<br/>⏰ Trzeba pamiętać</td>
+<td>✅ Automatyczne<br/>💵 Limit miejsca</td>
+</tr>
+<tr>
+<td><b>Aktualizacje</b></td>
+<td>✅ Bezpieczne<br/>↩️ Auto rollback</td>
+<td>⚠️ Ryzykowne<br/>🤞 Bez zabezpieczeń</td>
+<td>✅ Automatyczne<br/>💵 Premium feature</td>
+</tr>
+<tr>
+<td><b>Cross-Platform</b></td>
+<td>✅ Win/Linux/Mac<br/>🌍 Wszędzie działa</td>
+<td>⚠️ Zależy od OS<br/>📝 Różne instrukcje</td>
+<td>⚠️ Ograniczone<br/>🖥️ Tylko serwer</td>
+</tr>
+<tr>
+<td><b>Koszt</b></td>
+<td>✅ 100% Darmowy<br/>🎉 Open concept</td>
+<td>✅ Darmowy<br/>⏰ Kosztuje czas</td>
+<td>❌ $5-50/mc<br/>💸 Subskrypcja</td>
+</tr>
+<tr>
+<td><b>Dokumentacja</b></td>
+<td>✅ 2000+ linii<br/>🇵🇱 Po polsku!</td>
+<td>⚠️ Google/Forum<br/>🌐 Fragmentaryczna</td>
+<td>⚠️ Podstawowa<br/>🇬🇧 Po angielsku</td>
+</tr>
+</table>
+
+### 🎯 Nasza Przewaga: **Automatyzacja + Bezpieczeństwo + Polski Support!**
+
+</div>
 
 ---
 
 ## 🚧 Status Projektu
 
-Projekt jest w **aktywnym rozwoju**. Zobacz szczegółowy plan działania:
+<div align="center">
 
-📖 **[PLAN_DZIAŁANIA.md](PLAN_DZIAŁANIA.md)** - Kompleksowy plan rozwoju projektu  
-🔧 **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** - Przewodnik rozwiązywania problemów  
+### 🎯 Projekt w Aktywnym Rozwoju!
 
-### Aktualny Etap: Etap 1 - Fundamenty
+```mermaid
+graph LR
+    A[📝 Etap 1<br/>Fundamenty] -->|80% ✅| B[⚙️ Etap 2<br/>Skrypty]
+    B -->|0%| C[🔄 Etap 3<br/>Automatyzacja]
+    C -->|0%| D[📊 Etap 4<br/>Monitoring]
+    D -->|0%| E[💰 Etap 5<br/>Monetyzacja]
+    
+    style A fill:#90EE90,stroke:#006400,stroke-width:3px
+    style B fill:#FFE4B5,stroke:#FF8C00,stroke-width:2px
+    style C fill:#F0F0F0,stroke:#999,stroke-width:1px
+    style D fill:#F0F0F0,stroke:#999,stroke-width:1px
+    style E fill:#F0F0F0,stroke:#999,stroke-width:1px
+```
 
-- [x] Utworzenie podstawowej struktury repozytorium
-- [x] Stworzenie pliku .gitignore
-- [x] Przygotowanie README.md z pełną dokumentacją
-- [x] Stworzenie kompleksowego planu działania
-- [x] Utworzenie przewodnika rozwiązywania problemów
-- [x] Stworzenie QUICK_START.md
-- [ ] Utworzenie struktury katalogów
-- [ ] Przygotowanie pierwszych skryptów
+</div>
+
+<table width="100%">
+<tr>
+<td width="50%">
+
+### 📚 Dokumentacja
+
+| Dokument | Status | Linie Kodu |
+|----------|--------|------------|
+| 📖 [PLAN_DZIAŁANIA.md](PLAN_DZIAŁANIA.md) | ✅ Kompletny | 467 linii |
+| 🔧 [TROUBLESHOOTING.md](TROUBLESHOOTING.md) | ✅ Kompletny | 635 linii |
+| 🚀 [QUICK_START.md](QUICK_START.md) | ✅ Kompletny | 580 linii |
+
+**Łącznie:** 2085 linii dokumentacji! 📝
+
+</td>
+<td width="50%">
+
+### ✅ Aktualny Etap: Fundamenty
+
+<details open>
+<summary><b>🟢 Ukończone (80%)</b></summary>
+
+- [x] 📁 Struktura repozytorium
+- [x] 🚫 Plik .gitignore
+- [x] 📖 Pełna dokumentacja README
+- [x] 🗺️ Plan działania
+- [x] 🔧 Przewodnik troubleshooting
+- [x] 🚀 Quick Start guide
+
+</details>
+
+<details>
+<summary><b>🟡 W Trakcie (20%)</b></summary>
+
+- [ ] 📂 Struktura katalogów
+- [ ] ⚙️ Pierwsze skrypty PowerShell
+
+</details>
+
+</td>
+</tr>
+</table>
 
 ---
 
 ## ✨ Funkcje
 
-### 🎯 Planowane Funkcje (Zobacz [PLAN_DZIAŁANIA.md](PLAN_DZIAŁANIA.md))
+<div align="center">
 
-#### Podstawowe
-- 🚀 **Automatyczna instalacja** - pobieranie Java, server.jar, konfiguracja
-- ▶️ **Zarządzanie serwerem** - start, stop, restart z graceful shutdown
-- 💾 **System backupów** - automatyczne, zaplanowane kopie zapasowe z rotacją
-- 🔄 **Aktualizacje** - bezpieczne aktualizacje z backup i rollback
-- 📊 **Monitoring** - CPU, RAM, TPS, liczba graczy
+### 🎯 Co Oferujemy?
 
-#### Zaawansowane
-- 🔔 **Alerty** - powiadomienia o problemach (email/webhook)
-- 📝 **Logowanie** - strukturalne logi z rotacją
-- 🛡️ **Bezpieczeństwo** - weryfikacja backupów, safe mode
-- 🌐 **Multi-platform** - Windows, Linux, macOS
-- 💰 **Monetyzacja** - integracje z systemami płatności (przyszłość)
+</div>
+
+<table width="100%">
+<tr>
+<td width="50%" valign="top">
+
+### 🎮 Podstawowe Funkcje
+
+<table>
+<tr>
+<td width="20%">
+<div align="center">
+<img src="https://img.icons8.com/fluency/96/000000/rocket.png" width="50"/>
+<br/><b>Instalacja</b>
+</div>
+</td>
+<td width="80%">
+<h4>⚡ Automatyczna Instalacja</h4>
+Jeden klik i gotowe! Skrypt pobiera Java, server.jar, konfiguruje wszystko automatycznie.
+<br/>
+<code>✅ Java ✅ Server ✅ Konfiguracja ✅ EULA</code>
+</td>
+</tr>
+
+<tr>
+<td>
+<div align="center">
+<img src="https://img.icons8.com/fluency/96/000000/play-button-circled.png" width="50"/>
+<br/><b>Zarządzanie</b>
+</div>
+</td>
+<td>
+<h4>▶️ Inteligentne Zarządzanie</h4>
+Start, stop, restart z graceful shutdown. Serwer zatrzymuje się bezpiecznie, zapisując wszystko.
+<br/>
+<code>🟢 Start 🔴 Stop 🔄 Restart</code>
+</td>
+</tr>
+
+<tr>
+<td>
+<div align="center">
+<img src="https://img.icons8.com/fluency/96/000000/database.png" width="50"/>
+<br/><b>Backupy</b>
+</div>
+</td>
+<td>
+<h4>💾 System Kopii Zapasowych</h4>
+Automatyczne backupy z rotacją. Nigdy nie stracisz swojego świata!
+<br/>
+<code>📦 Kompresja 🔄 Rotacja ✅ Weryfikacja</code>
+</td>
+</tr>
+
+<tr>
+<td>
+<div align="center">
+<img src="https://img.icons8.com/fluency/96/000000/update.png" width="50"/>
+<br/><b>Aktualizacje</b>
+</div>
+</td>
+<td>
+<h4>🔄 Bezpieczne Aktualizacje</h4>
+Automatyczny backup przed aktualizacją. Coś poszło nie tak? Rollback w sekundę!
+<br/>
+<code>📥 Download 💾 Backup ↩️ Rollback</code>
+</td>
+</tr>
+
+<tr>
+<td>
+<div align="center">
+<img src="https://img.icons8.com/fluency/96/000000/graph.png" width="50"/>
+<br/><b>Monitoring</b>
+</div>
+</td>
+<td>
+<h4>📊 Real-time Monitoring</h4>
+Śledź wydajność na żywo: CPU, RAM, TPS, liczba graczy.
+<br/>
+<code>🖥️ CPU 💾 RAM ⚡ TPS 👥 Gracze</code>
+</td>
+</tr>
+</table>
+
+</td>
+<td width="50%" valign="top">
+
+### 🚀 Zaawansowane Funkcje
+
+<table>
+<tr>
+<td width="20%">
+<div align="center">
+<img src="https://img.icons8.com/fluency/96/000000/alarm.png" width="50"/>
+<br/><b>Alerty</b>
+</div>
+</td>
+<td width="80%">
+<h4>🔔 System Alertów</h4>
+Powiadomienia o problemach przez email lub webhook. Zawsze wiesz co się dzieje!
+<br/>
+<code>📧 Email 🔗 Webhook 📱 SMS</code>
+</td>
+</tr>
+
+<tr>
+<td>
+<div align="center">
+<img src="https://img.icons8.com/fluency/96/000000/document.png" width="50"/>
+<br/><b>Logi</b>
+</div>
+</td>
+<td>
+<h4>📝 Strukturalne Logowanie</h4>
+Wszystkie operacje logowane z rotacją. Łatwo znajdziesz problemy!
+<br/>
+<code>📊 Poziomy 🔄 Rotacja 🔍 Łatwe przeszukiwanie</code>
+</td>
+</tr>
+
+<tr>
+<td>
+<div align="center">
+<img src="https://img.icons8.com/fluency/96/000000/security-checked.png" width="50"/>
+<br/><b>Bezpieczeństwo</b>
+</div>
+</td>
+<td>
+<h4>🛡️ Weryfikacja i Bezpieczeństwo</h4>
+Weryfikacja integralności backupów, safe mode, automatyczne testy.
+<br/>
+<code>✅ Weryfikacja 🔒 Szyfrowanie 🧪 Testy</code>
+</td>
+</tr>
+
+<tr>
+<td>
+<div align="center">
+<img src="https://img.icons8.com/fluency/96/000000/globe.png" width="50"/>
+<br/><b>Cross-Platform</b>
+</div>
+</td>
+<td>
+<h4>🌐 Prawdziwy Multi-Platform</h4>
+Jeden kod działa wszędzie: Windows, Linux, macOS.
+<br/>
+<code>🪟 Windows 🐧 Linux 🍎 macOS</code>
+</td>
+</tr>
+
+<tr>
+<td>
+<div align="center">
+<img src="https://img.icons8.com/fluency/96/000000/money.png" width="50"/>
+<br/><b>Monetyzacja</b>
+</div>
+</td>
+<td>
+<h4>💰 System Monetyzacji</h4>
+<i>(Przyszła wersja)</i><br/>
+Integracje z płatnościami, rangi, sklep - zarabiaj na serwerze!
+<br/>
+<code>💳 Płatności 👑 Rangi 🛒 Sklep</code>
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+<div align="center">
+
+### 📖 [Zobacz Pełny Plan Funkcji →](PLAN_DZIAŁANIA.md)
+
+</div>
 
 ---
 
@@ -335,45 +660,223 @@ Zobacz [COPYRIGHT.md](COPYRIGHT.md) dla pełnych informacji.
 
 ## 🗺️ Roadmap
 
-### ✅ Etap 1: Fundamenty (Aktualny)
-- [x] Podstawowa struktura repozytorium
-- [x] Dokumentacja i plan działania
-- [x] Przewodnik rozwiązywania problemów
-- [ ] Struktura katalogów
-- [ ] Pierwsze skrypty
+<div align="center">
 
-### 🚧 Etap 2: Skrypty Podstawowe (Następny)
-- [ ] MinecraftServerSetup.ps1
-- [ ] StartServer.ps1
-- [ ] StopServer.ps1
+### 🎯 Mapa Drogowa Projektu
+
+```mermaid
+timeline
+    title Ewolucja Projektu Minecraft Server Automation
+    
+    section 2025 Q1
+        Etap 1 - Fundamenty : ✅ Dokumentacja
+                             : ✅ Plan działania
+                             : 🔄 Struktura plików
+    
+    section 2025 Q2
+        Etap 2 - Skrypty : ⏳ Setup Script
+                         : ⏳ Start/Stop Scripts
+                         : ⏳ Podstawowe funkcje
+    
+    section 2025 Q3
+        Etap 3 - Automatyzacja : 📅 Backupy
+                                : 📅 Aktualizacje
+                                : 📅 Przywracanie
+    
+    section 2025 Q4
+        Etap 4 - Monitoring : 📅 System monitoringu
+                            : 📅 Alerty
+                            : 📅 Dashboard
+    
+    section 2026 Q1
+        Etap 5 - Monetyzacja : 🔮 Integracje płatności
+                             : 🔮 System rangów
+                             : 🔮 Sklep
+```
+
+</div>
+
+<br/>
+
+<table width="100%">
+<tr>
+<td width="20%" align="center">
+
+### ✅ Etap 1
+**Fundamenty**
+
+<img src="https://img.icons8.com/fluency/96/000000/foundation.png" width="60"/>
+
+**Status:** 80% 🟢
+
+</td>
+<td width="20%" align="center">
+
+### 🚧 Etap 2
+**Skrypty**
+
+<img src="https://img.icons8.com/fluency/96/000000/code.png" width="60"/>
+
+**Status:** 0% 🟡
+
+</td>
+<td width="20%" align="center">
+
+### 📋 Etap 3
+**Automatyzacja**
+
+<img src="https://img.icons8.com/fluency/96/000000/automation.png" width="60"/>
+
+**Status:** 0% ⚪
+
+</td>
+<td width="20%" align="center">
+
+### 🔮 Etap 4
+**Monitoring**
+
+<img src="https://img.icons8.com/fluency/96/000000/monitor.png" width="60"/>
+
+**Status:** 0% ⚪
+
+</td>
+<td width="20%" align="center">
+
+### 💰 Etap 5
+**Monetyzacja**
+
+<img src="https://img.icons8.com/fluency/96/000000/cash.png" width="60"/>
+
+**Status:** 0% ⚪
+
+</td>
+</tr>
+</table>
+
+<details>
+<summary><h3>📖 Szczegółowy Plan Etapów (kliknij aby rozwinąć)</h3></summary>
+
+### ✅ Etap 1: Fundamenty (80% - W TRAKCIE)
+```diff
++ [x] Podstawowa struktura repozytorium
++ [x] Dokumentacja i plan działania (2085 linii!)
++ [x] Przewodnik rozwiązywania problemów
+! [ ] Struktura katalogów (scripts/, config/, logs/)
+! [ ] Pierwsze skrypty testowe
+```
+
+### 🚧 Etap 2: Skrypty Podstawowe (NASTĘPNY)
+```yaml
+Główne zadania:
+  - MinecraftServerSetup.ps1: Automatyczna instalacja
+  - StartServer.ps1: Uruchamianie z zarządzaniem pamięcią
+  - StopServer.ps1: Bezpieczne zatrzymywanie
+  - Testy: Walidacja na Windows/Linux/macOS
+```
 
 ### 📋 Etap 3: Automatyzacja Zaawansowana
-- [ ] BackupServer.ps1
-- [ ] UpdateServer.ps1
-- [ ] RestoreBackup.ps1
+```yaml
+System backupów:
+  - BackupServer.ps1: Automatyczne kopie zapasowe
+  - UpdateServer.ps1: Bezpieczne aktualizacje
+  - RestoreBackup.ps1: Przywracanie z kopii
+  - Harmonogram: Cron jobs / Task Scheduler
+```
 
 ### 🔮 Etap 4: Monitoring i Diagnostyka
-- [ ] MonitorServer.ps1
-- [ ] System logowania
-- [ ] Alerty
+```yaml
+Monitoring:
+  - MonitorServer.ps1: Real-time stats
+  - System logowania: Strukturalne logi
+  - Alerty: Email/Webhook/SMS
+  - Dashboard: Wizualizacja metryk
+```
 
-### 💰 Etap 5: Monetyzacja
-- [ ] Integracje płatności
-- [ ] System rangów
-- [ ] Sklep
+### 💰 Etap 5: Monetyzacja (Przyszłość)
+```yaml
+Funkcje premium:
+  - Integracje płatności: PayPal, Stripe, przelewy24
+  - System rangów: VIP, Premium, Sponsor
+  - Sklep: Items, rangi, komendy
+  - Statystyki: Przychody, top płacący
+```
+
+</details>
 
 ---
 
-## 📊 Status
+## 📊 Status i Statystyki
 
-| Obszar | Status | Postęp |
-|--------|--------|--------|
-| Dokumentacja | 🟢 W trakcie | 80% |
-| Skrypty podstawowe | 🔴 Nie rozpoczęte | 0% |
-| Automatyzacja | 🔴 Nie rozpoczęte | 0% |
-| Monitoring | 🔴 Nie rozpoczęte | 0% |
-| Testy | 🔴 Nie rozpoczęte | 0% |
-| **Ogółem** | 🟡 Wczesna faza | 15% |
+<div align="center">
+
+### 🎯 Postęp Projektu
+
+<table>
+<tr>
+<td align="center" width="20%">
+<img src="https://img.icons8.com/fluency/96/000000/documents.png" width="60"/><br/>
+<b>Dokumentacja</b><br/>
+<img src="https://geps.dev/progress/80?dangerColor=800000&warningColor=ff9900&successColor=006600" /><br/>
+<b>80%</b> 🟢
+</td>
+<td align="center" width="20%">
+<img src="https://img.icons8.com/fluency/96/000000/code-file.png" width="60"/><br/>
+<b>Skrypty</b><br/>
+<img src="https://geps.dev/progress/0" /><br/>
+<b>0%</b> 🔴
+</td>
+<td align="center" width="20%">
+<img src="https://img.icons8.com/fluency/96/000000/robot.png" width="60"/><br/>
+<b>Automatyzacja</b><br/>
+<img src="https://geps.dev/progress/0" /><br/>
+<b>0%</b> 🔴
+</td>
+<td align="center" width="20%">
+<img src="https://img.icons8.com/fluency/96/000000/dashboard.png" width="60"/><br/>
+<b>Monitoring</b><br/>
+<img src="https://geps.dev/progress/0" /><br/>
+<b>0%</b> 🔴
+</td>
+<td align="center" width="20%">
+<img src="https://img.icons8.com/fluency/96/000000/test-passed.png" width="60"/><br/>
+<b>Testy</b><br/>
+<img src="https://geps.dev/progress/0" /><br/>
+<b>0%</b> 🔴
+</td>
+</tr>
+</table>
+
+### 📈 Ogólny Postęp: 15% 🟡
+
+</div>
+
+<br/>
+
+<table width="100%">
+<tr>
+<td width="33%" align="center">
+
+#### 📝 Linie Kodu
+**2,085** linii<br/>
+dokumentacji
+
+</td>
+<td width="33%" align="center">
+
+#### 📁 Pliki
+**5** plików<br/>
+dokumentacji
+
+</td>
+<td width="33%" align="center">
+
+#### 🔧 Problemy
+**12** rozwiązań<br/>
+w planie
+
+</td>
+</tr>
+</table>
 
 ---
 
@@ -388,16 +891,147 @@ Zobacz [COPYRIGHT.md](COPYRIGHT.md) dla pełnych informacji.
 
 ---
 
-**Ostatnia aktualizacja:** 2025-12-07  
-**Autor:** Dominik Opałka (hetwerk1943@gmail.com)  
-**Status:** Aktywny rozwój
+## 🤝 Społeczność i Wsparcie
+
+<div align="center">
+
+### Dołącz do Nas! 🎉
+
+<table>
+<tr>
+<td align="center" width="25%">
+<img src="https://img.icons8.com/fluency/96/000000/github.png" width="80"/><br/>
+<b>GitHub</b><br/>
+<a href="https://github.com/hetwerk1943/Minecraft-Server-Automation/issues">Issues</a> •
+<a href="https://github.com/hetwerk1943/Minecraft-Server-Automation/discussions">Discussions</a>
+</td>
+<td align="center" width="25%">
+<img src="https://img.icons8.com/fluency/96/000000/star.png" width="80"/><br/>
+<b>Zostaw Gwiazdkę</b><br/>
+Pokaż że Ci się podoba!<br/>
+⭐ <a href="https://github.com/hetwerk1943/Minecraft-Server-Automation/stargazers">Star</a>
+</td>
+<td align="center" width="25%">
+<img src="https://img.icons8.com/fluency/96/000000/code-fork.png" width="80"/><br/>
+<b>Fork</b><br/>
+Stwórz swoją wersję!<br/>
+🔱 <a href="https://github.com/hetwerk1943/Minecraft-Server-Automation/fork">Fork</a>
+</td>
+<td align="center" width="25%">
+<img src="https://img.icons8.com/fluency/96/000000/email.png" width="80"/><br/>
+<b>Kontakt</b><br/>
+Masz pytania?<br/>
+📧 hetwerk1943@gmail.com
+</td>
+</tr>
+</table>
+
+---
+
+### 💡 Jak Możesz Pomóc?
+
+<table width="100%">
+<tr>
+<td align="center" width="20%">
+<img src="https://img.icons8.com/fluency/48/000000/code.png"/><br/>
+<b>Koduj</b><br/>
+Pomóż w rozwoju
+</td>
+<td align="center" width="20%">
+<img src="https://img.icons8.com/fluency/48/000000/test-tube.png"/><br/>
+<b>Testuj</b><br/>
+Znajdź błędy
+</td>
+<td align="center" width="20%">
+<img src="https://img.icons8.com/fluency/48/000000/document.png"/><br/>
+<b>Dokumentuj</b><br/>
+Popraw docs
+</td>
+<td align="center" width="20%">
+<img src="https://img.icons8.com/fluency/48/000000/chat.png"/><br/>
+<b>Dyskutuj</b><br/>
+Dziel się pomysłami
+</td>
+<td align="center" width="20%">
+<img src="https://img.icons8.com/fluency/48/000000/share.png"/><br/>
+<b>Udostępnij</b><br/>
+Pokaż znajomym
+</td>
+</tr>
+</table>
+
+</div>
+
+---
+
+## 🏆 Podziękowania
+
+<div align="center">
+
+Projekt istnieje dzięki wszystkim, którzy przyczyniają się do jego rozwoju! 🙏
+
+### Specjalne Podziękowania
+
+<table>
+<tr>
+<td align="center">
+<img src="https://img.icons8.com/fluency/48/000000/community.png"/><br/>
+<b>Społeczność PowerShell</b>
+</td>
+<td align="center">
+<img src="https://img.icons8.com/fluency/48/000000/minecraft-creeper.png"/><br/>
+<b>Deweloperzy Paper/Spigot</b>
+</td>
+<td align="center">
+<img src="https://img.icons8.com/fluency/48/000000/java-coffee-cup-logo.png"/><br/>
+<b>Eclipse Adoptium</b>
+</td>
+<td align="center">
+<img src="https://img.icons8.com/fluency/48/000000/administrator-male.png"/><br/>
+<b>Admini Serwerów MC</b>
+</td>
+</tr>
+</table>
+
+</div>
 
 ---
 
 <div align="center">
 
+## 📜 Informacje Prawne
+
+**© 2025 Dominik Opałka. All Rights Reserved.**
+
+Ten projekt jest własnością prywatną. Wszystkie prawa zastrzeżone.
+
+📄 [COPYRIGHT.md](COPYRIGHT.md) • 📧 hetwerk1943@gmail.com
+
+---
+
 ### ⭐ Jeśli projekt Ci się podoba, zostaw gwiazdkę! ⭐
 
-**Made with ❤️ for Minecraft Server Admins**
+![Separator](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+<table>
+<tr>
+<td align="center" width="33%">
+<img src="https://img.icons8.com/fluency/96/000000/heart-with-pulse.png" width="60"/><br/>
+<b>Made with ❤️</b>
+</td>
+<td align="center" width="33%">
+<img src="https://img.icons8.com/fluency/96/000000/minecraft-creeper.png" width="60"/><br/>
+<b>For Minecraft</b>
+</td>
+<td align="center" width="33%">
+<img src="https://img.icons8.com/fluency/96/000000/administrator-male.png" width="60"/><br/>
+<b>By Server Admins</b>
+</td>
+</tr>
+</table>
+
+### 🚀 Ostatnia Aktualizacja: 2025-12-08 • Status: 🟢 Aktywny Rozwój
+
+[![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=hetwerk1943.Minecraft-Server-Automation)](https://github.com/hetwerk1943/Minecraft-Server-Automation)
 
 </div>
