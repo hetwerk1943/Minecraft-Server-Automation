@@ -5,7 +5,7 @@ Ten katalog zawiera główne skrypty automatyzacji serwera Minecraft.
 ## 📋 Skrypty Podstawowe
 
 ### 🚀 MinecraftServerSetup.ps1
-**Status:** 🔴 Nie zaimplementowany
+**Status:** ✅ Zaimplementowany
 
 Automatyczna instalacja i konfiguracja serwera Minecraft.
 
@@ -25,7 +25,7 @@ Automatyczna instalacja i konfiguracja serwera Minecraft.
 ---
 
 ### ▶️ StartServer.ps1
-**Status:** 🔴 Nie zaimplementowany
+**Status:** ✅ Zaimplementowany
 
 Uruchamianie serwera Minecraft z odpowiednią konfiguracją.
 
@@ -44,7 +44,7 @@ Uruchamianie serwera Minecraft z odpowiednią konfiguracją.
 ---
 
 ### 🛑 StopServer.ps1
-**Status:** 🔴 Nie zaimplementowany
+**Status:** ✅ Zaimplementowany
 
 Bezpieczne zatrzymywanie serwera Minecraft.
 

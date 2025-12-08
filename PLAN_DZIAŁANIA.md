@@ -48,20 +48,23 @@ Minecraft-Server-Automation/
   - [x] config/ - pliki konfiguracyjne
   - [x] tests/ - testy automatyczne
 
-### Etap 2: Skrypty Podstawowe (Priorytet: WYSOKI)
-- [ ] MinecraftServerSetup.ps1 - instalacja i konfiguracja
-  - Pobieranie Java JDK
-  - Pobieranie server.jar
-  - Pierwsza konfiguracja
-  - Akceptacja EULA
-- [ ] StartServer.ps1 - uruchamianie serwera
-  - Konfiguracja pamięci JVM
-  - Kolorowe logi
-  - Sprawdzanie wymagań
-- [ ] StopServer.ps1 - bezpieczne zatrzymywanie
-  - Ostrzeżenia dla graczy
-  - Zapis świata
-  - Graceful shutdown
+### Etap 2: Skrypty Podstawowe (Priorytet: WYSOKI) ✅ UKOŃCZONY
+- [x] MinecraftServerSetup.ps1 - instalacja i konfiguracja
+  - [x] Sprawdzanie wymagań systemowych
+  - [x] Pobieranie server.jar (Paper/Vanilla)
+  - [x] Pierwsza konfiguracja
+  - [x] Akceptacja EULA
+  - [x] Optymalna konfiguracja pamięci JVM
+- [x] StartServer.ps1 - uruchamianie serwera
+  - [x] Konfiguracja pamięci JVM (Aikar's flags)
+  - [x] Kolorowe logi
+  - [x] Sprawdzanie wymagań
+  - [x] Wczytywanie konfiguracji
+- [x] StopServer.ps1 - bezpieczne zatrzymywanie
+  - [x] Ostrzeżenia dla graczy (countdown)
+  - [x] Zapis świata
+  - [x] Graceful shutdown
+  - [x] Force kill po timeout
 
 ### Etap 3: Automatyzacja Zaawansowana (Priorytet: ŚREDNI)
 - [ ] BackupServer.ps1 - system kopii zapasowych

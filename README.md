@@ -396,12 +396,22 @@ graph LR
 
 </details>
 
-<details>
-<summary><b>🟡 Następny Krok: Etap 2 - Skrypty</b></summary>
+<details open>
+<summary><b>🟢 Etap 2: Skrypty Podstawowe (100%)</b></summary>
 
-- [ ] ⚙️ MinecraftServerSetup.ps1
-- [ ] ▶️ StartServer.ps1
-- [ ] 🛑 StopServer.ps1
+- [x] ⚙️ MinecraftServerSetup.ps1
+- [x] ▶️ StartServer.ps1
+- [x] 🛑 StopServer.ps1
+- [x] 🔧 Common.ps1 (funkcje pomocnicze)
+
+</details>
+
+<details>
+<summary><b>🟡 Następny Krok: Etap 3 - Automatyzacja</b></summary>
+
+- [ ] 💾 BackupServer.ps1
+- [ ] 🔄 UpdateServer.ps1
+- [ ] ↩️ RestoreBackup.ps1
 
 </details>
 
@@ -1338,8 +1348,8 @@ Funkcje premium:
 <td align="center" width="20%">
 <img src="https://img.icons8.com/fluency/96/000000/code-file.png" alt="Ikona pliku kodu" width="60"/><br/>
 <b>Skrypty</b><br/>
-<img src="https://geps.dev/progress/0" alt="Progress: 0% not started" /><br/>
-<b>0%</b> 🔴
+<img src="https://geps.dev/progress/40?dangerColor=800000&warningColor=ff9900&successColor=006600" alt="Progress: 40% in progress" /><br/>
+<b>40%</b> 🟡
 </td>
 <td align="center" width="20%">
 <img src="https://img.icons8.com/fluency/96/000000/robot.png" alt="Ikona robota" width="60"/><br/>
@@ -1362,9 +1372,10 @@ Funkcje premium:
 </tr>
 </table>
 
-### 📈 Ogólny Postęp: 20% 🟡
+### 📈 Ogólny Postęp: 28% 🟡
 
-**Etap 1: Fundamenty** - ✅ Ukończony!
+**Etap 1: Fundamenty** - ✅ Ukończony!  
+**Etap 2: Skrypty Podstawowe** - ✅ Ukończony!
 
 </div>
 
