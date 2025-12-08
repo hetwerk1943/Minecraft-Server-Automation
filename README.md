@@ -819,7 +819,7 @@ Funkcje premium:
 <td align="center" width="20%">
 <img src="https://img.icons8.com/fluency/96/000000/documents.png" alt="Ikona dokumentów" width="60"/><br/>
 <b>Dokumentacja</b><br/>
-<img src="https://geps.dev/progress/80" alt="Progress: 80% complete"?dangerColor=800000&warningColor=ff9900&successColor=006600" /><br/>
+<img src="https://geps.dev/progress/80?dangerColor=800000&warningColor=ff9900&successColor=006600" alt="Progress: 80% complete" /><br/>
 <b>80%</b> 🟢
 </td>
 <td align="center" width="20%">
