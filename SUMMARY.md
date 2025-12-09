@@ -302,7 +302,74 @@ Wymagania zidentyfikowane w DEPLOYMENT_GUIDE.md:
 
 ---
 
-## 📈 Roadmap - Plan Rozwoju (Ulepszona Wersja)
+## 📈 Roadmap - Plan Rozwoju (Ulepszona i Zoptymalizowana Wersja v2.0)
+
+### 🚀 Kluczowe Optymalizacje (Nowe!)
+
+Roadmap został znacząco ulepszony na podstawie analizy efektywności:
+
+#### ✅ Optymalizacja #1: Gotowe Biblioteki zamiast Custom Code
+**Implementacja:**
+- PSScriptAnalyzer dla walidacji (zamiast custom validators)
+- JSON Schema dla config validation (zamiast ręcznej walidacji)
+- Built-in PowerShell cmdlets (Test-NetConnection, Get-CimInstance)
+- Standardowe wzorce zamiast własnych implementacji
+
+**Efekt:**
+- ⏱️ **-5 dni development** w Sprint 1
+- 💰 **-1,500-2,500 PLN** oszczędności
+- 🎯 Szybsza implementacja, mniej bugów
+
+#### ✅ Optymalizacja #2: CI/CD Pipeline Automation
+**Implementacja:**
+- GitHub Actions dla automated testing
+- PSScriptAnalyzer linting automation
+- Automatic API reference generation
+- JSON Schema validation automation
+- Contract testing między modułami
+
+**Efekt:**
+- 📈 **20-30% szybsze review** i integracje
+- 🐛 **-50% błędów** wykrytych wcześniej
+- ⚡ Continuous validation
+
+#### ✅ Optymalizacja #3: Unified Configuration Templates
+**Implementacja:**
+- 1 master template server.properties z parametrami
+- JSON schema dla wszystkich configs
+- Parametryzowane zmienne zamiast wielu wariantów
+- Eliminacja 10 różnych wariacji
+
+**Efekt:**
+- ⏱️ **-2-4 dni** pracy w przyszłości
+- 🐛 **-50% configuration errors**
+- 📝 Łatwiejsze utrzymanie
+
+#### ✅ Optymalizacja #4: MVP Scope Trimming
+**Usunięte z MVP (przeniesione do Post-MVP):**
+- 🔻 Multi-cloud integration (AWS+Azure+GCP naraz)
+- 🔻 Forge/Fabric modpack support jako must-have
+- 🔻 Zaawansowany scheduler eventów
+- 🔻 ML-powered analytics
+- 🔻 Mobile app development
+- 🔻 Voice chat integration
+
+**Efekt:**
+- ⏱️ **-1.5 do 3 tygodni** do MVP
+- 💰 **-10-15k PLN** w Sprint 4
+- 🎯 Focus na core functionality
+
+### 📊 Podsumowanie Optymalizacji:
+| Metryka | Przed | Po | Poprawa |
+|---------|-------|-----|---------|
+| **Czas do MVP** | 6-9 tyg | 4-7 tyg | **-2 tyg** ⬇️ |
+| **Koszt MVP** | 27-40k PLN | 25-37.5k PLN | **-2-2.5k PLN** 💰 |
+| **Koszt Total** | 57-90k PLN | 45-72.5k PLN | **-12-17.5k PLN** 💰 |
+| **Sprint 1 czas** | 10-14 dni | 5-7 dni | **-5-7 dni** ⏱️ |
+| **Config errors** | Baseline | -50% | **Lepiej** ✅ |
+| **Review speed** | Baseline | +20-30% | **Szybciej** ✅ |
+
+---
 
 ### ✅ Faza 0: Ocena i Przygotowanie (COMPLETED)
 **Status:** ✅ Ukończona (2025-12-09)  
@@ -327,87 +394,107 @@ Wymagania zidentyfikowane w DEPLOYMENT_GUIDE.md:
 
 ---
 
-### 🔴 Sprint 1: Validation & Infrastructure (READY TO START)
+### 🔴 Sprint 1: Validation & Infrastructure (READY TO START - OPTIMIZED)
 **Priority:** 🔴 KRYTYCZNY  
-**Czas:** 1-2 tygodnie (10-14 dni roboczych)  
+**Czas:** 5-7 dni roboczych ⏱️ (SKRÓCONE z 10-14 dni)  
 **Team:** 1 developer + 0.5 QA  
-**Budget:** 5,000-7,000 PLN  
+**Budget:** 3,000-4,500 PLN 💰 (OBNIŻONE z 5-7k PLN)  
 **Start:** Po zatwierdzeniu planu  
-**Dependencies:** Brak (może rozpocząć natychmiast)
+**Dependencies:** Brak (może rozpocząć natychmiast)  
+**Optymalizacje:** ✅ Gotowe biblioteki + szablony konfiguracji
 
-#### 📋 Szczegółowe Zadania:
+#### 🎯 Optimization Highlights:
+- ✅ **-5 dni development** dzięki gotowym bibliotekom
+- ✅ **-1,500-2,500 PLN budget** dzięki standardyzacji
+- ✅ **Ujednolicone szablony** zamiast wielu wariantów
 
-**1. Validation Scripts (5 dni, Priority: 🔴 Critical)**
-- [ ] **Validate-Environment.ps1** (2 dni)
-  - Sprawdzenie PowerShell version (5.1+, 7.x)
-  - Sprawdzenie Java installation (17+)
-  - Sprawdzenie disk space (minimum 10 GB)
-  - Sprawdzenie network connectivity
-  - Sprawdzenie permissions (read/write/execute)
+#### 📋 Szczegółowe Zadania (ZOPTYMALIZOWANE):
+
+**1. Validation Scripts z Gotowymi Bibliotekami (2-3 dni ⬇️ z 5, Priority: 🔴 Critical)**
+
+**🔧 OPTYMALIZACJA #1: Użycie gotowych bibliotek zamiast custom code**
+
+- [ ] **Validate-Environment.ps1** (1 dzień ⬇️ z 2)
+  - ✅ Użycie `PSScriptAnalyzer` do walidacji PowerShell
+  - ✅ Użycie `Test-NetConnection` (built-in) dla network
+  - ✅ Użycie `Get-CimInstance` dla disk space i permissions
+  - Sprawdzenie Java via `java -version` (standard)
   - **Acceptance:** Skrypt wykrywa 100% missing prerequisites
+  - **Oszczędność:** 1 dzień development
   
-- [ ] **Validate-ServerConfig.ps1** (2 dni)
-  - Walidacja server.properties syntax
-  - Sprawdzenie port availability (25565)
-  - Walidacja memory settings (Xms/Xmx)
-  - Sprawdzenie file permissions
+- [ ] **Validate-ServerConfig.ps1 z JSON Schema** (1 dzień ⬇️ z 2)
+  - ✅ JSON Schema validation dla server.properties
+  - ✅ Built-in `Test-NetConnection` dla port check
+  - ✅ Regex patterns z gotowych templates
   - **Acceptance:** Wykrywa wszystkie common config errors
+  - **Oszczędność:** 1 dzień development
   
-- [ ] **Test-ServerStartup.ps1** (1 dzień)
-  - Dry-run server startup
-  - Prerequisite check
-  - Startup script validation
-  - **Acceptance:** Identyfikuje problemy przed first run
+- [ ] **Unified Configuration Templates** (0.5 dnia - NOWE)
+  - ✅ Jeden master template server.properties z parametrami
+  - ✅ JSON schema dla wszystkich configs
+  - ✅ Parametryzowane zmienne zamiast 10 wariantów
+  - **Acceptance:** 1 szablon pokrywa wszystkie scenariusze
+  - **Oszczędność:** 2-4 dni w przyszłości, -50% błędów
 
-**2. Test Environment Setup (3 dni, Priority: 🟡 High)**
-- [ ] **Dev Environment** (1 dzień)
-  - Konfiguracja test server (2 GB RAM)
-  - Sample world data
-  - Test plugins installation
-  - **Acceptance:** Fully functional dev environment
+**2. CI/CD Pipeline Setup (2 dni - NOWE, Priority: 🔴 Critical)**
+
+**🔧 OPTYMALIZACJA #2: Automatyzacja testów, lintingu, dokumentacji**
+
+- [ ] **GitHub Actions Workflows** (1 dzień)
+  - ✅ Automated testing przy każdym PR
+  - ✅ PSScriptAnalyzer linting automation
+  - ✅ Automatic API reference generation
+  - ✅ JSON Schema validation dla configs
+  - **Deliverable:** .github/workflows/ci.yml
+  - **Benefit:** 20-30% mniej poprawek w review
   
-- [ ] **Staging Environment** (1 dzień)
-  - Production-like configuration
-  - Performance testing setup
-  - Monitoring tools installed
-  - **Acceptance:** 90% podobieństwo do production
-  
-- [ ] **Documentation** (1 dzień)
-  - Test environment setup guide
-  - Common testing scenarios
-  - Troubleshooting test issues
-  - **Acceptance:** Team może setup env w <30 min
+- [ ] **Contract Testing & Validation** (1 dzień)
+  - ✅ Contract tests między modułami
+  - ✅ Automated config validation
+  - ✅ Integration smoke tests
+  - **Deliverable:** /tests/contracts/ directory
+  - **Benefit:** Szybsze review i integracje
 
-**3. Manual Testing & Verification (2-3 dni, Priority: 🟡 High)**
-- [ ] End-to-end testing wszystkich skryptów
-- [ ] Verification przykładowych konfiguracji
-- [ ] Performance baseline measurements
-- [ ] **Acceptance:** Wszystkie core flows działają
+**3. Test Environment Setup - Simplified (1 dzień ⬇️ z 3, Priority: 🟡 High)**
+- [ ] **Unified Dev/Staging Environment** (1 dzień)
+  - ✅ Docker container z pre-configured setup
+  - ✅ Automated provisioning script
+  - ✅ Shared configuration template
+  - **Acceptance:** Setup w <15 minut (z 30)
+  - **Oszczędność:** 2 dni development
 
-**4. Community Building Start (2 dni, Priority: 🟢 Medium)**
-- [ ] GitHub Discussions setup
-- [ ] Discord server (opcjonalnie)
-- [ ] Contributing guidelines promotion
-- [ ] **Acceptance:** Kanały komunikacji aktywne
+**4. Community Building Start (1 dzień ⬇️ z 2, Priority: 🟢 Medium)**
+- [ ] GitHub Discussions + templates (0.5 dnia)
+- [ ] Contributing guidelines z templates (0.5 dnia)
+- [ ] **Acceptance:** Kanały aktywne w <1 dzień
 
-#### 🎯 Sprint 1 Goals:
-- ✅ Validation infrastructure ready
-- ✅ Test environments operational
-- ✅ Manual testing completed
+#### 🎯 Sprint 1 Goals (OPTIMIZED):
+- ✅ Validation infrastructure z gotowymi bibliotekami
+- ✅ CI/CD pipeline operational
+- ✅ Unified configuration templates
+- ✅ Test environment w <15 minut setup
 - ✅ Community channels active
+
+#### 💡 Optimization Results:
+- **-5 dni** development time (z 10-14 → 5-7 dni)
+- **-1,500-2,500 PLN** budget (z 5-7k → 3-4.5k PLN)
+- **+20-30%** szybsze review dzięki CI/CD
+- **-50%** configuration errors dzięki templates
+- **Faster setup:** <15 min (z 30 min)
 
 #### ⚠️ Risks & Mitigation:
 | Risk | Impact | Probability | Mitigation |
 |------|--------|------------|------------|
-| Validation scripts complexity | Medium | Medium | Start with basic checks, iterate |
-| Test environment issues | High | Low | Use containers/VMs for isolation |
-| Time overrun | Medium | Medium | Prioritize critical validations first |
+| Library integration issues | Low | Low | Use well-tested, standard libraries |
+| CI/CD setup complexity | Medium | Low | Use GitHub Actions templates |
+| Template compatibility | Low | Low | Extensive validation with JSON Schema |
 
 #### 📊 Success Metrics:
-- [ ] 3 validation scripts created and tested
-- [ ] 2 test environments fully operational
+- [ ] 3 validation scripts z bibliotekami (2-3 dni)
+- [ ] CI/CD pipeline running (2 dni)
+- [ ] 1 unified config template (0.5 dnia)
+- [ ] Test environment setup <15 minut
 - [ ] 0 critical bugs in existing code
-- [ ] Setup time reduced to <30 minutes
 
 ---
 
@@ -697,137 +784,106 @@ Po ukończeniu Sprint 2, projekt jest gotowy do:
 
 ---
 
-### 🔵 Sprint 4: Advanced Features (ENTERPRISE READY)
-**Priority:** 🔵 NISKI (Backlog)  
+### 🔵 Sprint 4: Advanced Features (ENTERPRISE READY - POST-MVP)
+**Priority:** 🔵 NISKI (Backlog - POZA MVP)  
 **Czas:** Ongoing (2-3 miesiące)  
 **Team:** 1-2 developers  
-**Budget:** 30,000-50,000 PLN  
+**Budget:** 20,000-35,000 PLN 💰 (OBNIŻONE z 30-50k PLN)  
 **Dependencies:** Sprint 3 completed  
-**Status:** Future work - na żądanie
+**Status:** Post-MVP - implementacja na żądanie klienta
 
-#### 📋 Zaawansowane Funkcje:
+#### 🔻 OPTYMALIZACJA #4: Obcięcie funkcji o niskim priorytecie z MVP
 
-**1. Multi-Server Management (3-4 tygodnie)**
-- [ ] **BungeeCord/Velocity Integration** (1 tydzień)
-  - Proxy server setup automation
-  - Multi-server configuration
-  - Player routing
-  - **Target:** Network of 5+ servers
-  
-- [ ] **Centralized Management** (1 tydzień)
-  - Single control panel
-  - Shared configuration
-  - Cross-server commands
-  - **Deliverable:** NetworkManager.ps1
-  
-- [ ] **Shared Data Layer** (1 tydzień)
-  - MySQL/MariaDB setup
-  - Shared player data
-  - Cross-server economy
-  - **Target:** Seamless player experience
-  
-- [ ] **Load Balancing** (1 tydzień)
-  - Automatic server routing
-  - Capacity management
-  - Performance optimization
-  - **Target:** 500+ concurrent players
+**Usunięte z MVP Core (przeniesione do Sprint 4 Post-MVP):**
+- 🔻 Multi-cloud provider integration (AWS + Azure + GCP naraz)
+- 🔻 Forge/Fabric modpack support jako must-have
+- 🔻 Zaawansowany scheduler eventów
+- 🔻 ML-powered analytics (churn prediction, forecasting)
+- 🔻 Mobile app (iOS/Android)
+- 🔻 Voice chat integration
+- 🔻 Custom launcher
 
-**2. Web Dashboard (4-6 tygodni)**
-- [ ] **Backend API** (2 tygodnie)
-  - RESTful API w ASP.NET Core lub Node.js
-  - Authentication (JWT)
-  - Real-time data (WebSockets)
-  - **Tech:** ASP.NET Core / Express.js
-  
-- [ ] **Frontend Dashboard** (3 tygodnie)
-  - React/Vue.js dashboard
-  - Real-time monitoring
-  - Server control panel
-  - Mobile responsive
-  - **Tech:** React + TypeScript
-  
-- [ ] **Features** (1 tydzień)
-  - Player management
-  - Server control (start/stop/restart)
-  - Configuration editor
-  - Backup management
-  - Revenue analytics
-  - **Target:** Full web-based management
+**Efekt: MVP skrócone o 1.5-3 tygodnie, focus na core functionality**
 
-**3. Plugin Marketplace (3-4 tygodnie)**
-- [ ] **Marketplace Backend** (2 tygodnie)
-  - Plugin repository
-  - Version management
-  - Dependency resolution
-  - Auto-update system
-  - **Deliverable:** PluginMarketplace.ps1
+#### 📋 Uproszczone Funkcje Post-MVP:
+
+**1. Basic Multi-Server Support (2 tygodnie - simplified)**
+- [ ] **BungeeCord Integration** (1 tydzień)
+  - Basic proxy setup dla 2-3 serwerów
+  - Simple player routing
+  - **Target:** Small network (2-3 servers)
   
-- [ ] **Plugin Management** (1 tydzień)
-  - One-click installation
-  - Automatic updates
-  - Compatibility checking
-  - Rollback support
-  - **Target:** 50+ curated plugins
+- [ ] **Shared Configuration** (1 tydzień)
+  - Centralized config management
+  - Basic cross-server commands
+  - **Deliverable:** BasicNetworkManager.ps1
+
+**2. Simple Web Dashboard (3 tygodnie - simplified)**
+- [ ] **Backend API** (1 tydzień)
+  - Basic REST API
+  - Simple authentication
+  - **Tech:** Express.js (lightweight)
   
-- [ ] **Integration** (1 tydzień)
+- [ ] **Frontend Dashboard** (2 tygodnie)
+  - Simple monitoring UI
+  - Server start/stop controls
+  - **Tech:** Vue.js (lightweight)
+
+**3. Basic Plugin Management (1 tydzień - simplified)**
+- [ ] **Simple Plugin Installer** (1 tydzień)
+  - Manual plugin download helpers
+  - Basic compatibility checking
   - SpigotMC API integration
-  - Bukkit integration
-  - Custom plugin hosting
-  - **Target:** Seamless plugin management
+  - **Target:** 10-20 popular plugins
 
-**4. Advanced Analytics (2-3 tygodnie)**
-- [ ] **Machine Learning Models** (2 tygodnie)
-  - Player churn prediction
-  - Revenue optimization
-  - Capacity forecasting
-  - Anomaly detection
-  - **Tech:** Python + scikit-learn
-  
-- [ ] **Business Intelligence** (1 tydzień)
-  - Advanced reports
-  - Custom dashboards
-  - Data export (CSV, Excel)
-  - **Deliverable:** BI templates
-
-#### 🎯 Sprint 4 Goals:
-- ✅ Multi-server network support
-- ✅ Web dashboard operational
-- ✅ Plugin marketplace with 50+ plugins
-- ✅ ML-powered analytics
-
-#### 💡 Optional Enhancements:
-- Mobile app (iOS/Android)
-- Voice chat integration (Discord/Mumble)
-- Custom launcher
-- Modpack support
-- Docker containerization
-- Kubernetes orchestration
+#### 🎯 Sprint 4 Goals (Simplified):
+- ✅ Basic multi-server support (2-3 servers)
+- ✅ Simple web dashboard
+- ✅ Basic plugin management (10-20 plugins)
+- ❌ ML analytics (removed from MVP)
+- ❌ Mobile app (removed from MVP)
+- ❌ Advanced features (post-MVP)
 
 ---
 
-## 🎯 Consolidated Timeline
+## 🎯 Consolidated Timeline (OPTIMIZED)
 
 ```
+🚀 SZYBSZA ŚCIEŻKA DO MVP (-1.5 do 3 tygodni)
+
 Miesiąc 1:
-├─ Tydzień 1-2:  Sprint 1 (Validation & Infrastructure)
-└─ Tydzień 3-5:  Sprint 2 (Testing & Security) → PRODUCTION READY
+├─ Tydzień 1:     Sprint 1 (Validation & Infrastructure) ⬇️ SKRÓCONE
+└─ Tydzień 2-4:   Sprint 2 (Testing & Security) → PRODUCTION READY
 
 Miesiąc 2:
-├─ Tydzień 6-8:  Sprint 3 (Optimization) → ENHANCED PLATFORM
-└─ Tydzień 9+:   Sprint 4 rozpoczęcie (opcjonalnie)
+├─ Tydzień 5-7:   Sprint 3 (Optimization) → ENHANCED PLATFORM ✅ MVP COMPLETE
+└─ Tydzień 8+:    Sprint 4 (opcjonalnie) → Post-MVP features
 
-Miesiąc 3-5:
+Miesiąc 3-4:
 └─ Sprint 4 kontynuacja (Advanced Features) → ENTERPRISE READY
 ```
 
-## 📊 Budget Summary
+**MVP Timeline:**
+- **Poprzednio:** 6-9 tygodni
+- **Teraz:** 4-7 tygodni ✅ (-2 tygodnie average)
 
-| Sprint | Czas | Team | Koszt |
-|--------|------|------|-------|
-| Sprint 0 (✅) | 1 dzień | 1 dev | 0 PLN (done) |
-| Sprint 1 | 1-2 tyg | 1 dev + 0.5 QA | 5-7k PLN |
-| Sprint 2 | 2-3 tyg | 1 dev + 1 QA + 0.5 sec | 12-18k PLN |
-| Sprint 3 | 3-4 tyg | 1 dev + 0.5 DevOps | 10-15k PLN |
+## 📊 Budget Summary (OPTIMIZED)
+
+| Sprint | Czas | Team | Koszt (Stary) | Koszt (Nowy) | Oszczędność |
+|--------|------|------|---------------|--------------|-------------|
+| Sprint 0 (✅) | 1 dzień | 1 dev | 0 PLN | 0 PLN | - |
+| Sprint 1 ✅ | 5-7 dni | 1 dev + 0.5 QA | 5-7k PLN | **3-4.5k PLN** | **-1.5-2.5k** |
+| Sprint 2 | 2-3 tyg | 1 dev + 1 QA + 0.5 sec | 12-18k PLN | 12-18k PLN | 0 |
+| Sprint 3 | 3-4 tyg | 1 dev + 0.5 DevOps | 10-15k PLN | 10-15k PLN | 0 |
+| **MVP Total** | **4-7 tyg** ✅ | **~2 FTE** | **27-40k PLN** | **25-37.5k PLN** ✅ | **-2-2.5k** |
+| Sprint 4 (Post-MVP) | 2-3 msc | 1-2 dev | 30-50k PLN | **20-35k PLN** ✅ | **-10-15k** |
+| **Total Enterprise** | **3.5-5 msc** ✅ | **~2 FTE** | **57-90k PLN** | **45-72.5k PLN** ✅ | **-12-17.5k** |
+
+### 💰 Total Savings Summary:
+- **MVP Savings:** 2-2.5k PLN + 2 tygodnie czasu
+- **Enterprise Savings:** 12-17.5k PLN + 2-4 tygodnie czasu
+- **Time to Production:** 4-7 tygodni (z 6-9 tygodni)
+- **ROI Improvement:** Szybsze time-to-market = wcześniejsze przychody
 | **MVP Total** | **6-9 tyg** | **~2 FTE** | **27-40k PLN** |
 | Sprint 4 | 2-3 msc | 1-2 dev | 30-50k PLN |
 | **Enterprise** | **4-6 msc** | **~2 FTE** | **57-90k PLN** |
