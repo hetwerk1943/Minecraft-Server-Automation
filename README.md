@@ -10,6 +10,36 @@ Kompletny zestaw skryptów PowerShell do profesjonalnego zarządzania serwerem M
 - Uruchamianie serwera z konfigurowalnymi parametrami
 - Tworzenie kopii zapasowych z automatycznym zarządzaniem
 - Aktualizację wersji serwera
+# Miner GUI – Legalne narzędzie do zarządzania kopaniem kryptowalut
+
+## Nowe funkcje (v2.0)
+
+### 🔥 1. Auto-Pause
+Automatyczna ochrona przed przegrzaniem CPU i GPU.  
+Przekroczony limit → miner pauzuje. Temperatura spada → wznowienie.
+
+### 🔥 2. Watchdog
+Monitoruje działanie minera i w razie awarii:
+- restartuje proces,
+- informuje użytkownika,
+- pilnuje spadku hashrate.
+
+### 🔥 3. Benchmark sprzętu
+Jednym kliknięciem uruchamia test:
+- CPU (XMRig),
+- GPU (lolMiner).
+Zapisuje optymalne ustawienia.
+
+### 🔥 4. Dashboard w czasie rzeczywistym
+Panel statystyk:
+- hashrate,
+- temperatury,
+- obciążenie CPU/GPU,
+- wykresy.
+
+### 🔥 5. Nowy diagram architektury
+Dokumentacja opisuje podział na moduły:  
+GUI → logika → miner → monitorowanie.
 
 ### 💰 System Monetyzacji
 - System VIP z 4 poziomami (Bronze, Silver, Gold, Platinum)
