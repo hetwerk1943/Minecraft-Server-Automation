@@ -1,0 +1,36 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+solc_version = "0.8.23"
+optimizer = true
+optimizer_runs = 200
+via_ir = false
+
+# Testing
+fuzz_runs = 256
+fuzz_max_test_rejects = 65536
+
+# Formatting
+line_length = 120
+tab_width = 4
+bracket_spacing = true
+
+# RPC endpoints (override with env vars)
+[rpc_endpoints]
+sepolia = "${SEPOLIA_RPC_URL}"
+mumbai = "${MUMBAI_RPC_URL}"
+polygon = "${POLYGON_RPC_URL}"
+arbitrum = "${ARBITRUM_RPC_URL}"
+base = "${BASE_RPC_URL}"
+
+# Etherscan API keys
+[etherscan]
+sepolia = { key = "${ETHERSCAN_API_KEY}" }
+mumbai = { key = "${POLYGONSCAN_API_KEY}", url = "https://api-testnet.polygonscan.com/api" }
+polygon = { key = "${POLYGONSCAN_API_KEY}" }
+arbitrum = { key = "${ARBISCAN_API_KEY}" }
+base = { key = "${BASESCAN_API_KEY}" }
+
+# Gas reports
+gas_reports = ["*"]
