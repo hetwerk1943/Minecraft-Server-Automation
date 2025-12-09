@@ -1,0 +1,103 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+*.tsbuildinfo
+
+# Contracts
+contracts/cache/
+contracts/out/
+contracts/artifacts/
+contracts/broadcast/*/31337/
+contracts/broadcast/**/dry-run/
+contracts/lib/
+
+# Database
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.settings/
+
+# Testing
+coverage/
+.nyc_output/
+*.lcov
+.cache/
+
+# Temporary
+tmp/
+temp/
+*.tmp
+
+# Game builds
+game/Build/
+game/Library/
+game/Temp/
+game/Obj/
+game/Logs/
+game/*.csproj
+game/*.unityproj
+game/*.sln
+game/.vs/
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Secrets and keys (NEVER commit!)
+*.pem
+*.key
+*.pfx
+*.p12
+private_key.txt
+secrets.json
+
+# Local config overrides
+config/local.json
+config/*.local.json
