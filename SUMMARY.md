@@ -302,77 +302,567 @@ Wymagania zidentyfikowane w DEPLOYMENT_GUIDE.md:
 
 ---
 
-## 📈 Roadmap - Plan Rozwoju
+## 📈 Roadmap - Plan Rozwoju (Ulepszona Wersja)
 
 ### ✅ Faza 0: Ocena i Przygotowanie (COMPLETED)
-**Status:** ✅ Ukończona (2025-12-09)
-**Czas:** 1 dzień
+**Status:** ✅ Ukończona (2025-12-09)  
+**Czas:** 1 dzień  
+**Team:** 1 senior developer  
+**Budget:** 0 PLN (internal work)
 
-Deliverables:
-- [x] EVALUATION.md
-- [x] ACTION_PLAN.md
-- [x] TROUBLESHOOTING.md
-- [x] CONTRIBUTING.md
-- [x] DEPLOYMENT_GUIDE.md
-- [x] examples/ configurations
-- [x] Code review przeprowadzony
-- [x] Issues zidentyfikowane i naprawione
+**Deliverables:**
+- [x] EVALUATION.md - Kompleksowa ocena (12 KB)
+- [x] ACTION_PLAN.md - 4-sprint roadmap (20 KB)
+- [x] TROUBLESHOOTING.md - 50+ rozwiązań (28 KB)
+- [x] CONTRIBUTING.md - Developer guide (19 KB)
+- [x] DEPLOYMENT_GUIDE.md - Production guide (37 KB)
+- [x] examples/ - 3 konfiguracje (basic, survival, production)
+- [x] SUMMARY.md - Executive summary (18 KB)
+- [x] Code review + fixes
 
-### 🔴 Faza 1: Sprint 1 - Dokumentacja i Podstawy
-**Priority:** KRYTYCZNY  
-**Czas:** 1-2 tygodnie  
-**Status:** Ready to start
+**Success Metrics:**
+- ✅ 100% dokumentacji krytycznej utworzone
+- ✅ 0 critical issues w istniejącym kodzie
+- ✅ Roadmap zaakceptowany
 
-Tasks:
-- [ ] Validation scripts (Validate-Environment.ps1, Validate-ServerConfig.ps1)
-- [ ] Test basic functionality manually
-- [ ] Create test environments
-- [ ] Begin community building
+---
 
-Target: Foundation for testing i production readiness
+### 🔴 Sprint 1: Validation & Infrastructure (READY TO START)
+**Priority:** 🔴 KRYTYCZNY  
+**Czas:** 1-2 tygodnie (10-14 dni roboczych)  
+**Team:** 1 developer + 0.5 QA  
+**Budget:** 5,000-7,000 PLN  
+**Start:** Po zatwierdzeniu planu  
+**Dependencies:** Brak (może rozpocząć natychmiast)
 
-### 🟡 Faza 2: Sprint 2 - Testy i Bezpieczeństwo
-**Priority:** WYSOKI  
-**Czas:** 2-3 tygodnie  
-**Status:** Planned
+#### 📋 Szczegółowe Zadania:
 
-Tasks:
-- [ ] Pester test framework setup
-- [ ] Unit tests (target: 80% coverage)
-- [ ] Integration tests
-- [ ] GitHub Actions CI/CD
-- [ ] CodeQL security scan
-- [ ] Security hardening
-- [ ] Performance benchmarks
+**1. Validation Scripts (5 dni, Priority: 🔴 Critical)**
+- [ ] **Validate-Environment.ps1** (2 dni)
+  - Sprawdzenie PowerShell version (5.1+, 7.x)
+  - Sprawdzenie Java installation (17+)
+  - Sprawdzenie disk space (minimum 10 GB)
+  - Sprawdzenie network connectivity
+  - Sprawdzenie permissions (read/write/execute)
+  - **Acceptance:** Skrypt wykrywa 100% missing prerequisites
+  
+- [ ] **Validate-ServerConfig.ps1** (2 dni)
+  - Walidacja server.properties syntax
+  - Sprawdzenie port availability (25565)
+  - Walidacja memory settings (Xms/Xmx)
+  - Sprawdzenie file permissions
+  - **Acceptance:** Wykrywa wszystkie common config errors
+  
+- [ ] **Test-ServerStartup.ps1** (1 dzień)
+  - Dry-run server startup
+  - Prerequisite check
+  - Startup script validation
+  - **Acceptance:** Identyfikuje problemy przed first run
 
-Target: Production-ready with tests i security
+**2. Test Environment Setup (3 dni, Priority: 🟡 High)**
+- [ ] **Dev Environment** (1 dzień)
+  - Konfiguracja test server (2 GB RAM)
+  - Sample world data
+  - Test plugins installation
+  - **Acceptance:** Fully functional dev environment
+  
+- [ ] **Staging Environment** (1 dzień)
+  - Production-like configuration
+  - Performance testing setup
+  - Monitoring tools installed
+  - **Acceptance:** 90% podobieństwo do production
+  
+- [ ] **Documentation** (1 dzień)
+  - Test environment setup guide
+  - Common testing scenarios
+  - Troubleshooting test issues
+  - **Acceptance:** Team może setup env w <30 min
 
-### 🟢 Faza 3: Sprint 3 - Optymalizacja
-**Priority:** ŚREDNI  
-**Czas:** 3-4 tygodnie  
-**Status:** Planned
+**3. Manual Testing & Verification (2-3 dni, Priority: 🟡 High)**
+- [ ] End-to-end testing wszystkich skryptów
+- [ ] Verification przykładowych konfiguracji
+- [ ] Performance baseline measurements
+- [ ] **Acceptance:** Wszystkie core flows działają
 
-Tasks:
-- [ ] Performance optimization
-- [ ] Enhanced error recovery
-- [ ] Advanced monitoring
-- [ ] Community engagement
-- [ ] Documentation site (GitHub Pages)
+**4. Community Building Start (2 dni, Priority: 🟢 Medium)**
+- [ ] GitHub Discussions setup
+- [ ] Discord server (opcjonalnie)
+- [ ] Contributing guidelines promotion
+- [ ] **Acceptance:** Kanały komunikacji aktywne
 
-Target: Enhanced platform
+#### 🎯 Sprint 1 Goals:
+- ✅ Validation infrastructure ready
+- ✅ Test environments operational
+- ✅ Manual testing completed
+- ✅ Community channels active
 
-### 🔵 Faza 4: Sprint 4 - Advanced Features
-**Priority:** NISKI (Backlog)  
-**Czas:** Ongoing  
-**Status:** Future work
+#### ⚠️ Risks & Mitigation:
+| Risk | Impact | Probability | Mitigation |
+|------|--------|------------|------------|
+| Validation scripts complexity | Medium | Medium | Start with basic checks, iterate |
+| Test environment issues | High | Low | Use containers/VMs for isolation |
+| Time overrun | Medium | Medium | Prioritize critical validations first |
 
-Tasks:
-- [ ] Multi-server management
-- [ ] Web dashboard
-- [ ] Plugin marketplace integration
-- [ ] Advanced analytics (ML-based)
+#### 📊 Success Metrics:
+- [ ] 3 validation scripts created and tested
+- [ ] 2 test environments fully operational
+- [ ] 0 critical bugs in existing code
+- [ ] Setup time reduced to <30 minutes
 
-Target: Enterprise features
+---
+
+### 🟡 Sprint 2: Testing & Security (PRODUCTION-READY)
+**Priority:** 🟡 WYSOKI  
+**Czas:** 2-3 tygodnie (14-21 dni roboczych)  
+**Team:** 1 developer + 1 QA + 0.5 security specialist  
+**Budget:** 12,000-18,000 PLN  
+**Dependencies:** Sprint 1 completed  
+**Milestone:** **PRODUCTION READY** 🎯
+
+#### 📋 Szczegółowe Zadania:
+
+**1. Test Framework Setup (3-4 dni, Priority: 🔴 Critical)**
+- [ ] **Pester Installation & Configuration** (1 dzień)
+  - Install-Module Pester -Force
+  - Test framework setup
+  - CI integration preparation
+  - **Acceptance:** Pester runs successfully
+  
+- [ ] **Test Structure Creation** (2 dni)
+  - /tests/Unit/ directory
+  - /tests/Integration/ directory
+  - /tests/E2E/ directory
+  - Test helpers i utilities
+  - **Acceptance:** Clear test organization
+  
+- [ ] **First Test Suite** (1 dzień)
+  - Template tests dla każdego skryptu
+  - Basic smoke tests
+  - **Acceptance:** Sample tests pass
+
+**2. Unit Tests Development (7-10 dni, Priority: 🔴 Critical)**
+- [ ] **MinecraftServerSetup.Tests.ps1** (2 dni)
+  - Test-JavaInstallation tests
+  - New-ServerDirectory tests
+  - Configuration generation tests
+  - **Target:** 80% coverage, 20+ tests
+  
+- [ ] **StartServer.Tests.ps1** (1 dzień)
+  - JVM arguments validation
+  - Memory settings tests
+  - **Target:** 80% coverage, 10+ tests
+  
+- [ ] **BackupServer.Tests.ps1** (1 dzień)
+  - Backup creation tests
+  - Rotation logic tests
+  - **Target:** 80% coverage, 15+ tests
+  
+- [ ] **UpdateServer.Tests.ps1** (1 dzień)
+  - Update validation tests
+  - Backup before update tests
+  - **Target:** 80% coverage, 12+ tests
+  
+- [ ] **MonetizationSetup.Tests.ps1** (2 dni)
+  - VIP configuration tests
+  - Economy setup tests
+  - **Target:** 70% coverage, 25+ tests
+  
+- [ ] **ServerMonitoring.Tests.ps1** (1 dzień)
+  - Metrics collection tests
+  - Discord webhook tests
+  - **Target:** 75% coverage, 15+ tests
+  
+- [ ] **PlayerManagement.Tests.ps1** (1 dzień)
+  - Stats calculation tests
+  - Report generation tests
+  - **Target:** 75% coverage, 12+ tests
+
+**3. Integration Tests (3-4 dni, Priority: 🟡 High)**
+- [ ] Server lifecycle tests (setup → start → backup → update)
+- [ ] Backup & restore flow tests
+- [ ] Monetization integration tests
+- [ ] **Target:** Core flows covered, 15+ tests
+
+**4. CI/CD Pipeline (3-4 dni, Priority: 🔴 Critical)**
+- [ ] **GitHub Actions Workflows** (2 dni)
+  - .github/workflows/ci.yml
+  - .github/workflows/security.yml
+  - .github/workflows/test.yml
+  - **Acceptance:** Tests run on every PR
+  
+- [ ] **Automated Testing** (1 dzień)
+  - Test execution on push
+  - Coverage reports generation
+  - Failure notifications
+  - **Acceptance:** CI passes on main branch
+  
+- [ ] **Quality Gates** (1 dzień)
+  - Minimum 80% coverage required
+  - No failing tests allowed
+  - Security scan must pass
+  - **Acceptance:** PR merge blocked if fails
+
+**5. Security Audit (4-5 dni, Priority: 🔴 Critical)**
+- [ ] **CodeQL Setup & Scan** (1 dzień)
+  - CodeQL workflow configuration
+  - First scan execution
+  - Results analysis
+  - **Acceptance:** CodeQL runs successfully
+  
+- [ ] **Vulnerability Remediation** (2-3 dni)
+  - Fix all critical vulnerabilities
+  - Fix high-priority vulnerabilities
+  - Document medium/low issues
+  - **Acceptance:** 0 critical, 0 high vulnerabilities
+  
+- [ ] **Security Hardening** (1 dzień)
+  - Input validation improvements
+  - Secrets management documentation
+  - Security best practices enforcement
+  - **Acceptance:** Security checklist complete
+  
+- [ ] **Security Documentation** (1 dzień)
+  - SECURITY.md creation
+  - Vulnerability reporting process
+  - Security advisories setup
+  - **Acceptance:** Security policy published
+
+**6. Performance Benchmarking (2 dni, Priority: 🟢 Medium)**
+- [ ] Baseline performance metrics
+- [ ] Stress testing (100+ concurrent operations)
+- [ ] Memory leak detection
+- [ ] **Acceptance:** Performance benchmarks documented
+
+#### 🎯 Sprint 2 Goals:
+- ✅ **80%+ test coverage achieved**
+- ✅ **CI/CD pipeline operational**
+- ✅ **0 critical security vulnerabilities**
+- ✅ **Production deployment ready**
+
+#### ⚠️ Risks & Mitigation:
+| Risk | Impact | Probability | Mitigation |
+|------|--------|------------|------------|
+| Test coverage < 80% | High | Medium | Prioritize critical paths, extend sprint if needed |
+| Security vulnerabilities found | Critical | Medium | Allocate extra time for remediation |
+| CI/CD complexity | Medium | Low | Use GitHub Actions templates |
+| Performance issues | High | Low | Early performance testing |
+
+#### 📊 Success Metrics:
+- [ ] 100+ unit tests written and passing
+- [ ] 15+ integration tests passing
+- [ ] CI/CD running on all PRs
+- [ ] 0 critical + 0 high security issues
+- [ ] Code coverage ≥80%
+- [ ] All sprints passing in CI
+
+#### 🏆 MILESTONE: Production Ready!
+Po ukończeniu Sprint 2, projekt jest gotowy do:
+- ✅ Production deployment
+- ✅ Public release
+- ✅ Community adoption
+- ✅ Commercial use
+
+---
+
+### 🟢 Sprint 3: Optimization & Enhancement (PLATFORM MATURITY)
+**Priority:** 🟢 ŚREDNI  
+**Czas:** 3-4 tygodnie (21-28 dni roboczych)  
+**Team:** 1 developer + 0.5 DevOps  
+**Budget:** 10,000-15,000 PLN  
+**Dependencies:** Sprint 2 completed (production ready)  
+**Milestone:** **ENHANCED PLATFORM** 🚀
+
+#### 📋 Szczegółowe Zadania:
+
+**1. Performance Optimization (5-7 dni, Priority: 🟡 High)**
+- [ ] **Script Profiling** (2 dni)
+  - Identify bottlenecks
+  - Measure-Command analysis
+  - Memory usage profiling
+  - **Target:** 20% performance improvement
+  
+- [ ] **Code Optimization** (2-3 dni)
+  - Optimize loops and I/O
+  - Implement caching where appropriate
+  - Parallel execution dla independent tasks
+  - **Target:** 30% faster execution
+  
+- [ ] **JVM Tuning Guide** (1 dzień)
+  - Advanced JVM flags documentation
+  - Memory optimization strategies
+  - GC tuning recommendations
+  - **Deliverable:** PERFORMANCE_TUNING.md
+  
+- [ ] **Benchmarking & Documentation** (1 dzień)
+  - Before/after metrics
+  - Performance regression tests
+  - **Acceptance:** Documented improvements
+
+**2. Enhanced Error Recovery (4-5 dni, Priority: 🟡 High)**
+- [ ] **Retry Logic Implementation** (2 dni)
+  - Automatic retry dla failed operations
+  - Exponential backoff
+  - Configurable retry limits
+  - **Target:** 90% auto-recovery rate
+  
+- [ ] **Circuit Breaker Pattern** (1 dzień)
+  - Detect repeated failures
+  - Automatic circuit opening
+  - Recovery attempts
+  - **Target:** Prevent cascade failures
+  
+- [ ] **Graceful Degradation** (1-2 dni)
+  - Fallback mechanisms
+  - Partial functionality maintenance
+  - User notifications
+  - **Target:** Service continuity
+  
+- [ ] **State Recovery** (1 dzień)
+  - Operation state persistence
+  - Resume interrupted operations
+  - Rollback support
+  - **Target:** 0 data loss
+
+**3. Advanced Monitoring (6-8 dni, Priority: 🟡 High)**
+- [ ] **Enhanced Metrics Collection** (2 dni)
+  - Real-time metrics
+  - Historical data storage
+  - Trend analysis
+  - **Deliverable:** Enhanced ServerMonitoring.ps1
+  
+- [ ] **Alerting System** (2 dni)
+  - Email alerts (SMTP)
+  - SMS alerts (Twilio integration)
+  - Enhanced Discord alerts
+  - Slack integration (optional)
+  - **Target:** Multi-channel alerting
+  
+- [ ] **Dashboard Templates** (2 dni)
+  - Grafana dashboard JSON
+  - Prometheus configuration
+  - Custom HTML dashboard
+  - **Deliverable:** /dashboards/ directory
+  
+- [ ] **Predictive Analytics** (2 dni)
+  - Player growth predictions
+  - Revenue forecasting
+  - Capacity planning metrics
+  - **Deliverable:** Analytics reports
+
+**4. Community Building & Engagement (5-6 dni, Priority: 🟢 Medium)**
+- [ ] **Documentation Website** (3 dni)
+  - GitHub Pages setup
+  - Searchable documentation
+  - Interactive examples
+  - **URL:** hetwerk1943.github.io/Minecraft-Server-Automation
+  
+- [ ] **Community Forum** (1 dzień)
+  - GitHub Discussions organization
+  - Categories setup
+  - Moderation guidelines
+  - **Target:** Active community space
+  
+- [ ] **Content Creation** (2 dni)
+  - Blog posts (3-5)
+  - Video tutorials plan
+  - Case studies template
+  - **Target:** Marketing materials
+
+**5. Error Recovery Testing (2 dni, Priority: 🟢 Medium)**
+- [ ] Chaos engineering tests
+- [ ] Failure scenario validation
+- [ ] Recovery time measurement
+- [ ] **Target:** <5 min recovery time
+
+#### 🎯 Sprint 3 Goals:
+- ✅ 20-30% performance improvement
+- ✅ Automatic error recovery operational
+- ✅ Advanced monitoring with alerting
+- ✅ Documentation website live
+- ✅ Active community engagement
+
+#### ⚠️ Risks & Mitigation:
+| Risk | Impact | Probability | Mitigation |
+|------|--------|------------|------------|
+| Performance optimization complexity | Medium | Medium | Focus on high-impact optimizations first |
+| Community adoption slow | Low | Medium | Proactive outreach, quality content |
+| Monitoring overhead | Medium | Low | Optimize metrics collection |
+
+#### 📊 Success Metrics:
+- [ ] 20%+ performance improvement measured
+- [ ] <5 minute recovery time for failures
+- [ ] 5+ monitoring dashboards created
+- [ ] Documentation website with 100+ daily views
+- [ ] 50+ community members engaged
+
+---
+
+### 🔵 Sprint 4: Advanced Features (ENTERPRISE READY)
+**Priority:** 🔵 NISKI (Backlog)  
+**Czas:** Ongoing (2-3 miesiące)  
+**Team:** 1-2 developers  
+**Budget:** 30,000-50,000 PLN  
+**Dependencies:** Sprint 3 completed  
+**Status:** Future work - na żądanie
+
+#### 📋 Zaawansowane Funkcje:
+
+**1. Multi-Server Management (3-4 tygodnie)**
+- [ ] **BungeeCord/Velocity Integration** (1 tydzień)
+  - Proxy server setup automation
+  - Multi-server configuration
+  - Player routing
+  - **Target:** Network of 5+ servers
+  
+- [ ] **Centralized Management** (1 tydzień)
+  - Single control panel
+  - Shared configuration
+  - Cross-server commands
+  - **Deliverable:** NetworkManager.ps1
+  
+- [ ] **Shared Data Layer** (1 tydzień)
+  - MySQL/MariaDB setup
+  - Shared player data
+  - Cross-server economy
+  - **Target:** Seamless player experience
+  
+- [ ] **Load Balancing** (1 tydzień)
+  - Automatic server routing
+  - Capacity management
+  - Performance optimization
+  - **Target:** 500+ concurrent players
+
+**2. Web Dashboard (4-6 tygodni)**
+- [ ] **Backend API** (2 tygodnie)
+  - RESTful API w ASP.NET Core lub Node.js
+  - Authentication (JWT)
+  - Real-time data (WebSockets)
+  - **Tech:** ASP.NET Core / Express.js
+  
+- [ ] **Frontend Dashboard** (3 tygodnie)
+  - React/Vue.js dashboard
+  - Real-time monitoring
+  - Server control panel
+  - Mobile responsive
+  - **Tech:** React + TypeScript
+  
+- [ ] **Features** (1 tydzień)
+  - Player management
+  - Server control (start/stop/restart)
+  - Configuration editor
+  - Backup management
+  - Revenue analytics
+  - **Target:** Full web-based management
+
+**3. Plugin Marketplace (3-4 tygodnie)**
+- [ ] **Marketplace Backend** (2 tygodnie)
+  - Plugin repository
+  - Version management
+  - Dependency resolution
+  - Auto-update system
+  - **Deliverable:** PluginMarketplace.ps1
+  
+- [ ] **Plugin Management** (1 tydzień)
+  - One-click installation
+  - Automatic updates
+  - Compatibility checking
+  - Rollback support
+  - **Target:** 50+ curated plugins
+  
+- [ ] **Integration** (1 tydzień)
+  - SpigotMC API integration
+  - Bukkit integration
+  - Custom plugin hosting
+  - **Target:** Seamless plugin management
+
+**4. Advanced Analytics (2-3 tygodnie)**
+- [ ] **Machine Learning Models** (2 tygodnie)
+  - Player churn prediction
+  - Revenue optimization
+  - Capacity forecasting
+  - Anomaly detection
+  - **Tech:** Python + scikit-learn
+  
+- [ ] **Business Intelligence** (1 tydzień)
+  - Advanced reports
+  - Custom dashboards
+  - Data export (CSV, Excel)
+  - **Deliverable:** BI templates
+
+#### 🎯 Sprint 4 Goals:
+- ✅ Multi-server network support
+- ✅ Web dashboard operational
+- ✅ Plugin marketplace with 50+ plugins
+- ✅ ML-powered analytics
+
+#### 💡 Optional Enhancements:
+- Mobile app (iOS/Android)
+- Voice chat integration (Discord/Mumble)
+- Custom launcher
+- Modpack support
+- Docker containerization
+- Kubernetes orchestration
+
+---
+
+## 🎯 Consolidated Timeline
+
+```
+Miesiąc 1:
+├─ Tydzień 1-2:  Sprint 1 (Validation & Infrastructure)
+└─ Tydzień 3-5:  Sprint 2 (Testing & Security) → PRODUCTION READY
+
+Miesiąc 2:
+├─ Tydzień 6-8:  Sprint 3 (Optimization) → ENHANCED PLATFORM
+└─ Tydzień 9+:   Sprint 4 rozpoczęcie (opcjonalnie)
+
+Miesiąc 3-5:
+└─ Sprint 4 kontynuacja (Advanced Features) → ENTERPRISE READY
+```
+
+## 📊 Budget Summary
+
+| Sprint | Czas | Team | Koszt |
+|--------|------|------|-------|
+| Sprint 0 (✅) | 1 dzień | 1 dev | 0 PLN (done) |
+| Sprint 1 | 1-2 tyg | 1 dev + 0.5 QA | 5-7k PLN |
+| Sprint 2 | 2-3 tyg | 1 dev + 1 QA + 0.5 sec | 12-18k PLN |
+| Sprint 3 | 3-4 tyg | 1 dev + 0.5 DevOps | 10-15k PLN |
+| **MVP Total** | **6-9 tyg** | **~2 FTE** | **27-40k PLN** |
+| Sprint 4 | 2-3 msc | 1-2 dev | 30-50k PLN |
+| **Enterprise** | **4-6 msc** | **~2 FTE** | **57-90k PLN** |
+
+## 🎖️ Key Milestones
+
+1. **✅ Documentation Complete** (Sprint 0) - ACHIEVED 2025-12-09
+2. **🎯 Production Ready** (Sprint 2 end) - Target: Week 5
+3. **🚀 Enhanced Platform** (Sprint 3 end) - Target: Week 9
+4. **🏢 Enterprise Ready** (Sprint 4 end) - Target: Month 6
+
+## 📈 Success Indicators
+
+### After Sprint 1:
+- Setup time: <30 minutes (from 4-8 hours)
+- 0 setup failures due to env issues
+- Community channels active
+
+### After Sprint 2 (Production Ready):
+- Code coverage: ≥80%
+- Security score: 9/10
+- CI/CD: 100% automated
+- Ready for public release
+
+### After Sprint 3 (Enhanced Platform):
+- Performance: +20-30% improvement
+- Recovery time: <5 minutes
+- Community: 100+ active members
+- Documentation: 500+ monthly visitors
+
+### After Sprint 4 (Enterprise Ready):
+- Multi-server: 5+ servers supported
+- Web dashboard: 1000+ monthly users
+- Plugin marketplace: 50+ plugins
+- Revenue: 10,000+ PLN/month potential
 
 ---
 
