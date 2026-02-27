@@ -9,13 +9,7 @@ param(
     [int]$TopPlayersCount = 10
 )
 
-function Write-ColorMessage {
-    param(
-        [string]$Message,
-        [string]$Color = "White"
-    )
-    Write-Host $Message -ForegroundColor $Color
-}
+Import-Module (Join-Path $PSScriptRoot "lib\SharedFunctions.psm1") -Force
 
 function Get-PlayerDatabase {
     param([string]$ServerPath)

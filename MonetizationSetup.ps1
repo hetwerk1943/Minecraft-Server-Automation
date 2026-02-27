@@ -10,13 +10,7 @@ param(
     [string]$CurrencyName = "Monety"
 )
 
-function Write-ColorMessage {
-    param(
-        [string]$Message,
-        [string]$Color = "White"
-    )
-    Write-Host $Message -ForegroundColor $Color
-}
+Import-Module (Join-Path $PSScriptRoot "lib\SharedFunctions.psm1") -Force
 
 function New-PluginsDirectory {
     param([string]$ServerPath)
@@ -96,9 +90,15 @@ vip-tiers:
     duration-days: 90
     price: 120.00
     permissions:
-      - 'essentials.*'
-      - 'minecraft.command.*'
-      - 'worldedit.*'
+      - 'essentials.kit.platinum'
+      - 'essentials.back'
+      - 'essentials.tpa'
+      - 'essentials.fly'
+      - 'essentials.speed'
+      - 'essentials.god'
+      - 'minecraft.command.fly'
+      - 'worldedit.use'
+      - 'worldedit.wand'
     commands:
       - 'give {player} diamond_block 10'
       - 'give {player} emerald_block 5'
@@ -392,16 +392,17 @@ donation-system:
       prefix: '&6[Legend]&r'
       permissions:
         - 'donor.legend'
-        - '*'
+        - 'essentials.fly'
+        - 'essentials.god'
   
   # Ustawienia
   settings:
     broadcast-purchases: true
     thank-you-message: true
     email-receipts: true
-    # UWAGA: Webhook URL jest tajny! Nie commituj prawdziwego URL do repozytorium
-    # Przechowuj webhook URL w zmiennych środowiskowych lub bezpiecznym magazynie
-    webhook-url: 'https://discord.com/api/webhooks/YOUR_WEBHOOK'
+    # SECURITY: Do NOT commit real webhook URLs to version control.
+    # Set the DISCORD_WEBHOOK_URL environment variable and reference it at runtime.
+    webhook-url: ''
 "@ | Out-File -FilePath $configFile -Encoding UTF8
         
         Write-ColorMessage "Utworzono konfigurację donacji: $configFile" "Green"

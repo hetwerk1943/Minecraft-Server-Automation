@@ -11,13 +11,7 @@ param(
     [switch]$GenerateReports
 )
 
-function Write-ColorMessage {
-    param(
-        [string]$Message,
-        [string]$Color = "White"
-    )
-    Write-Host $Message -ForegroundColor $Color
-}
+Import-Module (Join-Path $PSScriptRoot "lib\SharedFunctions.psm1") -Force
 
 function Get-ServerMetrics {
     param([string]$ServerPath)
@@ -73,7 +67,7 @@ function Get-PlayerActivity {
     param([string]$ServerPath)
     
     try {
-        $logFile = Join-Path $ServerPath "logs\latest.log"
+        $logFile = Join-Path $ServerPath (Join-Path "logs" "latest.log")
         if (-not (Test-Path $logFile)) {
             return @{
                 CurrentPlayers = @()

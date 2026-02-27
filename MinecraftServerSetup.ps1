@@ -9,28 +9,7 @@ param(
     [int]$MaxMemory = 2048
 )
 
-function Write-ColorMessage {
-    param(
-        [string]$Message,
-        [string]$Color = "White"
-    )
-    Write-Host $Message -ForegroundColor $Color
-}
-
-function Test-JavaInstallation {
-    try {
-        $javaVersion = java -version 2>&1
-        if ($LASTEXITCODE -eq 0) {
-            Write-ColorMessage "Java jest zainstalowana: $($javaVersion[0])" "Green"
-            return $true
-        }
-    }
-    catch {
-        Write-ColorMessage "Java nie została znaleziona. Zainstaluj Javę przed kontynuowaniem." "Red"
-        return $false
-    }
-    return $false
-}
+Import-Module (Join-Path $PSScriptRoot "lib\SharedFunctions.psm1") -Force
 
 function New-ServerDirectory {
     param([string]$Path)
@@ -84,7 +63,7 @@ motd=Minecraft Server - Automated Setup
 difficulty=normal
 gamemode=survival
 pvp=true
-enable-command-block=true
+enable-command-block=false
 "@ | Out-File -FilePath $propertiesPath -Encoding ASCII
         Write-ColorMessage "Utworzono plik server.properties" "Green"
         

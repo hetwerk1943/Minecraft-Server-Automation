@@ -9,13 +9,7 @@ param(
     [switch]$NoGUI
 )
 
-function Write-ColorMessage {
-    param(
-        [string]$Message,
-        [string]$Color = "White"
-    )
-    Write-Host $Message -ForegroundColor $Color
-}
+Import-Module (Join-Path $PSScriptRoot "lib\SharedFunctions.psm1") -Force
 
 function Test-ServerFiles {
     param([string]$Path)
@@ -33,19 +27,6 @@ function Test-ServerFiles {
     }
     
     return $true
-}
-
-function Test-JavaInstallation {
-    try {
-        $javaVersion = java -version 2>&1
-        if ($LASTEXITCODE -eq 0) {
-            return $true
-        }
-    }
-    catch {
-        return $false
-    }
-    return $false
 }
 
 function Start-MinecraftServer {
