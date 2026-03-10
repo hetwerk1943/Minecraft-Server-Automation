@@ -16,9 +16,18 @@ ops.json
 usercache.json
 whitelist.json
 
+# Player data
+playerdata.json
+playerdata/
+stats/
+
 # Logs
 logs/
+Logs/
 *.log
+
+# Structured log output from automation scripts
+minecraft-automation_*.log
 
 # World Data
 world/
@@ -48,3 +57,6 @@ desktop.ini
 # Temporary Files
 *.tmp
 *.temp
+
+# Test results
+test-results.xml
