@@ -4,7 +4,7 @@ function Get-ServerHealthCheck {
         Performs a lightweight health check on the Minecraft server using multiple heuristics.
     .DESCRIPTION
         Uses three heuristics (tried in order, any positive = online):
-          1. PID file written by Start-MinecraftServer (server.pid in ServerPath)
+          1. PID file (server.pid in ServerPath), if present
           2. TCP port connectivity check on ServerPort
           3. Log freshness check (logs/latest.log modified within LogFreshnessMinutes)
     .PARAMETER ServerPath
