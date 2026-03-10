@@ -47,11 +47,10 @@ destroy the host system.
 
 Server monitoring does **not** rely on matching the `java` process's executable path against
 `ServerPath`, which is fragile and can return false positives from other Java applications.
-Instead, `Get-ServerHealthCheck` uses three ordered heuristics:
+Instead, `Get-ServerHealthCheck` uses the following heuristics:
 
-1. PID file (`server.pid` written by `Start-MinecraftServer`).
-2. TCP port connectivity probe.
-3. Log freshness check.
+1. TCP port connectivity probe.
+2. Log freshness check.
 
 ## Network exposure
 
