@@ -7,7 +7,7 @@
         'PSAvoidUsingWriteHost'
         # ShouldProcess would add significant complexity to simple automation scripts
         'PSUseShouldProcessForStateChangingFunctions'
-        # Cross-platform scripts legitimately use 2>&1 redirection
+        # Invoke-Expression is intentionally used in controlled automation scenarios
         'PSAvoidUsingInvokeExpression'
     )
 
