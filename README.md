@@ -32,8 +32,8 @@ cd Minecraft-Server-Automation
 | `scripts/PlayerManagement.ps1` | Player statistics and activity reports |
 | `scripts/MonetizationSetup.ps1` | Generates monetization configuration templates |
 
-> **Note:** Root-level scripts (`BackupServer.ps1`, etc.) are **deprecated** wrappers.
-> Use the `scripts/` versions going forward.
+> **Note:** Root-level scripts (`BackupServer.ps1`, etc.) are **deprecated** legacy scripts kept for backward compatibility.
+> Prefer the `scripts/` versions going forward to avoid diverging behavior.
 
 ## Module (advanced usage)
 
