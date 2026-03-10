@@ -1,6 +1,10 @@
 # UpdateServer.ps1
 # Skrypt do aktualizacji serwera Minecraft
 # © 2025 Dominik Opałka
+#
+# DEPRECATED: This root script is a compatibility wrapper.
+# Use scripts/UpdateServer.ps1 or Import-Module + Update-MinecraftServer instead.
+# This wrapper will be removed in a future release.
 
 param(
     [string]$ServerPath = ".\MinecraftServer",
@@ -9,7 +13,15 @@ param(
     [switch]$SkipBackup
 )
 
-Import-Module (Join-Path $PSScriptRoot "lib\SharedFunctions.psm1") -Force
+Write-Warning "UpdateServer.ps1 at the repository root is deprecated. Use 'scripts/UpdateServer.ps1' instead."
+
+function Write-ColorMessage {
+    param(
+        [string]$Message,
+        [string]$Color = "White"
+    )
+    Write-Host $Message -ForegroundColor $Color
+}
 
 function Backup-ServerBeforeUpdate {
     param(

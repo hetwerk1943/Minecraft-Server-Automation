@@ -1,6 +1,10 @@
 # MonetizationSetup.ps1
 # Skrypt do konfiguracji systemu monetyzacji serwera Minecraft
 # © 2025 Dominik Opałka
+#
+# DEPRECATED: This root script is a compatibility wrapper.
+# Use scripts/MonetizationSetup.ps1 instead.
+# This wrapper will be removed in a future release.
 
 param(
     [string]$ServerPath = ".\MinecraftServer",
@@ -10,7 +14,15 @@ param(
     [string]$CurrencyName = "Monety"
 )
 
-Import-Module (Join-Path $PSScriptRoot "lib\SharedFunctions.psm1") -Force
+Write-Warning "MonetizationSetup.ps1 at the repository root is deprecated. Use 'scripts/MonetizationSetup.ps1' instead."
+
+function Write-ColorMessage {
+    param(
+        [string]$Message,
+        [string]$Color = "White"
+    )
+    Write-Host $Message -ForegroundColor $Color
+}
 
 function New-PluginsDirectory {
     param([string]$ServerPath)

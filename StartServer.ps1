@@ -1,6 +1,10 @@
 # StartServer.ps1
 # Skrypt do uruchamiania serwera Minecraft
 # © 2025 Dominik Opałka
+#
+# DEPRECATED: This root script is a compatibility wrapper.
+# Use scripts/StartServer.ps1 or Import-Module + Start-MinecraftServer instead.
+# This wrapper will be removed in a future release.
 
 param(
     [string]$ServerPath = ".\MinecraftServer",
@@ -9,7 +13,15 @@ param(
     [switch]$NoGUI
 )
 
-Import-Module (Join-Path $PSScriptRoot "lib\SharedFunctions.psm1") -Force
+Write-Warning "StartServer.ps1 at the repository root is deprecated. Use 'scripts/StartServer.ps1' instead."
+
+function Write-ColorMessage {
+    param(
+        [string]$Message,
+        [string]$Color = "White"
+    )
+    Write-Host $Message -ForegroundColor $Color
+}
 
 function Test-ServerFiles {
     param([string]$Path)

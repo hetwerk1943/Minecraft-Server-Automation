@@ -1,6 +1,10 @@
 # PlayerManagement.ps1
 # Skrypt do zarządzania graczami i analityki
 # © 2025 Dominik Opałka
+#
+# DEPRECATED: This root script is a compatibility wrapper.
+# Use scripts/PlayerManagement.ps1 instead.
+# This wrapper will be removed in a future release.
 
 param(
     [string]$ServerPath = ".\MinecraftServer",
@@ -9,7 +13,15 @@ param(
     [int]$TopPlayersCount = 10
 )
 
-Import-Module (Join-Path $PSScriptRoot "lib\SharedFunctions.psm1") -Force
+Write-Warning "PlayerManagement.ps1 at the repository root is deprecated. Use 'scripts/PlayerManagement.ps1' instead."
+
+function Write-ColorMessage {
+    param(
+        [string]$Message,
+        [string]$Color = "White"
+    )
+    Write-Host $Message -ForegroundColor $Color
+}
 
 function Get-PlayerDatabase {
     param([string]$ServerPath)

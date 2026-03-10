@@ -1,6 +1,10 @@
 # MinecraftServerSetup.ps1
 # Skrypt do konfiguracji i instalacji serwera Minecraft
 # © 2025 Dominik Opałka
+#
+# DEPRECATED: This root script is a compatibility wrapper.
+# Use scripts/MinecraftServerSetup.ps1 or Import-Module + Install-MinecraftServer instead.
+# This wrapper will be removed in a future release.
 
 param(
     [string]$ServerPath = ".\MinecraftServer",
@@ -9,7 +13,30 @@ param(
     [int]$MaxMemory = 2048
 )
 
-Import-Module (Join-Path $PSScriptRoot "lib\SharedFunctions.psm1") -Force
+Write-Warning "MinecraftServerSetup.ps1 at the repository root is deprecated. Use 'scripts/MinecraftServerSetup.ps1' instead."
+
+function Write-ColorMessage {
+    param(
+        [string]$Message,
+        [string]$Color = "White"
+    )
+    Write-Host $Message -ForegroundColor $Color
+}
+
+function Test-JavaInstallation {
+    try {
+        $javaVersion = java -version 2>&1
+        if ($LASTEXITCODE -eq 0) {
+            Write-ColorMessage "Java jest zainstalowana: $($javaVersion[0])" "Green"
+            return $true
+        }
+    }
+    catch {
+        Write-ColorMessage "Java nie została znaleziona. Zainstaluj Javę przed kontynuowaniem." "Red"
+        return $false
+    }
+    return $false
+}
 
 function New-ServerDirectory {
     param([string]$Path)
