@@ -79,7 +79,7 @@ function Get-PlayerActivity {
     param([string]$ServerPath)
     
     try {
-        $logFile = Join-Path $ServerPath "logs\latest.log"
+        $logFile = Join-Path $ServerPath (Join-Path "logs" "latest.log")
         if (-not (Test-Path $logFile)) {
             return @{
                 CurrentPlayers = @()

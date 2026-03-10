@@ -90,7 +90,7 @@ motd=Minecraft Server - Automated Setup
 difficulty=normal
 gamemode=survival
 pvp=true
-enable-command-block=true
+enable-command-block=false
 "@ | Out-File -FilePath $propertiesPath -Encoding ASCII
         Write-ColorMessage "Utworzono plik server.properties" "Green"
         
