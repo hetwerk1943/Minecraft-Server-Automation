@@ -1,6 +1,10 @@
 # ServerMonitoring.ps1
 # Skrypt do monitorowania i analityki serwera Minecraft
 # © 2025 Dominik Opałka
+#
+# DEPRECATED: This root script is a compatibility wrapper.
+# Use scripts/ServerMonitoring.ps1 or Import-Module + Get-ServerHealthCheck instead.
+# This wrapper will be removed in a future release.
 
 param(
     [string]$ServerPath = ".\MinecraftServer",
@@ -10,6 +14,8 @@ param(
     [string]$DiscordWebhookUrl = "",
     [switch]$GenerateReports
 )
+
+Write-Warning "ServerMonitoring.ps1 at the repository root is deprecated. Use 'scripts/ServerMonitoring.ps1' instead."
 
 function Write-ColorMessage {
     param(

@@ -1,12 +1,18 @@
 # BackupServer.ps1
 # Skrypt do tworzenia kopii zapasowych serwera Minecraft
 # © 2025 Dominik Opałka
+#
+# DEPRECATED: This root script is a compatibility wrapper.
+# Use scripts/BackupServer.ps1 or Import-Module + Invoke-ServerBackup instead.
+# This wrapper will be removed in a future release.
 
 param(
     [string]$ServerPath = ".\MinecraftServer",
     [string]$BackupPath = ".\Backups",
     [int]$MaxBackups = 10
 )
+
+Write-Warning "BackupServer.ps1 at the repository root is deprecated. Use 'scripts/BackupServer.ps1' instead."
 
 function Write-ColorMessage {
     param(
