@@ -1,0 +1,839 @@
+*** Begin Patch
+*** Add File: configs/categories.json
++{
++  "agent_name": "Ultimate Super-Agent",
++  "version": "1.0",
++  "description": "Hierarchiczny super-agent AI do analizy, automatyzacji, kreatywności i zarządzania projektami.",
++  "categories": [
++    {"id":1,"name":"Analiza kodu i repozytoriów","functions":[{"id":1,"name":"Analiza struktury repozytorium"},{"id":2,"name":"Wykrywanie anty-wzorców"},{"id":3,"name":"Analiza zależności modułów"}]},
++    {"id":2,"name":"Generowanie kodu i zmian","functions":[{"id":21,"name":"Generowanie nowych funkcji"},{"id":22,"name":"Refaktoryzacja kodu"},{"id":23,"name":"Generowanie testów jednostkowych"}]},
++    {"id":3,"name":"Testowanie i jakość","functions":[{"id":41,"name":"Analiza pokrycia testów"},{"id":42,"name":"Wykrywanie brakujących przypadków"},{"id":43,"name":"Testy UX i wydajnościowe"}]},
++    {"id":4,"name":"Integracje i DevOps","functions":[{"id":61,"name":"Integracja z GitHub"},{"id":62,"name":"Integracja z Jira"},{"id":63,"name":"Monitorowanie pipeline'ów"}]},
++    {"id":5,"name":"Autonomia i planowanie","functions":[{"id":81,"name":"Planowanie zadań"},{"id":82,"name":"Reasoning wieloetapowy"},{"id":83,"name":"Autonomia w iteracjach"}]},
++    {"id":6,"name":"Funkcje produktowe i analityczne","functions":[{"id":101,"name":"Analiza zachowań użytkowników"},{"id":102,"name":"Wykrywanie problemów w lejku konwersji"},{"id":103,"name":"Proponowanie usprawnień UX"}]},
++    {"id":7,"name":"Funkcje kreatywne","functions":[{"id":141,"name":"Generowanie nazw funkcji"},{"id":142,"name":"Tworzenie opisów funkcji"},{"id":143,"name":"Tworzenie treści marketingowych"}]},
++    {"id":8,"name":"Funkcje biznesowe","functions":[{"id":161,"name":"Analiza kosztów projektu"},{"id":162,"name":"Analiza ROI funkcji"},{"id":163,"name":"Tworzenie analiz SWOT"}]},
++    {"id":9,"name":"Automatyzacja procesów","functions":[{"id":181,"name":"Automatyzacja powtarzalnych zadań"},{"id":182,"name":"Automatyczne generowanie raportów"},{"id":183,"name":"Automatyczne monitorowanie pipeline’ów"}]},
++    {"id":10,"name":"Funkcje dla zespołów i dużych organizacji","functions":[{"id":201,"name":"Analiza stylów pracy członków zespołu"},{"id":202,"name":"Dopasowywanie zadań do kompetencji"},{"id":221,"name":"Zarządzanie wieloma projektami"}]},
++    {"id":11,"name":"Polityki i zgodności","functions":[{"id":241,"name":"Analiza zgodności z RODO/GDPR"},{"id":242,"name":"Analiza zgodności z SOC2"},{"id":243,"name":"Analiza zgodności z ISO 27001"}]},
++    {"id":12,"name":"AI-R&D i modelowanie","functions":[{"id":261,"name":"Analiza jakości danych treningowych"},{"id":262,"name":"Proponowanie ulepszeń datasetów"},{"id":263,"name":"Tworzenie pipeline’ów danych"}]},
++    {"id":13,"name":"Funkcje kreatywno-produktywne PRO","functions":[{"id":281,"name":"Tworzenie pełnych opisów funkcji"},{"id":282,"name":"Tworzenie PRD"},{"id":283,"name":"Tworzenie specyfikacji technicznych"}]},
++    {"id":14,"name":"Automatyzacja organizacyjna","functions":[{"id":291,"name":"Automatyczne tworzenie harmonogramów projektów"},{"id":292,"name":"Automatyczne przypisywanie zadań do zespołów"},{"id":293,"name":"Automatyczne wykrywanie opóźnień"}]}
++  ]
++}
++
+*** End Patch
+*** Begin Patch
+*** Add File: src/super_agent/__init__.py
++"""Ultimate Super-Agent core package"""
++__all__ = ["generator","validator","io","utils"]
++
+*** End Patch
+*** Begin Patch
+*** Add File: src/super_agent/io.py
++from pathlib import Path
++import json
++from typing import Any
++
++def load_json(path: str) -> Any:
++    p = Path(path)
++    if not p.exists():
++        raise FileNotFoundError(f"{path} not found")
++    return json.loads(p.read_text(encoding="utf-8"))
++
++def write_json(obj: Any, path: str) -> None:
++    p = Path(path)
++    p.parent.mkdir(parents=True, exist_ok=True)
++    tmp = p.with_suffix(".tmp")
++    tmp.write_text(json.dumps(obj, ensure_ascii=False, indent=2), encoding="utf-8")
++    tmp.replace(p)
++
+*** End Patch
+*** Begin Patch
+*** Add File: src/super_agent/utils.py
++from typing import Dict, Any
++
++def normalize_entry(entry: Dict[str, Any]) -> Dict[str, Any]:
++    """
++    Normalize keys from possible English keys to canonical Polish keys.
++    """
++    mapping = {
++        "name": "nazwa",
++        "title": "nazwa",
++        "description": "opis",
++        "desc": "opis"
++    }
++    out = {}
++    for k, v in entry.items():
++        k2 = mapping.get(k, k)
++        out[k2] = v
++    return out
++
+*** End Patch
+*** Begin Patch
+*** Add File: src/super_agent/generator.py
++from __future__ import annotations
++from typing import Dict, Any, List, Tuple
++from datetime import datetime
++from .io import load_json, write_json
++from .utils import normalize_entry
++
++DEFAULT_CATEGORIES_PATH = "configs/categories.json"
++
++def load_categories(path: str = DEFAULT_CATEGORIES_PATH) -> List[Dict[str, Any]]:
++    data = load_json(path)
++    return data.get("categories", [])
++
++def allocate_ranges(total: int, n_buckets: int) -> List[Tuple[int,int]]:
++    base = total // n_buckets
++    rem = total % n_buckets
++    ranges = []
++    cur = 1
++    for i in range(n_buckets):
++        size = base + (1 if i < rem else 0)
++        ranges.append((cur, cur + size - 1))
++        cur += size
++    return ranges
++
++def build_hierarchy_from_categories(categories: List[Dict[str,Any]], total_ids: int = 10000):
++    n = len(categories)
++    cat_ranges = allocate_ranges(total_ids, n)
++    buckets = []
++    for cat, (start, end) in zip(categories, cat_ranges):
++        subcats = cat.get("functions", []) or ["default"]
++        count = end - start + 1
++        per = count // len(subcats)
++        rem = count % len(subcats)
++        cur = start
++        for i, sub in enumerate(subcats):
++            size = per + (1 if i < rem else 0)
++            buckets.append({
++                "category": cat.get("name"),
++                "subcategory": sub,
++                "start": cur,
++                "end": cur + size - 1
++            })
++            cur += size
++    buckets.sort(key=lambda b: b["start"])
++    return buckets
++
++def find_bucket(buckets: List[Dict[str,Any]], idx: int):
++    for b in buckets:
++        if b["start"] <= idx <= b["end"]:
++            return b
++    return None
++
++def generate_from_partials(partials: Dict[int, Dict[str,Any]], categories_path: str = DEFAULT_CATEGORIES_PATH, total_ids: int = 10000, preview_limit: int = None) -> Dict[str,Any]:
++    categories = load_categories(categories_path)
++    buckets = build_hierarchy_from_categories(categories, total_ids=total_ids)
++    super_agent = {}
++    for b in buckets:
++        super_agent.setdefault(b["category"], {}).setdefault(b["subcategory"], [])
++
++    produced = 0
++    for i in range(1, total_ids + 1):
++        if preview_limit is not None and produced >= preview_limit:
++            break
++        if i in partials:
++            e = normalize_entry(partials[i])
++            e["id"] = int(i)
++            b = find_bucket(buckets, i)
++            e.setdefault("kategoria", b["category"] if b else "Unassigned")
++            e.setdefault("podkategoria", b["subcategory"] if b else "Unassigned")
++            super_agent[e["kategoria"]][e["podkategoria"]].append(e)
++            produced += 1
++            continue
++        b = find_bucket(buckets, i)
++        if b:
++            local_idx = i - b["start"] + 1
++            name = f"{b['subcategory']} — funkcja {local_idx}"
++            desc = f"{i}: {b['subcategory']} — automatyczna funkcja wygenerowana dla kategorii {b['category']}."
++            entry = {
++                "id": i,
++                "nazwa": name,
++                "opis": desc,
++                "kategoria": b["category"],
++                "podkategoria": b["subcategory"]
++            }
++            super_agent[b["category"]][b["subcategory"]].append(entry)
++        else:
++            entry = {"id": i, "nazwa": f"Funkcja {i}", "opis": "", "kategoria": "Unassigned", "podkategoria": "Unassigned"}
++            super_agent.setdefault("Unassigned", {}).setdefault("default", []).append(entry)
++        produced += 1
++
++    meta = {
++        "agent_name": "Ultimate Super-Agent",
++        "version": "1.0",
++        "description": "Hierarchiczny super-agent AI generowany programowo.",
++        "generated_at": datetime.utcnow().isoformat() + "Z",
++        "total_functions": produced
++    }
++    return {"meta": meta, "super_agent": super_agent}
++
++def generate_and_write(output_path: str, partials_path: str = None, categories_path: str = DEFAULT_CATEGORIES_PATH, total_ids: int = 10000, preview_limit: int = None):
++    partials = {}
++    if partials_path:
++        try:
++            raw = load_json(partials_path)
++            def traverse(o):
++                if isinstance(o, dict) and "id" in o:
++                    try:
++                        partials[int(o["id"])] = o
++                    except:
++                        pass
++                elif isinstance(o, dict):
++                    for v in o.values(): traverse(v)
++                elif isinstance(o, list):
++                    for el in o: traverse(el)
++            traverse(raw)
++        except Exception as e:
++            raise RuntimeError(f"Failed to load partials: {e}")
++    result = generate_from_partials(partials, categories_path=categories_path, total_ids=total_ids, preview_limit=preview_limit)
++    write_json(result, output_path)
++    return result
++
+*** End Patch
+*** Begin Patch
+*** Add File: src/super_agent/schema_stub.py
++# Minimal JSON schema stub for quick validation. For full validation use configs/categories.json-based schema
++SCHEMA_STUB = {
++  "type": "object",
++  "required": ["meta", "super_agent"],
++  "properties": {
++    "meta": {"type": "object"},
++    "super_agent": {"type": "object"}
++  }
++}
++
+*** End Patch
+*** Begin Patch
+*** Add File: src/super_agent/validator.py
++from typing import Dict, Any, List
++from jsonschema import validate, ValidationError
++from .schema_stub import SCHEMA_STUB
++
++def detect_duplicate_ids(data: Dict[str, Any]) -> List[int]:
++    seen = set()
++    dup = []
++    for cat, subs in data.get("super_agent", {}).items():
++        for sub, items in subs.items():
++            for it in items:
++                i = it.get("id")
++                if i in seen:
++                    dup.append(i)
++                else:
++                    seen.add(i)
++    return dup
++
++def detect_missing_ids(data: Dict[str, Any], start: int = 1, end: int = 10000) -> List[int]:
++    seen = set()
++    for cat, subs in data.get("super_agent", {}).items():
++        for sub, items in subs.items():
++            for it in items:
++                seen.add(it.get("id"))
++    missing = [i for i in range(start, end + 1) if i not in seen]
++    return missing
++
++def validate_schema_minimal(data: Dict[str, Any]) -> List[str]:
++    errors = []
++    try:
++        validate(instance=data, schema=SCHEMA_STUB)
++    except ValidationError as e:
++        errors.append(str(e))
++    return errors
++
+*** End Patch
+*** Begin Patch
+*** Add File: scripts/generate_super_agent.py
++#!/usr/bin/env python3
++import argparse
++from src.super_agent.generator import generate_and_write
++
++def main():
++    parser = argparse.ArgumentParser()
++    parser.add_argument("--partial", default="częściowe/partial.json", help="Path to partials JSON")
++    parser.add_argument("--categories", default="configs/categories.json", help="Categories config path")
++    parser.add_argument("--output", default="artefakty/super-agent-10000.json", help="Output path")
++    parser.add_argument("--preview", type=int, default=None, help="Preview record count")
++    parser.add_argument("--total", type=int, default=10000, help="Total number of functions to generate")
++    args = parser.parse_args()
++
++    generate_and_write(output_path=args.output, partials_path=args.partial, categories_path=args.categories, total_ids=args.total, preview_limit=args.preview)
++    print("Generated:", args.output)
++
++if __name__ == "__main__":
++    main()
++
+*** End Patch
+*** Begin Patch
+*** Add File: scripts/validate_super_agent.py
++#!/usr/bin/env python3
++import argparse
++from src.super_agent.io import load_json
++from src.super_agent.validator import detect_duplicate_ids, detect_missing_ids, validate_schema_minimal
++
++def main():
++    parser = argparse.ArgumentParser()
++    parser.add_argument("--artifact", default="artefakty/super-agent-10000.json", help="Path to artifact JSON")
++    args = parser.parse_args()
++
++    data = load_json(args.artifact)
++    dups = detect_duplicate_ids(data)
++    missing = detect_missing_ids(data)
++    schema_errs = validate_schema_minimal(data)
++
++    print("Duplicate IDs (sample 20):", dups[:20])
++    print("Missing IDs (sample 20):", missing[:20])
++    print("Schema errors (if any):", schema_errs)
++    print("Total groups:", len(data.get("super_agent", {})))
++
++if __name__ == "__main__":
++    main()
++
+*** End Patch
+*** Begin Patch
+*** Add File: src/api/models.py
++from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Text, func
++from sqlalchemy.ext.declarative import declarative_base
++
++Base = declarative_base()
++
++class Tenant(Base):
++    __tablename__ = "tenants"
++    id = Column(Integer, primary_key=True)
++    name = Column(String(200), unique=True, nullable=False)
++
++class User(Base):
++    __tablename__ = "users"
++    id = Column(Integer, primary_key=True)
++    email = Column(String(200), unique=True, nullable=False)
++    hashed_password = Column(String(500), nullable=False)
++    tenant_id = Column(Integer, ForeignKey("tenants.id"), nullable=False)
++
++class Job(Base):
++    __tablename__ = "jobs"
++    id = Column(String(64), primary_key=True)
++    tenant_id = Column(Integer, ForeignKey("tenants.id"), nullable=True)
++    status = Column(String(50), nullable=False, default="pending")
++    artifact_path = Column(String(1000), nullable=True)
++    artifact_s3_key = Column(String(1000), nullable=True)
++    error = Column(Text, nullable=True)
++    created_at = Column(DateTime(timezone=True), server_default=func.now())
++    updated_at = Column(DateTime(timezone=True), onupdate=func.now())
++
++class Artifact(Base):
++    __tablename__ = "artifacts"
++    id = Column(Integer, primary_key=True, autoincrement=True)
++    tenant_id = Column(Integer, ForeignKey("tenants.id"), nullable=True)
++    job_id = Column(String(64), nullable=True)
++    s3_key = Column(String(1000), nullable=False)
++    storage_url = Column(String(1000), nullable=True)
++    version = Column(String(50), nullable=True)
++    created_at = Column(DateTime(timezone=True), server_default=func.now())
++
+*** End Patch
+*** Begin Patch
+*** Add File: src/worker/celery_app.py
++import os
++from celery import Celery
++
++broker = os.getenv("REDIS_URL", "redis://redis:6379/0")
++backend = os.getenv("CELERY_RESULT_BACKEND", broker)
++
++cel = Celery("ultra_agent_worker", broker=broker, backend=backend)
++cel.conf.update(
++    task_serializer="json",
++    result_serializer="json",
++    accept_content=["json"],
++    enable_utc=True,
++    timezone="UTC",
++)
++
+*** End Patch
+*** Begin Patch
+*** Add File: src/worker/db.py
++import os
++from sqlalchemy import create_engine
++from sqlalchemy.orm import sessionmaker
++from src.api.models import Base
++
++DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://postgres:postgres@db:5432/ultra_agent")
++
++engine = create_engine(DATABASE_URL, pool_pre_ping=True)
++SessionLocal = sessionmaker(bind=engine)
++
++def init_db():
++    Base.metadata.create_all(bind=engine)
++
+*** End Patch
+*** Begin Patch
+*** Add File: src/worker/s3_uploader.py
++import os
++import boto3
++from botocore.exceptions import ClientError
++
++S3_ENDPOINT = os.getenv("S3_ENDPOINT", None)
++S3_ACCESS_KEY = os.getenv("S3_ACCESS_KEY", None)
++S3_SECRET_KEY = os.getenv("S3_SECRET_KEY", None)
++S3_BUCKET = os.getenv("S3_BUCKET", "ultra-agent-artifacts")
++
++def get_s3_client():
++    kwargs = {}
++    if S3_ENDPOINT:
++        kwargs["endpoint_url"] = S3_ENDPOINT
++    if S3_ACCESS_KEY and S3_SECRET_KEY:
++        kwargs["aws_access_key_id"] = S3_ACCESS_KEY
++        kwargs["aws_secret_access_key"] = S3_SECRET_KEY
++    return boto3.client("s3", **kwargs)
++
++def upload_file(local_path: str, key: str) -> str:
++    s3 = get_s3_client()
++    try:
++        s3.upload_file(local_path, S3_BUCKET, key)
++    except ClientError as e:
++        raise
++    if S3_ENDPOINT:
++        return f"{S3_ENDPOINT}/{S3_BUCKET}/{key}"
++    return f"s3://{S3_BUCKET}/{key}"
++
+*** End Patch
+*** Begin Patch
+*** Add File: src/worker/tasks.py
++import os
++import traceback
++from uuid import uuid4
++from src.worker.celery_app import cel
++from src.worker.db import SessionLocal
++from src.worker.s3_uploader import upload_file
++from src.api.models import Job, Artifact
++from src.super_agent.generator import generate_and_write
++from src.super_agent.validator import detect_duplicate_ids, detect_missing_ids, validate_schema_minimal
++
++ARTIFACT_DIR = os.getenv("ARTIFACT_DIR", "/app/artefakty")
++
++@cel.task(bind=True, max_retries=2, default_retry_delay=10)
++def generate_job(self, tenant_id: int = None, partials_path: str = None, total: int = 10000):
++    job_id = uuid4().hex
++    session = SessionLocal()
++    job = Job(id=job_id, tenant_id=tenant_id, status="running")
++    session.add(job)
++    session.commit()
++    try:
++        os.makedirs(ARTIFACT_DIR, exist_ok=True)
++        local_path = os.path.join(ARTIFACT_DIR, f"super-agent-{job_id}.json")
++        generate_and_write(output_path=local_path, partials_path=partials_path, total_ids=total)
++        data = None
++        try:
++            from src.super_agent.io import load_json
++            data = load_json(local_path)
++        except Exception:
++            pass
++        dups = detect_duplicate_ids(data) if data else []
++        missing = detect_missing_ids(data) if data else []
++        schema_errs = validate_schema_minimal(data) if data else []
++        s3_key = f"{tenant_id or 'public'}/super-agent/{job_id}.json"
++        storage_url = upload_file(local_path, s3_key)
++        artifact = Artifact(tenant_id=tenant_id, job_id=job_id, s3_key=s3_key, storage_url=storage_url)
++        session.add(artifact)
++        job.status = "completed"
++        job.artifact_path = local_path
++        job.artifact_s3_key = s3_key
++        session.commit()
++        return {"job_id": job_id, "s3_key": s3_key, "storage_url": storage_url, "duplicates": dups[:20], "missing_sample": missing[:20], "schema_errors": schema_errs}
++    except Exception as exc:
++        session.rollback()
++        job.status = "failed"
++        job.error = f"{str(exc)}\n{traceback.format_exc()}"
++        session.add(job)
++        session.commit()
++        raise self.retry(exc=exc)
++    finally:
++        session.close()
++
+*** End Patch
+*** Begin Patch
+*** Add File: scripts/create_tables.py
++#!/usr/bin/env python3
++from src.worker.db import init_db
++
++if __name__ == "__main__":
++    print("Creating database tables...")
++    init_db()
++    print("Done.")
++
+*** End Patch
+*** Begin Patch
+*** Add File: src/api/main.py
++from fastapi import FastAPI
++from pydantic import BaseModel
++from typing import Optional, Dict, Any
++import os
++from src.worker.tasks import generate_job
++from src.worker.db import SessionLocal
++from src.api.models import Job
++
++app = FastAPI(title="Ultimate Super-Agent API")
++
++ARTIFACT_DIR = os.getenv("ARTIFACT_DIR", "artefakty")
++os.makedirs(ARTIFACT_DIR, exist_ok=True)
++
++class GenerateRequest(BaseModel):
++    partials_path: Optional[str] = None
++    total: Optional[int] = 10000
++    tenant_id: Optional[int] = None
++
++@app.get("/health")
++def health():
++    return {"status": "ok"}
++
++@app.post("/api/v1/generate")
++def generate(req: GenerateRequest):
++    res = generate_job.delay(tenant_id=req.tenant_id, partials_path=req.partials_path, total=req.total)
++    job_id = res.id
++    session = SessionLocal()
++    job = Job(id=job_id, tenant_id=req.tenant_id, status="queued")
++    session.add(job)
++    session.commit()
++    session.close()
++    return {"job_id": job_id}
++
+*** End Patch
+*** Begin Patch
+*** Add File: docker-compose.yml
++version: "3.8"
++services:
++  db:
++    image: postgres:15
++    environment:
++      POSTGRES_USER: postgres
++      POSTGRES_PASSWORD: postgres
++      POSTGRES_DB: ultra_agent
++    ports:
++      - "5432:5432"
++    volumes:
++      - db_data:/var/lib/postgresql/data
++
++  redis:
++    image: redis:7
++    ports:
++      - "6379:6379"
++
++  minio:
++    image: minio/minio
++    command: server /data
++    environment:
++      MINIO_ROOT_USER: minioadmin
++      MINIO_ROOT_PASSWORD: minioadmin
++    ports:
++      - "9000:9000"
++    volumes:
++      - minio_data:/data
++
++  backend:
++    build:
++      context: .
++      dockerfile: Dockerfile.backend
++    environment:
++      DATABASE_URL: postgresql+psycopg2://postgres:postgres@db:5432/ultra_agent
++      REDIS_URL: redis://redis:6379/0
++      S3_ENDPOINT: http://minio:9000
++      S3_ACCESS_KEY: minioadmin
++      S3_SECRET_KEY: minioadmin
++      S3_BUCKET: ultra-agent-artifacts
++      ARTIFACT_DIR: /app/artefakty
++    ports:
++      - "8000:8000"
++    depends_on:
++      - db
++      - redis
++      - minio
++    volumes:
++      - .:/app
++
++  worker:
++    build:
++      context: .
++      dockerfile: Dockerfile.worker
++    environment:
++      DATABASE_URL: postgresql://postgres:postgres@db:5432/ultra_agent
++      REDIS_URL: redis://redis:6379/0
++      S3_ENDPOINT: http://minio:9000
++      S3_ACCESS_KEY: minioadmin
++      S3_SECRET_KEY: minioadmin
++      S3_BUCKET: ultra-agent-artifacts
++      ARTIFACT_DIR: /app/artefakty
++    depends_on:
++      - redis
++      - db
++      - minio
++    volumes:
++      - .:/app
++
++volumes:
++  db_data:
++  minio_data:
++
+*** End Patch
+*** Begin Patch
+*** Add File: Dockerfile.backend
++FROM python:3.10-slim
++WORKDIR /app
++COPY requirements-dev.txt /app/
++RUN pip install --no-cache-dir -r requirements-dev.txt
++COPY . /app
++ENV PYTHONUNBUFFERED=1
++CMD ["uvicorn", "src.api.main:app", "--host", "0.0.0.0", "--port", "8000"]
++
+*** End Patch
+*** Begin Patch
+*** Add File: Dockerfile.worker
++FROM python:3.10-slim
++WORKDIR /app
++COPY requirements-dev.txt /app/
++RUN pip install --no-cache-dir -r requirements-dev.txt
++COPY . /app
++ENV PYTHONUNBUFFERED=1
++CMD ["celery", "-A", "src.worker.tasks", "worker", "--loglevel=info", "--concurrency=1"]
++
+*** End Patch
+*** Begin Patch
+*** Add File: .env.example
++DATABASE_URL=postgresql://postgres:postgres@db:5432/ultra_agent
++REDIS_URL=redis://redis:6379/0
++CELERY_BROKER_URL=${REDIS_URL}
++CELERY_RESULT_BACKEND=${REDIS_URL}
++S3_ENDPOINT=http://minio:9000
++S3_ACCESS_KEY=minioadmin
++S3_SECRET_KEY=minioadmin
++S3_BUCKET=ultra-agent-artifacts
++ARTIFACT_DIR=/app/artefakty
++SECRET_KEY=change-me
++
+*** End Patch
+*** Begin Patch
+*** Add File: .github/workflows/autogen.yml
++name: Auto-generate Super-Agent Artifact
++
++on:
++  schedule:
++    - cron: '0 * * * *'
++  workflow_dispatch:
++
++jobs:
++  generate-and-pr:
++    runs-on: ubuntu-latest
++    env:
++      PYTHONUNBUFFERED: 1
++    steps:
++      - name: Checkout
++        uses: actions/checkout@v3
++        with:
++          persist-credentials: true
++
++      - name: Setup Python
++        uses: actions/setup-python@v4
++        with:
++          python-version: '3.10'
++
++      - name: Install dependencies
++        run: |
++          python -m pip install --upgrade pip
++          pip install -r requirements-dev.txt
++
++      - name: Generate artifact
++        run: |
++          mkdir -p artefakty
++          python3 scripts/generate_super_agent.py --partial częściowe/partial.json --output artefakty/super-agent-10000.json --total 10000 || (echo "Generator failed" && exit 2)
++
++      - name: Validate artifact (non-fatal)
++        run: |
++          if [ -f artefakty/super-agent-10000.json ]; then
++            python3 scripts/validate_super_agent.py --artifact artefakty/super-agent-10000.json || echo "Validation reported issues"
++          else
++            echo "No artifact produced"
++            exit 1
++          fi
++
++      - name: Create automated PR if changes
++        uses: peter-evans/create-pull-request@v5
++        with:
++          token: ${{ secrets.GITHUB_TOKEN }}
++          commit-message: chore(autogen): update super-agent artifact
++          committer: 'ultra-agent[bot] <41898282+github-actions[bot]@users.noreply.github.com>'
++          author: 'ultra-agent[bot] <41898282+github-actions[bot]@users.noreply.github.com>'
++          branch: autogen/super-agent
++          title: 'chore(autogen): update super-agent-10000.json (automated)'
++          body: |
++            This PR was created automatically by the Auto-generate workflow.
++            - Generator: scripts/generate_super_agent.py
++            - Validator: scripts/validate_super_agent.py
++            Review checklist:
++            - [ ] Schema validation
++            - [ ] Sample spot-check (ids: 1..50, 2001..2010, 6001..6010)
++            - [ ] Approve to merge into dev/main (policy enforced)
++          labels: autogen, automated
++          draft: false
++
+*** End Patch
+*** Begin Patch
+*** Add File: .github/workflows/preview-generate.yml
++name: Preview Generate
++on:
++  workflow_dispatch:
++    inputs:
++      preview_size:
++        description: 'Number of records to preview'
++        required: false
++        default: '1000'
++jobs:
++  generate-preview:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v3
++      - name: Setup Python
++        uses: actions/setup-python@v4
++        with:
++          python-version: '3.10'
++      - name: Install deps
++        run: pip install -r requirements-dev.txt
++      - name: Generate preview
++        run: python3 scripts/generate_super_agent.py --partial częściowe/partial.json --preview ${{ github.event.inputs.preview_size }} --output artefakty/super-agent-preview.json
++      - name: Upload preview artifact
++        uses: actions/upload-artifact@v3
++        with:
++          name: super-agent-preview
++          path: artefakty/super-agent-preview.json
++
+*** End Patch
+*** Begin Patch
+*** Add File: .github/workflows/ci.yml
++name: CI
++on:
++  push:
++    branches: [ main, 'ultra-agent-dev' ]
++  pull_request:
++    paths:
++      - 'src/**'
++      - 'scripts/**'
++jobs:
++  test:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v3
++      - name: Setup Python
++        uses: actions/setup-python@v4
++        with:
++          python-version: '3.10'
++      - name: Install deps
++        run: pip install -r requirements-dev.txt
++      - name: Run linters
++        run: pre-commit run --all-files || true
++      - name: Run tests
++        run: pytest -q
++      - name: Validate partials and schema (if present)
++        run: |
++          if [ -f częściowe/partial.json ]; then
++            python3 scripts/validate_super_agent.py --artifact artefakty/super-agent-10000.json || true
++          else
++            echo "No partials to validate"
++          fi
++
+*** End Patch
+*** Begin Patch
+*** Add File: requirements-dev.txt
++fastapi
++uvicorn[standard]
++jsonschema
++pytest
++pre-commit
++boto3
++sqlalchemy
++asyncpg
++alembic
++python-jose
++passlib[bcrypt]
++celery[redis]
++
+*** End Patch
+*** Begin Patch
+*** Add File: tests/jednostka/test_generator.py
++from src.super_agent.generator import generate_from_partials, load_categories
++
++def test_load_categories():
++    cats = load_categories("configs/categories.json")
++    assert isinstance(cats, list) and len(cats) >= 1
++
++def test_generate_preview_counts():
++    res = generate_from_partials({}, preview_limit=10, total_ids=1000)
++    assert "meta" in res and "super_agent" in res
++    total = sum(len(items) for cat in res["super_agent"].values() for items in cat.values())
++    assert total == 10
++
+*** End Patch
+*** Begin Patch
+*** Add File: tests/unit/test_s3_uploader.py
++import tempfile
++from unittest import mock
++from src.worker import s3_uploader
++
++def test_get_s3_client_monkeypatch(monkeypatch, tmp_path):
++    f = tmp_path / "t.json"
++    f.write_text('{"x":1}')
++    class DummyClient:
++        def upload_file(self, local, bucket, key):
++            assert local == str(f)
++            assert bucket == s3_uploader.S3_BUCKET
++            assert key == "test/key.json"
++    monkeypatch.setattr('boto3.client', lambda **kw: DummyClient())
++    url = s3_uploader.upload_file(str(f), "test/key.json")
++    assert url is not None
++
+*** End Patch
+*** Begin Patch
+*** Add File: częściowe/partial.json
++[]
++
+*** End Patch
+*** Begin Patch
+*** Add File: artefakty/.gitkeep
++
+*** End Patch
+*** Begin Patch
+*** Add File: README.md
++# Ultimate Super-Agent
++
++Generator i zarządzanie hierarchicznym katalogiem 10 000 funkcji AI.
++
++Quick start:
++1. Stwórz venv i zainstaluj dependencies:
++   python3 -m venv .venv && source .venv/bin/activate
++   pip install -r requirements-dev.txt
++2. Przygotuj partials: częściowe/partial.json
++3. Podgląd:
++   python3 scripts/generate_super_agent.py --partial częściowe/partial.json --preview 1000 --output artefakty/super-agent-preview.json
++4. Wygeneruj cały artefakt:
++   python3 scripts/generate_super_agent.py --partial częściowe/partial.json --output artefakty/super-agent-10000.json
++5. Waliduj:
++   python3 scripts/validate_super_agent.py --artifact artefakty/super-agent-10000.json
++
++Dev: docker-compose up (postgres, redis, minio, backend, worker)
++
+*** End Patch
+*** Begin Patch
+*** Add File: .pre-commit-config.yaml
++repos:
++- repo: https://github.com/pre-commit/pre-commit-hooks
++  rev: v4.4.0
++  hooks:
++    - id: trailing-whitespace
++    - id: end-of-file-fixer
++- repo: https://github.com/psf/black
++  rev: 23.9.1
++  hooks:
++    - id: black
++- repo: https://github.com/PyCQA/flake8
++  rev: 6.0.0
++  hooks:
++    - id: flake8
++
+*** End Patch
